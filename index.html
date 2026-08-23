@@ -53,6 +53,11 @@
             position: relative;
             z-index: 10;
         }
+        #langToggle button.active-lang {
+            border-color: #00F0FF;
+            color: #00F0FF;
+            background: rgba(0, 240, 255, 0.08);
+        }
     </style>
 </head>
 <body class="bg-kn-dark text-gray-100 smooth-scroll">
@@ -65,14 +70,23 @@
             </div>
             <div class="flex items-center gap-8">
                 <div class="hidden md:flex gap-6 text-sm">
-                    <a href="#services" class="hover:text-kn-cyan transition">Services</a>
-                    <a href="#methodology" class="hover:text-kn-cyan transition">Process</a>
+                    <a href="#services" class="hover:text-kn-cyan transition">
+                        <span lang-en>Services</span>
+                        <span lang-fr style="display:none">Services</span>
+                        <span lang-es style="display:none">Servicios</span>
+                    </a>
+                    <a href="#methodology" class="hover:text-kn-cyan transition">
+                        <span lang-en>Process</span>
+                        <span lang-fr style="display:none">Processus</span>
+                        <span lang-es style="display:none">Proceso</span>
+                    </a>
                     <a href="#calculator" class="hover:text-kn-cyan transition">ROI</a>
                 </div>
+                <!-- Order of preference: ES default, FR 2nd, EN 3rd -->
                 <div class="flex gap-2" id="langToggle">
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition active-lang" onclick="switchLang('en')">EN</button>
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" onclick="switchLang('fr')">FR</button>
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" onclick="switchLang('es')">ES</button>
+                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="es" onclick="switchLang('es')">ES</button>
+                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="fr" onclick="switchLang('fr')">FR</button>
+                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="en" onclick="switchLang('en')">EN</button>
                 </div>
                 <button onclick="document.getElementById('contact').scrollIntoView()" class="px-6 py-2 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-xl hover:shadow-glow-cyan transition">
                     <span lang-en>Book Audit</span>
@@ -180,7 +194,7 @@
                         <span lang-es style="display:none">Tiempo Perdido</span>
                     </h3>
                     <p class="text-gray-400 text-sm">
-                        <span lang-en">Hours on repetitive tasks every week</span>
+                        <span lang-en>Hours on repetitive tasks every week</span>
                         <span lang-fr style="display:none">Des heures sur des tâches répétitives</span>
                         <span lang-es style="display:none">Horas en tareas repetitivas</span>
                     </p>
@@ -191,7 +205,7 @@
                             <span lang-es style="display:none">✓ 65% De Tiempo Liberado</span>
                         </p>
                         <p class="text-gray-400 text-xs mt-2">
-                            <span lang-en">Team focuses on high-value work</span>
+                            <span lang-en>Team focuses on high-value work</span>
                             <span lang-fr style="display:none">L'équipe se concentre sur le travail précieux</span>
                             <span lang-es style="display:none">El equipo se enfoca en trabajo de alto valor</span>
                         </p>
@@ -217,12 +231,12 @@
                     </p>
                     <div class="mt-6 pt-6 border-t border-gray-800">
                         <p class="text-kn-warm font-semibold">
-                            <span lang-en">✓ New Revenue Streams</span>
+                            <span lang-en>✓ New Revenue Streams</span>
                             <span lang-fr style="display:none">✓ Nouvelles Sources de Revenus</span>
                             <span lang-es style="display:none">✓ Nuevas Fuentes de Ingresos</span>
                         </p>
                         <p class="text-gray-400 text-xs mt-2">
-                            <span lang-en">Data-driven growth, captured clients, scale</span>
+                            <span lang-en>Data-driven growth, captured clients, scale</span>
                             <span lang-fr style="display:none">Croissance basée sur les données, clients captés</span>
                             <span lang-es style="display:none">Crecimiento basado en datos, clientes capturados</span>
                         </p>
@@ -277,7 +291,7 @@
                     <div class="bg-gradient-to-br from-kn-magenta/10 to-kn-dark border-2 border-kn-magenta/30 rounded-3xl p-6 text-center warm-glow">
                         <div class="text-4xl font-bold gradient-text mb-2" id="teamResult">75%</div>
                         <div class="text-sm text-gray-400">
-                            <span lang-en">🚀 Team capacity freed</span>
+                            <span lang-en>🚀 Team capacity freed</span>
                             <span lang-fr style="display:none">🚀 Capacité équipe libérée</span>
                             <span lang-es style="display:none">🚀 Capacidad del equipo liberada</span>
                         </div>
@@ -440,6 +454,12 @@
     </footer>
 
     <script>
+        // ===== LANGUAGE STATE (declared first — the canvas draws localized text
+        // from its very first frame, before switchLang() runs at init) =====
+        // Preference order: Spanish (default) → French → English
+        const SUPPORTED_LANGS = ['es', 'fr', 'en'];
+        let currentLang = 'es';
+
         // ===== CANVAS ANIMATION =====
         const canvas = document.getElementById('heroCanvas');
         const ctx = canvas.getContext('2d');
@@ -478,12 +498,33 @@
 
         // Each input lane carries one category of business cost/burden; each maps
         // to the matching result that comes out the single output lane.
-        const INPUT_LABELS = ['DÉPENSES', 'COÛT MARKETING', 'ADMINISTRATION'];
-        const OUTPUT_DATA = [
-            { label: 'CROISSANCE', color: 'rgba(255, 80, 80, 0.95)' },
-            { label: 'PROSPECTION', color: 'rgba(0, 190, 255, 0.95)' },
-            { label: 'TEMPS LIBÉRÉ', color: 'rgba(255, 200, 50, 0.95)' }
+        // Labels are looked up by currentLang at draw time, so an in-flight box
+        // or suitcase re-labels itself instantly if the visitor switches language.
+        const INPUT_LABELS = {
+            es: ['GASTOS', 'COSTE MARKETING', 'ADMINISTRACIÓN'],
+            fr: ['DÉPENSES', 'COÛT MARKETING', 'ADMINISTRATION'],
+            en: ['EXPENSES', 'MARKETING COST', 'ADMINISTRATION']
+        };
+        const OUTPUT_LABELS = {
+            es: ['CRECIMIENTO', 'PROSPECCIÓN', 'TIEMPO LIBRE'],
+            fr: ['CROISSANCE', 'PROSPECTION', 'TEMPS LIBÉRÉ'],
+            en: ['GROWTH', 'PROSPECTING', 'FREE TIME']
+        };
+        const OUTPUT_COLORS = [
+            'rgba(255, 80, 80, 0.95)',
+            'rgba(0, 190, 255, 0.95)',
+            'rgba(255, 200, 50, 0.95)'
         ];
+        const MACHINE_TEXT = {
+            es: { tagline: 'AUTOMATIZACIÓN KN', caption: 'tus archivos → 1 solución' },
+            fr: { tagline: 'AUTOMATISATION KN', caption: 'vos dossiers → 1 solution' },
+            en: { tagline: 'KN AUTOMATION', caption: 'your files → 1 solution' }
+        };
+        const STATS_TEXT = {
+            es: n => `✓ ${n} resultados entregados`,
+            fr: n => `✓ ${n} résultats livrés`,
+            en: n => `✓ ${n} results delivered`
+        };
 
         // ---- Geometry: 3 lanes merge into the KN machine, 1 lane exits it ----
         // Full-width panel now, so the machine sits centered for symmetry.
@@ -609,7 +650,6 @@
                 this.speed = 0.0013 + Math.random() * 0.0002; // slow, readable
                 this.width = 82;
                 this.height = 40;
-                this.label = INPUT_LABELS[laneIndex];
                 this.consumed = false;
             }
 
@@ -650,11 +690,11 @@
                 ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 5);
                 ctx.stroke();
 
-                // Label — inside the box, like the suitcases
+                // Label — inside the box, like the suitcases; localized live
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
                 ctx.font = 'bold 10px sans-serif';
                 ctx.textAlign = 'center';
-                ctx.fillText(this.label, 0, 4);
+                ctx.fillText(INPUT_LABELS[currentLang][this.laneIndex], 0, 4);
 
                 // Red X badge — unresolved; becomes a green check after the scan
                 drawStatusBadge(this.width/2 - 4, -this.height/2 - 2, 'reject');
@@ -666,13 +706,13 @@
         // Output Suitcase (colorful, premium — the result, after the scan)
         // Each carries a green check badge: what automation resolved.
         class OutputSuitcase {
-            constructor(data) {
+            constructor(dataIndex) {
                 this.t = 0;
                 this.speed = 0.0018 + Math.random() * 0.0002;
                 this.width = 64;
                 this.height = 52;
-                this.label = data.label;
-                this.color = data.color;
+                this.dataIndex = dataIndex; // which of the 3 result categories
+                this.color = OUTPUT_COLORS[dataIndex];
                 this.scale = 0.4;
                 this.glow = 0;
             }
@@ -729,11 +769,11 @@
                 ctx.lineTo(this.width/2, -this.height/2 + 10);
                 ctx.stroke();
 
-                // Label
+                // Label — localized live
                 ctx.fillStyle = 'rgba(255,255,255,0.95)';
                 ctx.font = 'bold 10px sans-serif';
                 ctx.textAlign = 'center';
-                ctx.fillText(this.label, 0, 5);
+                ctx.fillText(OUTPUT_LABELS[currentLang][this.dataIndex], 0, 5);
 
                 // Green check badge — resolved by the automation (mirrors the red X)
                 drawStatusBadge(this.width/2 - 4, -this.height/2 - 2, 'check');
@@ -806,7 +846,7 @@
             if (labelY + 4 < cy - tunnelH/2) {
                 ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
                 ctx.font = 'bold 11px sans-serif';
-                ctx.fillText('AUTOMATISATION KN', cx, labelY);
+                ctx.fillText(MACHINE_TEXT[currentLang].tagline, cx, labelY);
             }
 
             // Caption under the tunnel — only if the bottom half has room for it
@@ -814,7 +854,7 @@
             if (bottomRoom > 22) {
                 ctx.fillStyle = 'rgba(170, 175, 190, 0.7)';
                 ctx.font = '10px sans-serif';
-                ctx.fillText('vos dossiers → 1 solution', cx, cy + tunnelH/2 + 18);
+                ctx.fillText(MACHINE_TEXT[currentLang].caption, cx, cy + tunnelH/2 + 18);
             }
 
             ctx.restore();
@@ -848,8 +888,7 @@
                 const alive = box.update();
                 if (!alive) {
                     // Reached the entrance — consume it, spawn the matching result
-                    const data = OUTPUT_DATA[box.laneIndex];
-                    animation.outputSuitcases.push(new OutputSuitcase(data));
+                    animation.outputSuitcases.push(new OutputSuitcase(box.laneIndex));
                     animation.totalDelivered++;
                     return false;
                 }
@@ -871,7 +910,7 @@
             ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
             ctx.font = 'bold 13px sans-serif';
             ctx.textAlign = 'left';
-            ctx.fillText(`✓ ${animation.totalDelivered} résultats livrés`, 16, canvas.height - 12);
+            ctx.fillText(STATS_TEXT[currentLang](animation.totalDelivered), 16, canvas.height - 12);
 
             requestAnimationFrame(animate);
         }
@@ -879,11 +918,28 @@
         animate();
 
         // ===== LANGUAGE SWITCHING =====
+        // (SUPPORTED_LANGS / currentLang are declared at the top of this script)
         function switchLang(lang) {
+            currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'es';
             document.querySelectorAll('[lang-en], [lang-fr], [lang-es]').forEach(el => el.style.display = 'none');
-            document.querySelectorAll(`[lang-${lang}]`).forEach(el => el.style.display = 'inline');
-            document.querySelectorAll('#langToggle button').forEach(b => b.classList.remove('active-lang'));
-            event.target.classList.add('active-lang');
+            document.querySelectorAll(`[lang-${currentLang}]`).forEach(el => el.style.display = 'inline');
+            document.querySelectorAll('#langToggle button').forEach(b => {
+                b.classList.toggle('active-lang', b.dataset.lang === currentLang);
+            });
+        }
+
+        // Detect the visitor's browser language and map it to our priority
+        // order (ES default, FR 2nd, EN 3rd) — used only once, on first load.
+        function detectPreferredLang() {
+            const browserLangs = (navigator.languages && navigator.languages.length)
+                ? navigator.languages
+                : [navigator.language || 'es'];
+
+            for (const raw of browserLangs) {
+                const code = raw.toLowerCase().slice(0, 2);
+                if (SUPPORTED_LANGS.includes(code)) return code;
+            }
+            return 'es'; // default when nothing matches
         }
 
         // ===== ROI CALCULATOR =====
@@ -907,18 +963,23 @@
         }
 
         // ===== FORM SUBMISSION =====
+        const THANK_YOU_MESSAGE = {
+            es: '¡Gracias! Te contactaremos en menos de 24 horas.',
+            fr: 'Merci ! Nous vous recontactons sous 24 heures.',
+            en: "Thank you! We'll reach out within 24 hours."
+        };
         function handleSubmit(event) {
             event.preventDefault();
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             console.log('Form submitted:', data);
-            alert('Thank you! We\'ll reach out within 24 hours.');
+            alert(THANK_YOU_MESSAGE[currentLang]);
             event.target.reset();
         }
 
-        // Initialize
+        // Initialize — language auto-detected from the browser, ES/FR/EN priority
         updateROI();
-        switchLang('en');
+        switchLang(detectPreferredLang());
     </script>
 </body>
 </html>

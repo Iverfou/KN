@@ -82,10 +82,10 @@
                     </a>
                     <a href="#calculator" class="hover:text-kn-cyan transition">ROI</a>
                 </div>
-                <!-- Order of preference: ES default, FR 2nd, EN 3rd -->
+                <!-- Order of preference: FR default, ES 2nd, EN 3rd -->
                 <div class="flex gap-2" id="langToggle">
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="es" onclick="switchLang('es')">ES</button>
                     <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="fr" onclick="switchLang('fr')">FR</button>
+                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="es" onclick="switchLang('es')">ES</button>
                     <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="en" onclick="switchLang('en')">EN</button>
                 </div>
                 <button onclick="document.getElementById('contact').scrollIntoView()" class="px-6 py-2 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-xl hover:shadow-glow-cyan transition">
@@ -98,11 +98,13 @@
     </nav>
 
     <!-- HERO SECTION: uncluttered text (~3/4), full-width animation (~1/4) below -->
-    <!-- Desktop: fits the viewport height so both are visible without scrolling -->
-    <section id="hero" class="relative overflow-hidden flex flex-col pt-10 md:pt-0 md:h-[calc(100vh-80px)]">
+    <!-- Fits the viewport height on every breakpoint — the animation panel is -->
+    <!-- flex-1, so it fills whatever room the text leaves instead of leaving a -->
+    <!-- black gap on tall phone screens. -->
+    <section id="hero" class="relative overflow-hidden flex flex-col min-h-[100dvh] md:h-[calc(100vh-80px)] pt-8 md:pt-0">
 
         <!-- Text: short, centered, not overloaded — ~75% of the hero on desktop -->
-        <div class="md:flex-[3] flex flex-col justify-center px-6 pb-10 md:pb-6 fade-in hero-content">
+        <div class="md:flex-[3] flex flex-col justify-center px-6 pb-8 md:pb-6 fade-in hero-content">
             <div class="max-w-3xl mx-auto w-full text-center">
                 <div class="inline-block px-4 py-2 border-2 border-kn-warm/40 rounded-full mb-6 text-kn-warm text-sm bg-kn-warm/5">
                     <span lang-en>⚡ AI Automation & Business Intelligence</span>
@@ -134,8 +136,10 @@
             </div>
         </div>
 
-        <!-- Animation: full viewport width, edge to edge — ~25% of the hero on desktop -->
-        <div class="relative w-full h-64 sm:h-80 md:flex-1 md:h-auto min-h-[190px] border-t-2 border-b-2 border-kn-cyan/15 bg-kn-surface/40">
+        <!-- Animation: full viewport width, edge to edge. flex-1 on every -->
+        <!-- breakpoint so it fills all remaining vertical space — no dead void -->
+        <!-- on tall phones, and ~25% of the hero on desktop. -->
+        <div class="relative w-full flex-1 min-h-[220px] border-t-2 border-b-2 border-kn-cyan/15 bg-kn-surface/40">
             <canvas id="heroCanvas" class="absolute inset-0 w-full h-full"></canvas>
         </div>
     </section>
@@ -456,9 +460,9 @@
     <script>
         // ===== LANGUAGE STATE (declared first — the canvas draws localized text
         // from its very first frame, before switchLang() runs at init) =====
-        // Preference order: Spanish (default) → French → English
-        const SUPPORTED_LANGS = ['es', 'fr', 'en'];
-        let currentLang = 'es';
+        // Preference order: French (default) → Spanish → English
+        const SUPPORTED_LANGS = ['fr', 'es', 'en'];
+        let currentLang = 'fr';
 
         // ===== CANVAS ANIMATION =====
         const canvas = document.getElementById('heroCanvas');
@@ -920,7 +924,7 @@
         // ===== LANGUAGE SWITCHING =====
         // (SUPPORTED_LANGS / currentLang are declared at the top of this script)
         function switchLang(lang) {
-            currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'es';
+            currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'fr';
             document.querySelectorAll('[lang-en], [lang-fr], [lang-es]').forEach(el => el.style.display = 'none');
             document.querySelectorAll(`[lang-${currentLang}]`).forEach(el => el.style.display = 'inline');
             document.querySelectorAll('#langToggle button').forEach(b => {
@@ -929,17 +933,17 @@
         }
 
         // Detect the visitor's browser language and map it to our priority
-        // order (ES default, FR 2nd, EN 3rd) — used only once, on first load.
+        // order (FR default, ES 2nd, EN 3rd) — used only once, on first load.
         function detectPreferredLang() {
             const browserLangs = (navigator.languages && navigator.languages.length)
                 ? navigator.languages
-                : [navigator.language || 'es'];
+                : [navigator.language || 'fr'];
 
             for (const raw of browserLangs) {
                 const code = raw.toLowerCase().slice(0, 2);
                 if (SUPPORTED_LANGS.includes(code)) return code;
             }
-            return 'es'; // default when nothing matches
+            return 'fr'; // default when nothing matches
         }
 
         // ===== ROI CALCULATOR =====
@@ -977,7 +981,7 @@
             event.target.reset();
         }
 
-        // Initialize — language auto-detected from the browser, ES/FR/EN priority
+        // Initialize — language auto-detected from the browser, FR/ES/EN priority
         updateROI();
         switchLang(detectPreferredLang());
     </script>

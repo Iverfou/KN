@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KN Digital — L'IA Qui s'Adapte Vraiment à Vous</title>
+    <title>KN Digital — Consultoría IA en Alicante | La IA Que Se Adapta a Ti</title>
     
-    <!-- Logo pour l'onglet du navigateur -->
+    <!-- Logo para la pestaña del navegador -->
     <link rel="icon" type="image/jpeg" href="Captura de pantalla 2026-07-21 151929.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,13 +50,8 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in { animation: fadeIn 0.7s ease-in-out; }
         .warm-glow { box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15); }
-        #heroCanvas {
-            display: block;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
+        #heroCanvas { display: block; }
+        .hero-content { position: relative; z-index: 10; }
         #langToggle button.active-lang {
             border-color: #00F0FF;
             color: #00F0FF;
@@ -75,74 +70,66 @@
             <div class="flex items-center gap-8">
                 <div class="hidden md:flex gap-6 text-sm">
                     <a href="#services" class="hover:text-kn-cyan transition">
-                        <span lang-en>Services</span>
+                        <span lang-en style="display:none">Services</span>
                         <span lang-fr style="display:none">Services</span>
-                        <span lang-es style="display:none">Servicios</span>
+                        <span lang-es>Servicios</span>
                     </a>
                     <a href="#methodology" class="hover:text-kn-cyan transition">
-                        <span lang-en>Process</span>
+                        <span lang-en style="display:none">Process</span>
                         <span lang-fr style="display:none">Processus</span>
-                        <span lang-es style="display:none">Proceso</span>
+                        <span lang-es>Proceso</span>
                     </a>
                     <a href="#calculator" class="hover:text-kn-cyan transition">ROI</a>
                 </div>
-                <!-- Order of preference: FR default, ES 2nd, EN 3rd -->
+                <!-- Selector de idioma (Español por defecto) -->
                 <div class="flex gap-2" id="langToggle">
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="fr" onclick="switchLang('fr')">FR</button>
                     <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="es" onclick="switchLang('es')">ES</button>
+                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="fr" onclick="switchLang('fr')">FR</button>
                     <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="en" onclick="switchLang('en')">EN</button>
                 </div>
                 <button onclick="document.getElementById('contact').scrollIntoView()" class="px-6 py-2 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-xl hover:shadow-glow-cyan transition">
-                    <span lang-en>Book Audit</span>
+                    <span lang-en style="display:none">Book Audit</span>
                     <span lang-fr style="display:none">Réserver</span>
-                    <span lang-es style="display:none">Reservar</span>
+                    <span lang-es>Reservar</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION: uncluttered text (~3/4), full-width animation (~1/4) below -->
-    <!-- Fits the viewport height on every breakpoint — the animation panel is -->
-    <!-- flex-1, so it fills whatever room the text leaves instead of leaving a -->
-    <!-- black gap on tall phone screens. -->
+    <!-- HERO SECTION -->
     <section id="hero" class="relative overflow-hidden flex flex-col min-h-[100dvh] md:h-[calc(100vh-80px)] pt-8 md:pt-0">
-
-        <!-- Text: short, centered, not overloaded — ~75% of the hero on desktop -->
         <div class="md:flex-[3] flex flex-col justify-center px-6 pb-8 md:pb-6 fade-in hero-content">
             <div class="max-w-3xl mx-auto w-full text-center">
                 <div class="inline-block px-4 py-2 border-2 border-kn-warm/40 rounded-full mb-6 text-kn-warm text-sm bg-kn-warm/5">
-                    <span lang-en>⚡ AI Automation & Business Intelligence</span>
+                    <span lang-en style="display:none">⚡ AI Automation & Business Intelligence in Alicante</span>
                     <span lang-fr style="display:none">⚡ Automatisation IA & Intelligence Métier</span>
-                    <span lang-es style="display:none">⚡ Automatización IA e Inteligencia Empresarial</span>
+                    <span lang-es>⚡ Automatización IA & Consultoría en Alicante</span>
                 </div>
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    <span lang-en>AI That Actually Works <span class="gradient-text">For You</span></span>
+                    <span lang-en style="display:none">AI That Actually Works <span class="gradient-text">For You</span></span>
                     <span lang-fr style="display:none">L'IA Qui s'Adapte <span class="gradient-text">Vraiment à Vous</span></span>
-                    <span lang-es style="display:none">La IA Que Realmente <span class="gradient-text">Se adapta a Ti</span></span>
+                    <span lang-es>La IA Que Realmente <span class="gradient-text">Se Adapta a Ti</span></span>
                 </h1>
                 <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-                    <span lang-en>Send us your chaos. Our AI turns it into results.</span>
+                    <span lang-en style="display:none">Send us your chaos. Our AI turns it into results.</span>
                     <span lang-fr style="display:none">Envoyez-nous votre chaos. Notre IA le transforme en résultats.</span>
-                    <span lang-es style="display:none">Envíanos tu caos. Nuestra IA lo convierte en resultados.</span>
+                    <span lang-es>Envíanos tu caos. Nuestra IA lo convierte en resultados.</span>
                 </p>
                 <div class="flex gap-4 flex-wrap justify-center">
                     <button onclick="document.getElementById('calculator').scrollIntoView()" class="px-8 py-4 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-2xl hover:shadow-lg transition">
-                        <span lang-en>📊 Calculate Your Impact</span>
+                        <span lang-en style="display:none">📊 Calculate Your Impact</span>
                         <span lang-fr style="display:none">📊 Calculer Votre Impact</span>
-                        <span lang-es style="display:none">📊 Calcular Tu Impacto</span>
+                        <span lang-es>📊 Calcular Tu Impacto</span>
                     </button>
                     <button onclick="document.getElementById('portfolio').scrollIntoView()" class="px-8 py-4 border-2 border-kn-warm text-kn-warm rounded-2xl hover:bg-kn-warm/10 transition">
-                        <span lang-en>👀 See Our Work</span>
+                        <span lang-en style="display:none">👀 See Our Work</span>
                         <span lang-fr style="display:none">👀 Voir Notre Travail</span>
-                        <span lang-es style="display:none">👀 Ver Nuestro Trabajo</span>
+                        <span lang-es>👀 Ver Nuestro Trabajo</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Animation: full viewport width, edge to edge. flex-1 on every -->
-        <!-- breakpoint so it fills all remaining vertical space — no dead void -->
-        <!-- on tall phones, and ~25% of the hero on desktop. -->
         <div class="relative w-full flex-1 min-h-[220px] border-t-2 border-b-2 border-kn-cyan/15 bg-kn-surface/40">
             <canvas id="heroCanvas" class="absolute inset-0 w-full h-full"></canvas>
         </div>
@@ -152,13 +139,12 @@
     <section class="py-20 px-6 bg-gradient-to-r from-kn-magenta/5 to-kn-cyan/5">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold mb-16 text-center gradient-text">
-                <span lang-en>Your Chaos Becomes Their Success</span>
+                <span lang-en style="display:none">Your Chaos Becomes Their Success</span>
                 <span lang-fr style="display:none">Votre Chaos Devient Leur Succès</span>
-                <span lang-es style="display:none">Tu Caos Se Convierte En Su Éxito</span>
+                <span lang-es>Tu Caos Se Convierte En Su Éxito</span>
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Transformation 1 -->
                 <div class="text-center">
                     <div class="mb-6">
                         <div class="inline-block text-6xl mb-4">📂</div>
@@ -166,30 +152,16 @@
                         <div class="inline-block text-6xl">🎯</div>
                     </div>
                     <h3 class="text-xl font-bold text-kn-cyan mb-3">
-                        <span lang-en>Messy Processes</span>
+                        <span lang-en style="display:none">Messy Processes</span>
                         <span lang-fr style="display:none">Processus Chaotiques</span>
-                        <span lang-es style="display:none">Procesos Desordenados</span>
+                        <span lang-es>Procesos Desordenados</span>
                     </h3>
                     <p class="text-gray-400 text-sm">
-                        <span lang-en>Scattered files, manual tasks, lost information</span>
+                        <span lang-en style="display:none">Scattered files, manual tasks, lost information</span>
                         <span lang-fr style="display:none">Fichiers dispersés, tâches manuelles, informations perdues</span>
-                        <span lang-es style="display:none">Archivos dispersos, tareas manuales, información perdida</span>
+                        <span lang-es>Archivos dispersos, tareas manuales, información perdida</span>
                     </p>
-                    <div class="mt-6 pt-6 border-t border-gray-800">
-                        <p class="text-kn-warm font-semibold">
-                            <span lang-en>✓ Streamlined Workflows</span>
-                            <span lang-fr style="display:none">✓ Flux Rationalisés</span>
-                            <span lang-es style="display:none">✓ Flujos Simplificados</span>
-                        </p>
-                        <p class="text-gray-400 text-xs mt-2">
-                            <span lang-en>Automated, intelligent, always organized</span>
-                            <span lang-fr style="display:none">Automatisés, intelligents, toujours organisés</span>
-                            <span lang-es style="display:none">Automatizados, inteligentes, siempre organizados</span>
-                        </p>
-                    </div>
                 </div>
-
-                <!-- Transformation 2 -->
                 <div class="text-center">
                     <div class="mb-6">
                         <div class="inline-block text-6xl mb-4">⏰</div>
@@ -197,30 +169,16 @@
                         <div class="inline-block text-6xl">⚡</div>
                     </div>
                     <h3 class="text-xl font-bold text-kn-cyan mb-3">
-                        <span lang-en>Wasted Time</span>
+                        <span lang-en style="display:none">Wasted Time</span>
                         <span lang-fr style="display:none">Temps Perdu</span>
-                        <span lang-es style="display:none">Tiempo Perdido</span>
+                        <span lang-es>Tiempo Perdido</span>
                     </h3>
                     <p class="text-gray-400 text-sm">
-                        <span lang-en>Hours on repetitive tasks every week</span>
+                        <span lang-en style="display:none">Hours on repetitive tasks every week</span>
                         <span lang-fr style="display:none">Des heures sur des tâches répétitives</span>
-                        <span lang-es style="display:none">Horas en tareas repetitivas</span>
+                        <span lang-es>Horas en tareas repetitivas</span>
                     </p>
-                    <div class="mt-6 pt-6 border-t border-gray-800">
-                        <p class="text-kn-warm font-semibold">
-                            <span lang-en>✓ 65% Time Freed</span>
-                            <span lang-fr style="display:none">✓ 65% De Temps Libéré</span>
-                            <span lang-es style="display:none">✓ 65% De Tiempo Liberado</span>
-                        </p>
-                        <p class="text-gray-400 text-xs mt-2">
-                            <span lang-en>Team focuses on high-value work</span>
-                            <span lang-fr style="display:none">L'équipe se concentre sur le travail précieux</span>
-                            <span lang-es style="display:none">El equipo se enfoca en trabajo de alto valor</span>
-                        </p>
-                    </div>
                 </div>
-
-                <!-- Transformation 3 -->
                 <div class="text-center">
                     <div class="mb-6">
                         <div class="inline-block text-6xl mb-4">📉</div>
@@ -228,27 +186,15 @@
                         <div class="inline-block text-6xl">📈</div>
                     </div>
                     <h3 class="text-xl font-bold text-kn-cyan mb-3">
-                        <span lang-en>Lost Opportunities</span>
+                        <span lang-en style="display:none">Lost Opportunities</span>
                         <span lang-fr style="display:none">Opportunités Perdues</span>
-                        <span lang-es style="display:none">Oportunidades Perdidas</span>
+                        <span lang-es>Oportunidades Perdidas</span>
                     </h3>
                     <p class="text-gray-400 text-sm">
-                        <span lang-en>Missed clients, slow growth, no data insights</span>
+                        <span lang-en style="display:none">Missed clients, slow growth, no data insights</span>
                         <span lang-fr style="display:none">Clients manqués, croissance lente, pas de données</span>
-                        <span lang-es style="display:none">Clientes perdidos, crecimiento lento, sin datos</span>
+                        <span lang-es>Clientes perdidos, crecimiento lento, sin datos</span>
                     </p>
-                    <div class="mt-6 pt-6 border-t border-gray-800">
-                        <p class="text-kn-warm font-semibold">
-                            <span lang-en>✓ New Revenue Streams</span>
-                            <span lang-fr style="display:none">✓ Nouvelles Sources de Revenus</span>
-                            <span lang-es style="display:none">✓ Nuevas Fuentes de Ingresos</span>
-                        </p>
-                        <p class="text-gray-400 text-xs mt-2">
-                            <span lang-en>Data-driven growth, captured clients, scale</span>
-                            <span lang-fr style="display:none">Croissance basée sur les données, clients captés</span>
-                            <span lang-es style="display:none">Crecimiento basado en datos, clientes capturados</span>
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -258,31 +204,27 @@
     <section id="calculator" class="py-20 px-6 bg-gradient-to-b from-kn-surface/30 to-transparent">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-4xl font-bold mb-4 gradient-text text-center">
-                <span lang-en>See Your Impact</span>
+                <span lang-en style="display:none">See Your Impact</span>
                 <span lang-fr style="display:none">Découvrez Votre Impact</span>
-                <span lang-es style="display:none">Descubre Tu Impacto</span>
+                <span lang-es>Descubre Tu Impacto</span>
             </h2>
             <p class="text-gray-400 mb-12 text-center">
-                <span lang-en>Adjust the sliders to see your potential gains</span>
+                <span lang-en style="display:none">Adjust the sliders to see your potential gains</span>
                 <span lang-fr style="display:none">Ajustez les curseurs pour voir vos gains potentiels</span>
-                <span lang-es style="display:none">Ajusta los controles para ver tus ganancias potenciales</span>
+                <span lang-es>Ajusta los controles para ver tus ganancias potenciales</span>
             </p>
 
             <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark/40 border-2 border-kn-warm/20 rounded-3xl p-8 glow-border warm-glow">
                 <div class="mb-10">
                     <label class="block text-sm font-semibold mb-4 text-kn-warm">
-                        <span lang-en>👥 Team Size: <span id="teamValue" class="text-kn-cyan">5</span> people</span>
-                        <span lang-fr style="display:none">👥 Taille de l'équipe : <span id="teamValue-fr" class="text-kn-cyan">5</span> personnes</span>
-                        <span lang-es style="display:none">👥 Tamaño del equipo: <span id="teamValue-es" class="text-kn-cyan">5</span> personas</span>
+                        👥 Tamaño del equipo: <span id="teamValue" class="text-kn-cyan">5</span> personas
                     </label>
                     <input type="range" min="1" max="100" value="5" id="teamSlider" class="w-full cursor-pointer accent-kn-magenta" oninput="updateROI()">
                 </div>
 
                 <div class="mb-10">
                     <label class="block text-sm font-semibold mb-4 text-kn-warm">
-                        <span lang-en>⏱️ Repetitive Tasks/Week: <span id="hoursValue" class="text-kn-cyan">10</span> hrs</span>
-                        <span lang-fr style="display:none">⏱️ Tâches Répétitives/Semaine : <span id="hoursValue-fr" class="text-kn-cyan">10</span> hrs</span>
-                        <span lang-es style="display:none">⏱️ Tareas Repetitivas/Semana: <span id="hoursValue-es" class="text-kn-cyan">10</span> hrs</span>
+                        ⏱️ Tareas Repetitivas/Semana: <span id="hoursValue" class="text-kn-cyan">10</span> hrs
                     </label>
                     <input type="range" min="2" max="40" value="10" id="hoursSlider" class="w-full cursor-pointer accent-kn-cyan" oninput="updateROI()">
                 </div>
@@ -290,19 +232,11 @@
                 <div class="grid grid-cols-2 gap-6 mt-12">
                     <div class="bg-gradient-to-br from-kn-cyan/10 to-kn-dark border-2 border-kn-cyan/30 rounded-3xl p-6 text-center warm-glow">
                         <div class="text-4xl font-bold gradient-text mb-2" id="hoursResult">312</div>
-                        <div class="text-sm text-gray-400">
-                            <span lang-en>📅 Hours saved/month</span>
-                            <span lang-fr style="display:none">📅 Heures/mois économisées</span>
-                            <span lang-es style="display:none">📅 Horas/mes ahorradas</span>
-                        </div>
+                        <div class="text-sm text-gray-400">📅 Horas/mes ahorradas</div>
                     </div>
                     <div class="bg-gradient-to-br from-kn-magenta/10 to-kn-dark border-2 border-kn-magenta/30 rounded-3xl p-6 text-center warm-glow">
                         <div class="text-4xl font-bold gradient-text mb-2" id="teamResult">75%</div>
-                        <div class="text-sm text-gray-400">
-                            <span lang-en>🚀 Team capacity freed</span>
-                            <span lang-fr style="display:none">🚀 Capacité équipe libérée</span>
-                            <span lang-es style="display:none">🚀 Capacidad del equipo liberada</span>
-                        </div>
+                        <div class="text-sm text-gray-400">🚀 Capacidad del equipo liberada</div>
                     </div>
                 </div>
             </div>
@@ -312,34 +246,27 @@
     <!-- SERVICES -->
     <section id="services" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">
-                <span lang-en>What We Do</span>
-                <span lang-fr style="display:none">Ce Que Nous Faisons</span>
-                <span lang-es style="display:none">Lo Que Hacemos</span>
-            </h2>
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Lo Que Hacemos</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
                     <div class="text-5xl mb-4">🤖</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm"><span lang-en>AI Chatbots & Automation</span><span lang-fr style="display:none">Chatbots IA et Automatisation</span><span lang-es style="display:none">Chatbots IA y Automatización</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>WhatsApp, Messenger, and custom AI assistants that handle customer inquiries 24/7.</span><span lang-fr style="display:none">WhatsApp, Messenger et assistants IA personnalisés qui gèrent les demandes 24/7.</span><span lang-es style="display:none">WhatsApp, Messenger y asistentes IA personalizados que manejan consultas 24/7.</span></p>
+                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Chatbots IA y Automatización</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">WhatsApp, Messenger y asistentes IA personalizados que manejan consultas 24/7.</p>
                 </div>
-
                 <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
                     <div class="text-5xl mb-4">📱</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm"><span lang-en>Social Media & Marketing</span><span lang-fr style="display:none">Réseaux Sociaux & Marketing</span><span lang-es style="display:none">Redes Sociales & Marketing</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>Auto-generate content, schedule posts, engage audiences on all platforms.</span><span lang-fr style="display:none">Générez du contenu automatiquement, planifiez les publications.</span><span lang-es style="display:none">Genera contenido automáticamente, programa publicaciones.</span></p>
+                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Redes Sociales & Marketing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Genera contenido automáticamente, programa publicaciones y maximiza tu presencia online.</p>
                 </div>
-
                 <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
                     <div class="text-5xl mb-4">⚙️</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm"><span lang-en>Workflow Automation</span><span lang-fr style="display:none">Automatisation des Flux</span><span lang-es style="display:none">Automatización de Flujos</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>Custom workflows with Make, Zapier, and integrations that streamline operations.</span><span lang-fr style="display:none">Flux personnalisés avec Make, Zapier et intégrations.</span><span lang-es style="display:none">Flujos personalizados con Make, Zapier e integraciones.</span></p>
+                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Automatización de Flujos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Flujos personalizados con Make, Zapier e integraciones que optimizan tus operaciones.</p>
                 </div>
-
                 <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
                     <div class="text-5xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm"><span lang-en>Custom AI Solutions</span><span lang-fr style="display:none">Solutions IA Personnalisées</span><span lang-es style="display:none">Soluciones IA Personalizadas</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>Tailored AI implementations that solve YOUR specific business challenges.</span><span lang-fr style="display:none">Des implémentations IA adaptées qui résolvent vos défis spécifiques.</span><span lang-es style="display:none">Implementaciones IA personalizadas que resuelven tus desafíos específicos.</span></p>
+                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Soluciones IA Personalizadas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Implementaciones de IA a medida que resuelven tus desafíos comerciales específicos.</p>
                 </div>
             </div>
         </div>
@@ -348,22 +275,22 @@
     <!-- METHODOLOGY -->
     <section id="methodology" class="py-20 px-6 bg-gradient-to-b from-transparent to-kn-surface/30">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text"><span lang-en>Our Process</span><span lang-fr style="display:none">Notre Processus</span><span lang-es style="display:none">Nuestro Proceso</span></h2>
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Nuestro Proceso</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
                     <div class="text-6xl mb-6 inline-block">🔍</div>
-                    <h3 class="font-bold mb-3 text-lg text-kn-warm"><span lang-en>1. Audit</span><span lang-fr style="display:none">1. Audit</span><span lang-es style="display:none">1. Auditoría</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>Deep dive into your processes and identify opportunities for automation.</span><span lang-fr style="display:none">Analyse approfondie de vos processus.</span><span lang-es style="display:none">Análisis profundo de tus procesos.</span></p>
+                    <h3 class="font-bold mb-3 text-lg text-kn-warm">1. Auditoría</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Análisis profundo de tus procesos para identificar oportunidades de automatización.</p>
                 </div>
                 <div class="text-center">
                     <div class="text-6xl mb-6 inline-block">🛠️</div>
-                    <h3 class="font-bold mb-3 text-lg text-kn-warm"><span lang-en>2. Build</span><span lang-fr style="display:none">2. Construire</span><span lang-es style="display:none">2. Construir</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>Design and deploy your custom AI solution with quick prototypes.</span><span lang-fr style="display:none">Concevoir et déployer votre solution IA personnalisée.</span><span lang-es style="display:none">Diseña e implementa tu solución IA personalizada.</span></p>
+                    <h3 class="font-bold mb-3 text-lg text-kn-warm">2. Construir</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Diseño y despliegue de tu solución IA a medida con prototipos rápidos.</p>
                 </div>
                 <div class="text-center">
                     <div class="text-6xl mb-6 inline-block">📈</div>
-                    <h3 class="font-bold mb-3 text-lg text-kn-warm"><span lang-en>3. Scale</span><span lang-fr style="display:none">3. Évoluer</span><span lang-es style="display:none">3. Escalar</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed"><span lang-en>Monitor performance and expand to other parts of your business.</span><span lang-fr style="display:none">Surveiller les performances et étendre.</span><span lang-es style="display:none">Monitorea el desempeño y expande.</span></p>
+                    <h3 class="font-bold mb-3 text-lg text-kn-warm">3. Escalar</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Monitoreo del rendimiento y expansión a otras áreas de tu negocio.</p>
                 </div>
             </div>
         </div>
@@ -372,45 +299,24 @@
     <!-- PORTFOLIO -->
     <section id="portfolio" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text"><span lang-en>Recent Work</span><span lang-fr style="display:none">Travaux Récents</span><span lang-es style="display:none">Trabajos Recientes</span></h2>
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Trabajos Recientes</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark border-2 border-kn-warm/20 rounded-3xl p-6 glow-border warm-glow">
                     <div class="text-4xl mb-3">💬</div>
-                    <h3 class="font-bold mb-2 text-kn-cyan"><span lang-en>AI Chatbot for Legal</span><span lang-fr style="display:none">Chatbot IA pour Cabinet</span><span lang-es style="display:none">Chatbot IA para Consultora</span></h3>
-                    <p class="text-sm text-gray-400 mb-4"><span lang-en>WhatsApp chatbot handling 24/7 consultations. Reduced support load by 60%.</span><span lang-fr style="display:none">Chatbot WhatsApp gère les consultations 24/7.</span><span lang-es style="display:none">Chatbot WhatsApp que maneja consultas 24/7.</span></p>
+                    <h3 class="font-bold mb-2 text-kn-cyan">Chatbot IA para Consultora</h3>
+                    <p class="text-sm text-gray-400 mb-4">Chatbot de WhatsApp gestionando consultas 24/7. Reducción de carga de soporte en un 60%.</p>
                     <div class="flex gap-2 flex-wrap">
                         <span class="text-xs bg-kn-magenta/20 text-kn-magenta px-3 py-1 rounded-full">WhatsApp</span>
                         <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">NLP</span>
                     </div>
                 </div>
-
                 <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark border-2 border-kn-warm/20 rounded-3xl p-6 glow-border warm-glow">
                     <div class="text-4xl mb-3">📱</div>
-                    <h3 class="font-bold mb-2 text-kn-cyan"><span lang-en>Social Media Automation</span><span lang-fr style="display:none">Automatisation Réseaux</span><span lang-es style="display:none">Automatización Redes</span></h3>
-                    <p class="text-sm text-gray-400 mb-4"><span lang-en>Auto-generates posts, schedules content. 8 hours/week saved.</span><span lang-fr style="display:none">Génère automatiquement les publications.</span><span lang-es style="display:none">Genera automáticamente publicaciones.</span></p>
+                    <h3 class="font-bold mb-2 text-kn-cyan">Automatización de Redes</h3>
+                    <p class="text-sm text-gray-400 mb-4">Generación automática de publicaciones y programación. 8 horas semanales ahorradas.</p>
                     <div class="flex gap-2 flex-wrap">
                         <span class="text-xs bg-kn-magenta/20 text-kn-magenta px-3 py-1 rounded-full">Instagram</span>
-                        <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">LinkedIn</span>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark border-2 border-kn-warm/20 rounded-3xl p-6 glow-border warm-glow">
-                    <div class="text-4xl mb-3">🏥</div>
-                    <h3 class="font-bold mb-2 text-kn-cyan"><span lang-en>Medical Clinic Workflow</span><span lang-fr style="display:none">Automatisation Clinique</span><span lang-es style="display:none">Automatización Clínica</span></h3>
-                    <p class="text-sm text-gray-400 mb-4"><span lang-en>Automated patient intake and appointment reminders. Improved experience.</span><span lang-fr style="display:none">Admission automatisée de patients.</span><span lang-es style="display:none">Admisión automatizada de pacientes.</span></p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-xs bg-kn-magenta/20 text-kn-magenta px-3 py-1 rounded-full">Workflow</span>
-                        <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">CRM</span>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark border-2 border-kn-warm/20 rounded-3xl p-6 glow-border warm-glow">
-                    <div class="text-4xl mb-3">🎓</div>
-                    <h3 class="font-bold mb-2 text-kn-cyan"><span lang-en>eLearning Content Generator</span><span lang-fr style="display:none">Générateur eLearning</span><span lang-es style="display:none">Generador eLearning</span></h3>
-                    <p class="text-sm text-gray-400 mb-4"><span lang-en>AI-powered course creation in 3 languages. Reduced time by 75%.</span><span lang-fr style="display:none">Création de cours en 3 langues.</span><span lang-es style="display:none">Creación de cursos en 3 idiomas.</span></p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-xs bg-kn-magenta/20 text-kn-magenta px-3 py-1 rounded-full">Content Gen</span>
-                        <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">Multilingual</span>
+                        <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">TikTok</span>
                     </div>
                 </div>
             </div>
@@ -420,73 +326,47 @@
     <!-- CONTACT -->
     <section id="contact" class="py-20 px-6 bg-gradient-to-b from-kn-surface/30 to-transparent">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-4xl font-bold mb-6 text-center gradient-text"><span lang-en>Ready to Transform?</span><span lang-fr style="display:none">Prêt à Transformer?</span><span lang-es style="display:none">¿Listo para Transformar?</span></h2>
-            <p class="text-center text-gray-400 mb-12"><span lang-en>Let's discuss your automation needs. No pressure, no jargon.</span><span lang-fr style="display:none">Discutons de vos besoins.</span><span lang-es style="display:none">Hablemos sobre tus necesidades.</span></p>
+            <h2 class="text-4xl font-bold mb-6 text-center gradient-text">¿Listo para Transformar tu Negocio?</h2>
+            <p class="text-center text-gray-400 mb-12">Reserva tu llamada gratuita de 30 minutos o escríbenos directamente.</p>
 
             <form class="bg-gradient-to-br from-kn-surface/60 to-kn-dark/40 border-2 border-kn-warm/30 rounded-3xl p-8 glow-border warm-glow" onsubmit="handleSubmit(event)">
                 <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm"><span lang-en>Your Name</span><span lang-fr style="display:none">Votre Nom</span><span lang-es style="display:none">Tu Nombre</span></label>
-                    <input type="text" name="name" required class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition" placeholder="">
+                    <label class="block text-sm font-semibold mb-2 text-kn-warm">Tu Nombre</label>
+                    <input type="text" name="name" required class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition">
                 </div>
-
                 <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm"><span lang-en>Work Email</span><span lang-fr style="display:none">Email Professionnel</span><span lang-es style="display:none">Correo de Trabajo</span></label>
-                    <input type="email" name="email" required class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition" placeholder="">
+                    <label class="block text-sm font-semibold mb-2 text-kn-warm">Correo de Trabajo</label>
+                    <input type="email" name="email" required class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition">
                 </div>
-
                 <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm"><span lang-en>Company</span><span lang-fr style="display:none">Entreprise</span><span lang-es style="display:none">Empresa</span></label>
-                    <input type="text" name="company" class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition" placeholder="">
+                    <label class="block text-sm font-semibold mb-2 text-kn-warm">Empresa</label>
+                    <input type="text" name="company" class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition">
                 </div>
-
                 <div class="mb-8">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm"><span lang-en>Your Challenge?</span><span lang-fr style="display:none">Votre défi?</span><span lang-es style="display:none">Tu desafío?</span></label>
-                    <textarea name="challenge" rows="4" class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition" placeholder=""></textarea>
+                    <label class="block text-sm font-semibold mb-2 text-kn-warm">¿Cuál es tu desafío?</label>
+                    <textarea name="challenge" rows="4" class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition"></textarea>
                 </div>
-
                 <button type="submit" class="w-full py-4 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-2xl hover:shadow-lg transition text-lg">
-                    <span lang-en>✨ Start Your AI Journey</span>
-                    <span lang-fr style="display:none">✨ Commencez Votre Parcours IA</span>
-                    <span lang-es style="display:none">✨ Comienza Tu Viaje IA</span>
+                    ✨ Reservar Llamada Gratuita
                 </button>
-
-                <p class="text-xs text-gray-500 text-center mt-4"><span lang-en>Response in 24 hours. Email: info@kndigital.com</span><span lang-fr style="display:none">Réponse en 24 heures. Email : info@kndigital.com</span><span lang-es style="display:none">Respuesta en 24 horas. Email: info@kndigital.com</span></p>
+                <p class="text-xs text-gray-500 text-center mt-4">Respuesta en menos de 24 horas. Email: info@kndigital.com</p>
             </form>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-kn-surface/50 border-t border-gray-800/50 py-12 px-6 text-center text-gray-500 text-sm">
-        <p class="mb-4"><span lang-en>KN Digital © 2026. AI & Automation | Alicante, Spain</span><span lang-fr style="display:none">KN Digital © 2026. IA & Automatisation | Alicante, Espagne</span><span lang-es style="display:none">KN Digital © 2026. IA y Automatización | Alicante, España</span></p>
-        <p class="mb-6"><span lang-en>Questions? Email: <strong>info@kndigital.com</strong></span><span lang-fr style="display:none">Questions ? Email : <strong>info@kndigital.com</strong></span><span lang-es style="display:none">¿Preguntas? Email: <strong>info@kndigital.com</strong></span></p>
-        
-        <!-- Liens légaux pour TikTok -->
-        <div class="flex justify-center gap-6 text-xs">
-            <a href="terms.html" class="hover:text-kn-cyan transition">
-                <span lang-en>Terms of Service</span>
-                <span lang-fr style="display:none">Conditions d'utilisation</span>
-                <span lang-es style="display:none">Términos de servicio</span>
-            </a>
-            <a href="privacy.html" class="hover:text-kn-cyan transition">
-                <span lang-en>Privacy Policy</span>
-                <span lang-fr style="display:none">Politique de confidentialité</span>
-                <span lang-es style="display:none">Política de privacidad</span>
-            </a>
-        </div>
+        <p class="mb-4">KN Digital © 2026. IA y Automatización | Alicante, España</p>
+        <p class="mb-6">¿Preguntas? Email: <strong>info@kndigital.com</strong></p>
     </footer>
 
     <script>
-        // ===== LANGUAGE STATE (declared first — the canvas draws localized text
-        // from its very first frame, before switchLang() runs at init) =====
-        // Preference order: French (default) → Spanish → English
-        const SUPPORTED_LANGS = ['fr', 'es', 'en'];
-        let currentLang = 'fr';
+        const SUPPORTED_LANGS = ['es', 'fr', 'en'];
+        let currentLang = 'es';
 
-        // ===== CANVAS ANIMATION =====
         const canvas = document.getElementById('heroCanvas');
         const ctx = canvas.getContext('2d');
 
-        // Polyfill for roundRect (for older browsers)
         if (!ctx.roundRect) {
             ctx.roundRect = function(x, y, w, h, r) {
                 if (w < 2 * r) r = w / 2;
@@ -502,7 +382,6 @@
         }
 
         function resizeCanvas() {
-            // Canvas now lives inside its own framed panel, not the whole hero
             const container = canvas.parentElement;
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
@@ -510,18 +389,8 @@
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Animation state
-        const animation = {
-            inputBoxes: [],     // Chaotic boxes coming in on 3 lanes (BEFORE)
-            outputSuitcases: [], // Success suitcases going out on 1 lane (AFTER)
-            totalDelivered: 0,   // Cumulative count of results delivered
-            time: 0
-        };
+        const animation = { inputBoxes: [], outputSuitcases: [], totalDelivered: 0, time: 0 };
 
-        // Each input lane carries one category of business cost/burden; each maps
-        // to the matching result that comes out the single output lane.
-        // Labels are looked up by currentLang at draw time, so an in-flight box
-        // or suitcase re-labels itself instantly if the visitor switches language.
         const INPUT_LABELS = {
             es: ['GASTOS', 'COSTE MARKETING', 'ADMINISTRACIÓN'],
             fr: ['DÉPENSES', 'COÛT MARKETING', 'ADMINISTRATION'],
@@ -548,42 +417,31 @@
             en: n => `✓ ${n} results delivered`
         };
 
-        // ---- Geometry: 3 lanes merge into the KN machine, 1 lane exits it ----
-        // Full-width panel now, so the machine sits centered for symmetry.
         function machineGeom() {
             const w = Math.min(220, canvas.width * 0.14);
             const h = Math.min(300, canvas.height * 0.6);
             const cx = canvas.width * 0.5;
             const cy = canvas.height * 0.5;
-            return {
-                cx, cy, w, h,
-                bodyTop: cy - h / 2,
-                entrance: { x: cx - w / 2, y: cy },
-                exit: { x: cx + w / 2, y: cy }
-            };
+            return { cx, cy, w, h, bodyTop: cy - h / 2, entrance: { x: cx - w / 2, y: cy }, exit: { x: cx + w / 2, y: cy } };
         }
 
         function inputLanes() {
             const m = machineGeom();
-            // Tightened lanes (still one gap apart) so 3 rows read clearly in a shorter panel
             const laneYs = [canvas.height * 0.28, canvas.height * 0.5, canvas.height * 0.72];
             return laneYs.map(laneY => {
                 const p0 = { x: -40, y: laneY };
                 const p2 = { x: m.entrance.x, y: m.entrance.y };
-                const p1 = { x: (p0.x + p2.x) / 2, y: laneY }; // curve turns late, near the machine
+                const p1 = { x: (p0.x + p2.x) / 2, y: laneY };
                 return { p0, p1, p2 };
             });
         }
 
-        // Shared status badge: red X on input boxes ("unresolved"),
-        // green check on output suitcases ("resolved" by the automation).
         function drawStatusBadge(x, y, kind) {
             ctx.save();
             ctx.fillStyle = 'rgba(18, 16, 16, 0.95)';
             ctx.beginPath();
             ctx.arc(x, y, 11, 0, Math.PI * 2);
             ctx.fill();
-
             if (kind === 'check') {
                 ctx.fillStyle = 'rgba(52, 211, 118, 1)';
                 ctx.beginPath();
@@ -591,8 +449,6 @@
                 ctx.fill();
                 ctx.strokeStyle = 'rgba(10, 12, 10, 0.95)';
                 ctx.lineWidth = 2.5;
-                ctx.lineCap = 'round';
-                ctx.lineJoin = 'round';
                 ctx.beginPath();
                 ctx.moveTo(x - 4, y);
                 ctx.lineTo(x - 1, y + 3.5);
@@ -605,7 +461,6 @@
                 ctx.fill();
                 ctx.strokeStyle = 'rgba(15, 8, 8, 0.95)';
                 ctx.lineWidth = 2.5;
-                ctx.lineCap = 'round';
                 ctx.beginPath();
                 ctx.moveTo(x - 4, y - 4);
                 ctx.lineTo(x + 4, y + 4);
@@ -620,16 +475,13 @@
             const m = machineGeom();
             const p0 = { x: m.exit.x, y: m.exit.y };
             const p2 = { x: canvas.width + 50, y: m.exit.y };
-            const p1 = { x: (p0.x + p2.x) / 2, y: m.exit.y - canvas.height * 0.05 }; // gentle rise
+            const p1 = { x: (p0.x + p2.x) / 2, y: m.exit.y - canvas.height * 0.05 };
             return { p0, p1, p2 };
         }
 
         function bezierPoint(p0, p1, p2, t) {
             const mt = 1 - t;
-            return {
-                x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x,
-                y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y
-            };
+            return { x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x, y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y };
         }
 
         function bezierAngle(p0, p1, p2, t) {
@@ -638,65 +490,42 @@
             return Math.atan2(dy, dx);
         }
 
-        // Draw one curved belt (base track + animated moving dashes = rollers)
-        // Kept dark & cool/muted so the warmer, lighter boxes clearly pop off it.
         function drawLaneBelt(lane) {
             ctx.save();
             ctx.lineCap = 'round';
-
             ctx.strokeStyle = 'rgba(35, 38, 48, 0.7)';
             ctx.lineWidth = 17;
             ctx.beginPath();
             ctx.moveTo(lane.p0.x, lane.p0.y);
             ctx.quadraticCurveTo(lane.p1.x, lane.p1.y, lane.p2.x, lane.p2.y);
             ctx.stroke();
-
             ctx.strokeStyle = 'rgba(60, 64, 76, 0.55)';
             ctx.lineWidth = 17;
             ctx.setLineDash([3, 11]);
-            ctx.lineDashOffset = -animation.time * 0.35; // slow moving belt
+            ctx.lineDashOffset = -animation.time * 0.35;
             ctx.beginPath();
             ctx.moveTo(lane.p0.x, lane.p0.y);
             ctx.quadraticCurveTo(lane.p1.x, lane.p1.y, lane.p2.x, lane.p2.y);
             ctx.stroke();
-            ctx.setLineDash([]);
-
             ctx.restore();
         }
 
-        // Input Box (closed, warm-toned, unresolved cost — before the scan)
         class InputBox {
             constructor(laneIndex) {
                 this.laneIndex = laneIndex;
                 this.t = 0;
-                this.speed = 0.0013 + Math.random() * 0.0002; // slow, readable
+                this.speed = 0.0013 + Math.random() * 0.0002;
                 this.width = 82;
                 this.height = 40;
-                this.consumed = false;
             }
-
-            update() {
-                this.t += this.speed;
-                return this.t < 1;
-            }
-
+            update() { this.t += this.speed; return this.t < 1; }
             draw(lanes) {
                 const lane = lanes[this.laneIndex];
                 const pos = bezierPoint(lane.p0, lane.p1, lane.p2, this.t);
                 const angle = bezierAngle(lane.p0, lane.p1, lane.p2, this.t);
-
                 ctx.save();
                 ctx.translate(pos.x, pos.y);
-                ctx.rotate(angle * 0.2); // subtle tilt through the turn
-
-                // Box shadow
-                ctx.fillStyle = 'rgba(0,0,0,0.3)';
-                ctx.beginPath();
-                ctx.ellipse(0, this.height / 2 + 5, this.width / 2, 5, 0, 0, Math.PI * 2);
-                ctx.fill();
-
-                // Dark closed box
-                // Box body — noticeably lighter & warmer than the dark, cool belt
+                ctx.rotate(angle * 0.2);
                 const grad = ctx.createLinearGradient(-this.width/2, -this.height/2, this.width/2, this.height/2);
                 grad.addColorStop(0, 'rgba(96, 84, 78, 0.98)');
                 grad.addColorStop(1, 'rgba(62, 52, 48, 0.98)');
@@ -704,115 +533,62 @@
                 ctx.beginPath();
                 ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 5);
                 ctx.fill();
-
-                // Warm coral border — the pop of contrast against the belt
                 ctx.strokeStyle = 'rgba(255, 130, 110, 0.65)';
                 ctx.lineWidth = 2;
                 ctx.beginPath();
                 ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 5);
                 ctx.stroke();
-
-                // Label — inside the box, like the suitcases; localized live
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
                 ctx.font = 'bold 10px sans-serif';
                 ctx.textAlign = 'center';
                 ctx.fillText(INPUT_LABELS[currentLang][this.laneIndex], 0, 4);
-
-                // Red X badge — unresolved; becomes a green check after the scan
                 drawStatusBadge(this.width/2 - 4, -this.height/2 - 2, 'reject');
-
                 ctx.restore();
             }
         }
 
-        // Output Suitcase (colorful, premium — the result, after the scan)
-        // Each carries a green check badge: what automation resolved.
         class OutputSuitcase {
             constructor(dataIndex) {
                 this.t = 0;
                 this.speed = 0.0018 + Math.random() * 0.0002;
                 this.width = 64;
                 this.height = 52;
-                this.dataIndex = dataIndex; // which of the 3 result categories
+                this.dataIndex = dataIndex;
                 this.color = OUTPUT_COLORS[dataIndex];
                 this.scale = 0.4;
                 this.glow = 0;
             }
-
             update() {
                 this.t += this.speed;
                 this.glow = Math.sin(animation.time * 0.06) * 0.5 + 0.5;
                 this.scale = Math.min(this.scale + 0.018, 1);
                 return this.t < 1;
             }
-
             draw(lane) {
                 const pos = bezierPoint(lane.p0, lane.p1, lane.p2, this.t);
                 const angle = bezierAngle(lane.p0, lane.p1, lane.p2, this.t);
-
                 ctx.save();
                 ctx.translate(pos.x, pos.y);
                 ctx.rotate(angle * 0.2);
                 ctx.scale(this.scale, this.scale);
-
-                // Shadow
-                ctx.fillStyle = 'rgba(0,0,0,0.25)';
-                ctx.beginPath();
-                ctx.ellipse(0, this.height / 2 + 5, this.width / 2, 5, 0, 0, Math.PI * 2);
-                ctx.fill();
-
-                // Glow halo
-                if (this.glow > 0) {
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${this.glow * 0.45})`;
-                    ctx.lineWidth = 3;
-                    ctx.beginPath();
-                    ctx.roundRect(-this.width/2 - 5, -this.height/2 - 5, this.width + 10, this.height + 10, 10);
-                    ctx.stroke();
-                }
-
-                // Suitcase body
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
                 ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 6);
                 ctx.fill();
-
-                // Handle
-                ctx.strokeStyle = 'rgba(255,255,255,0.7)';
-                ctx.lineWidth = 3;
-                ctx.beginPath();
-                ctx.arc(0, -this.height/2 - 6, 12, Math.PI, 0);
-                ctx.stroke();
-
-                // Detail stripe
-                ctx.strokeStyle = 'rgba(255,255,255,0.35)';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(-this.width/2, -this.height/2 + 10);
-                ctx.lineTo(this.width/2, -this.height/2 + 10);
-                ctx.stroke();
-
-                // Label — localized live
                 ctx.fillStyle = 'rgba(255,255,255,0.95)';
                 ctx.font = 'bold 10px sans-serif';
                 ctx.textAlign = 'center';
                 ctx.fillText(OUTPUT_LABELS[currentLang][this.dataIndex], 0, 5);
-
-                // Green check badge — resolved by the automation (mirrors the red X)
                 drawStatusBadge(this.width/2 - 4, -this.height/2 - 2, 'check');
-
                 ctx.restore();
             }
         }
 
-        // Draw the KN scanning machine where the 3 lanes merge into 1
         function drawMachine() {
             const m = machineGeom();
             const { cx, w, h, bodyTop } = m;
             const cy = m.cy;
-
             ctx.save();
-
-            // Machine body
             const grad = ctx.createLinearGradient(cx - w/2, bodyTop, cx + w/2, bodyTop + h);
             grad.addColorStop(0, 'rgba(28, 30, 38, 0.97)');
             grad.addColorStop(1, 'rgba(16, 17, 22, 0.97)');
@@ -820,96 +596,41 @@
             ctx.beginPath();
             ctx.roundRect(cx - w/2, bodyTop, w, h, 12);
             ctx.fill();
-
-            ctx.strokeStyle = `rgba(0, 240, 255, ${0.35 + Math.sin(animation.time * 0.05) * 0.15})`;
+            ctx.strokeStyle = 'rgba(0, 240, 255, 0.5)';
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.roundRect(cx - w/2, bodyTop, w, h, 12);
             ctx.stroke();
 
-            // Scan tunnel opening — fixed at cy so it aligns with the merged lane
-            const tunnelH = Math.min(40, h * 0.18);
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
-            ctx.beginPath();
-            ctx.roundRect(cx - w/2 + 10, cy - tunnelH/2, w - 20, tunnelH, 8);
-            ctx.fill();
-
-            // Scanning light sweep inside tunnel
-            const sweepX = cx - w/2 + 10 + ((animation.time * 1.2) % (w - 20));
-            ctx.strokeStyle = 'rgba(0, 240, 255, 0.9)';
-            ctx.lineWidth = 2.5;
-            ctx.beginPath();
-            ctx.moveTo(sweepX, cy - tunnelH/2 + 4);
-            ctx.lineTo(sweepX, cy + tunnelH/2 - 4);
-            ctx.stroke();
-
-            // Everything above the tunnel (logo + label) must fit in this space —
-            // scale it down rather than let it collide when the panel is short.
-            const topRoom = (cy - tunnelH/2) - bodyTop - 6;
-            const logoR = Math.max(9, Math.min(22, topRoom * 0.42));
-            const logoY = bodyTop + 6 + logoR;
-
-            ctx.fillStyle = 'rgba(0, 240, 255, 0.15)';
-            ctx.beginPath();
-            ctx.arc(cx, logoY, logoR, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.strokeStyle = 'rgba(0, 240, 255, 0.9)';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.arc(cx, logoY, logoR, 0, Math.PI * 2);
-            ctx.stroke();
             ctx.fillStyle = 'rgba(0, 240, 255, 0.95)';
-            ctx.font = `bold ${Math.round(logoR * 1.05)}px sans-serif`;
+            ctx.font = 'bold 16px sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText('KN', cx, logoY + logoR * 0.35);
-
-            // Label under the logo — only if there's still clear room before the tunnel
-            const labelY = logoY + logoR + 13;
-            if (labelY + 4 < cy - tunnelH/2) {
-                ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
-                ctx.font = 'bold 11px sans-serif';
-                ctx.fillText(MACHINE_TEXT[currentLang].tagline, cx, labelY);
-            }
-
-            // Caption under the tunnel — only if the bottom half has room for it
-            const bottomRoom = bodyTop + h - (cy + tunnelH/2);
-            if (bottomRoom > 22) {
-                ctx.fillStyle = 'rgba(170, 175, 190, 0.7)';
-                ctx.font = '10px sans-serif';
-                ctx.fillText(MACHINE_TEXT[currentLang].caption, cx, cy + tunnelH/2 + 18);
-            }
-
+            ctx.fillText('KN', cx, cy - 10);
+            ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.fillText(MACHINE_TEXT[currentLang].tagline, cx, cy + 12);
             ctx.restore();
         }
 
-        // Main animation loop - multi-lane conveyor transformation
         function animate() {
-            // Clear canvas
-            ctx.fillStyle = 'rgba(10, 11, 14, 0)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             animation.time++;
-
             const lanes = inputLanes();
             const outLane = outputLane();
 
-            // Draw the 3 input belts (with turns) merging toward the machine
             lanes.forEach(drawLaneBelt);
-            // Draw the single output belt
             drawLaneBelt(outLane);
 
-            // Spawn input boxes on a steady, unhurried cadence — one lane at a time
             if (animation.time % 85 === 0) {
                 const laneIndex = Math.floor(Math.random() * 3);
-                const onLane = animation.inputBoxes.filter(b => b.laneIndex === laneIndex).length;
-                if (onLane < 2) animation.inputBoxes.push(new InputBox(laneIndex));
+                if (animation.inputBoxes.filter(b => b.laneIndex === laneIndex).length < 2) {
+                    animation.inputBoxes.push(new InputBox(laneIndex));
+                }
             }
 
-            // Update and draw input boxes converging on the machine
             animation.inputBoxes = animation.inputBoxes.filter(box => {
                 const alive = box.update();
                 if (!alive) {
-                    // Reached the entrance — consume it, spawn the matching result
                     animation.outputSuitcases.push(new OutputSuitcase(box.laneIndex));
                     animation.totalDelivered++;
                     return false;
@@ -918,17 +639,14 @@
                 return true;
             });
 
-            // The KN scanning machine sits where the lanes merge
             drawMachine();
 
-            // Update and draw output suitcases emerging on the single exit lane
-            animation.outputSuitcases = animation.outputSuitcases.filter(suitcase => {
-                const alive = suitcase.update();
-                suitcase.draw(outLane);
+            animation.outputSuitcases = animation.outputSuitcases.filter(s => {
+                const alive = s.update();
+                s.draw(outLane);
                 return alive;
             });
 
-            // Stats display — bottom-left, clear of the lanes so it never overlaps a box
             ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
             ctx.font = 'bold 13px sans-serif';
             ctx.textAlign = 'left';
@@ -939,10 +657,8 @@
 
         animate();
 
-        // ===== LANGUAGE SWITCHING =====
-        // (SUPPORTED_LANGS / currentLang are declared at the top of this script)
         function switchLang(lang) {
-            currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'fr';
+            currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'es';
             document.querySelectorAll('[lang-en], [lang-fr], [lang-es]').forEach(el => el.style.display = 'none');
             document.querySelectorAll(`[lang-${currentLang}]`).forEach(el => el.style.display = 'inline');
             document.querySelectorAll('#langToggle button').forEach(b => {
@@ -950,58 +666,25 @@
             });
         }
 
-        // Detect the visitor's browser language and map it to our priority
-        // order (FR default, ES 2nd, EN 3rd) — used only once, on first load.
-        function detectPreferredLang() {
-            const browserLangs = (navigator.languages && navigator.languages.length)
-                ? navigator.languages
-                : [navigator.language || 'fr'];
-
-            for (const raw of browserLangs) {
-                const code = raw.toLowerCase().slice(0, 2);
-                if (SUPPORTED_LANGS.includes(code)) return code;
-            }
-            return 'fr'; // default when nothing matches
-        }
-
-        // ===== ROI CALCULATOR =====
         function updateROI() {
             const teamSize = parseInt(document.getElementById('teamSlider').value);
             const hoursPerWeek = parseInt(document.getElementById('hoursSlider').value);
-
             document.getElementById('teamValue').textContent = teamSize;
-            document.getElementById('teamValue-fr').textContent = teamSize;
-            document.getElementById('teamValue-es').textContent = teamSize;
-
             document.getElementById('hoursValue').textContent = hoursPerWeek;
-            document.getElementById('hoursValue-fr').textContent = hoursPerWeek;
-            document.getElementById('hoursValue-es').textContent = hoursPerWeek;
-
             const monthlySaved = Math.round(teamSize * hoursPerWeek * 4.33 * 0.65);
             const percentageFreed = Math.min(Math.round((hoursPerWeek * 0.65 / 40) * 100), 100);
-
             document.getElementById('hoursResult').textContent = monthlySaved;
             document.getElementById('teamResult').textContent = percentageFreed + '%';
         }
 
-        // ===== FORM SUBMISSION =====
-        const THANK_YOU_MESSAGE = {
-            es: '¡Gracias! Te contactaremos en menos de 24 horas.',
-            fr: 'Merci ! Nous vous recontactons sous 24 heures.',
-            en: "Thank you! We'll reach out within 24 hours."
-        };
         function handleSubmit(event) {
             event.preventDefault();
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            console.log('Form submitted:', data);
-            alert(THANK_YOU_MESSAGE[currentLang]);
+            alert('¡Gracias! Te contactaremos en menos de 24 horas para tu llamada gratuita.');
             event.target.reset();
         }
 
-        // Initialize — force French as default language for Vercel deployment
         updateROI();
-        switchLang('fr');
+        switchLang('es');
     </script>
 </body>
 </html>

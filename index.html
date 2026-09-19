@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KN Digital — Consultoría IA en Alicante | La IA Que Se Adapta a Ti</title>
+    <title>KN Digital — L'IA Qui s'Adapte Vraiment à Vous</title>
     
-    <!-- Logo para la pestaña del navegador -->
+    <!-- Logo pour l'onglet du navigateur -->
     <link rel="icon" type="image/jpeg" href="Captura de pantalla 2026-07-21 151929.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,11 +14,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'kn-magenta': '#E0115F',
-                        'kn-cyan': '#00F0FF',
-                        'kn-dark': '#0A0B0E',
-                        'kn-surface': '#12141C',
-                        'kn-warm': '#D4A574',
+                        /* New colors extracted from the KN Logo */
+                        'kn-blue': '#0066CC',
+                        'kn-magenta': '#E5007E',
+                        'kn-green': '#00B140',
+                        'kn-orange': '#FF8C00',
+                        'kn-darktext': '#002244',
+                        'kn-surface': '#F8F9FA',
+                        'kn-light': '#FFFFFF',
                     },
                     borderRadius: {
                         'xl': '2.5rem',
@@ -32,211 +35,271 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         .gradient-text {
-            background: linear-gradient(135deg, #E0115F, #00F0FF);
+            background: linear-gradient(135deg, #0066CC, #E5007E, #FF8C00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .glow-border {
-            border: 2px solid rgba(224, 17, 95, 0.2);
+            border: 2px solid rgba(0, 102, 204, 0.15);
             transition: all 0.4s ease;
+            background-color: #FFFFFF;
         }
         .glow-border:hover {
-            border-color: rgba(0, 240, 255, 0.5);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+            border-color: rgba(229, 0, 126, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 102, 204, 0.08);
             transform: translateY(-2px);
         }
         .smooth-scroll { scroll-behavior: smooth; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in { animation: fadeIn 0.7s ease-in-out; }
-        .warm-glow { box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15); }
-        #heroCanvas { display: block; }
-        .hero-content { position: relative; z-index: 10; }
+        .warm-glow { box-shadow: 0 8px 32px rgba(0, 34, 68, 0.04); }
+        #heroCanvas {
+            display: block;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
         #langToggle button.active-lang {
-            border-color: #00F0FF;
-            color: #00F0FF;
-            background: rgba(0, 240, 255, 0.08);
+            border-color: #0066CC;
+            color: #0066CC;
+            background: rgba(0, 102, 204, 0.08);
         }
     </style>
 </head>
-<body class="bg-kn-dark text-gray-100 smooth-scroll">
+<body class="bg-kn-surface text-kn-darktext smooth-scroll">
 
     <!-- NAVBAR -->
-    <nav class="sticky top-0 z-50 bg-kn-dark/90 backdrop-blur border-b border-gray-800/50">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-4xl font-bold gradient-text cursor-pointer hover:scale-110 transition" onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })">
                 KN
             </div>
             <div class="flex items-center gap-8">
-                <div class="hidden md:flex gap-6 text-sm">
-                    <a href="#services" class="hover:text-kn-cyan transition">
-                        <span lang-en style="display:none">Services</span>
+                <div class="hidden md:flex gap-6 text-sm font-medium">
+                    <a href="#services" class="hover:text-kn-blue transition">
+                        <span lang-en>Services</span>
                         <span lang-fr style="display:none">Services</span>
-                        <span lang-es>Servicios</span>
+                        <span lang-es style="display:none">Servicios</span>
                     </a>
-                    <a href="#methodology" class="hover:text-kn-cyan transition">
-                        <span lang-en style="display:none">Process</span>
+                    <a href="#methodology" class="hover:text-kn-blue transition">
+                        <span lang-en>Process</span>
                         <span lang-fr style="display:none">Processus</span>
-                        <span lang-es>Proceso</span>
+                        <span lang-es style="display:none">Proceso</span>
                     </a>
-                    <a href="#calculator" class="hover:text-kn-cyan transition">ROI</a>
+                    <a href="#calculator" class="hover:text-kn-blue transition">ROI</a>
                 </div>
-                <!-- Selector de idioma (Español por defecto) -->
+                <!-- Order of preference: FR default, ES 2nd, EN 3rd -->
                 <div class="flex gap-2" id="langToggle">
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="es" onclick="switchLang('es')">ES</button>
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="fr" onclick="switchLang('fr')">FR</button>
-                    <button class="px-3 py-1 text-xs border border-gray-700 rounded-full hover:border-kn-cyan hover:text-kn-cyan transition" data-lang="en" onclick="switchLang('en')">EN</button>
+                    <button class="px-3 py-1 text-xs border border-gray-300 rounded-full hover:border-kn-blue hover:text-kn-blue transition text-gray-500 font-medium" data-lang="fr" onclick="switchLang('fr')">FR</button>
+                    <button class="px-3 py-1 text-xs border border-gray-300 rounded-full hover:border-kn-blue hover:text-kn-blue transition text-gray-500 font-medium" data-lang="es" onclick="switchLang('es')">ES</button>
+                    <button class="px-3 py-1 text-xs border border-gray-300 rounded-full hover:border-kn-blue hover:text-kn-blue transition text-gray-500 font-medium" data-lang="en" onclick="switchLang('en')">EN</button>
                 </div>
-                <button onclick="document.getElementById('contact').scrollIntoView()" class="px-6 py-2 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-xl hover:shadow-glow-cyan transition">
-                    <span lang-en style="display:none">Book Audit</span>
+                <button onclick="document.getElementById('contact').scrollIntoView()" class="px-6 py-2 bg-gradient-to-r from-kn-blue to-kn-magenta text-white font-bold rounded-xl hover:shadow-lg transition">
+                    <span lang-en>Book Audit</span>
                     <span lang-fr style="display:none">Réserver</span>
-                    <span lang-es>Reservar</span>
+                    <span lang-es style="display:none">Reservar</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero" class="relative overflow-hidden flex flex-col min-h-[100dvh] md:h-[calc(100vh-80px)] pt-8 md:pt-0">
+    <section id="hero" class="relative overflow-hidden flex flex-col min-h-[100dvh] md:h-[calc(100vh-80px)] pt-8 md:pt-0 bg-white">
         <div class="md:flex-[3] flex flex-col justify-center px-6 pb-8 md:pb-6 fade-in hero-content">
             <div class="max-w-3xl mx-auto w-full text-center">
-                <div class="inline-block px-4 py-2 border-2 border-kn-warm/40 rounded-full mb-6 text-kn-warm text-sm bg-kn-warm/5">
-                    <span lang-en style="display:none">⚡ AI Automation & Business Intelligence in Alicante</span>
+                <div class="inline-block px-4 py-2 border-2 border-kn-blue/20 rounded-full mb-6 text-kn-blue font-semibold text-sm bg-kn-blue/5">
+                    <span lang-en>⚡ AI Automation & Business Intelligence</span>
                     <span lang-fr style="display:none">⚡ Automatisation IA & Intelligence Métier</span>
-                    <span lang-es>⚡ Automatización IA & Consultoría en Alicante</span>
+                    <span lang-es style="display:none">⚡ Automatización IA e Inteligencia Empresarial</span>
                 </div>
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    <span lang-en style="display:none">AI That Actually Works <span class="gradient-text">For You</span></span>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-kn-darktext">
+                    <span lang-en>AI That Actually Works <span class="gradient-text">For You</span></span>
                     <span lang-fr style="display:none">L'IA Qui s'Adapte <span class="gradient-text">Vraiment à Vous</span></span>
-                    <span lang-es>La IA Que Realmente <span class="gradient-text">Se Adapta a Ti</span></span>
+                    <span lang-es style="display:none">La IA Que Realmente <span class="gradient-text">Se adapta a Ti</span></span>
                 </h1>
-                <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-                    <span lang-en style="display:none">Send us your chaos. Our AI turns it into results.</span>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    <span lang-en>Send us your chaos. Our AI turns it into results.</span>
                     <span lang-fr style="display:none">Envoyez-nous votre chaos. Notre IA le transforme en résultats.</span>
-                    <span lang-es>Envíanos tu caos. Nuestra IA lo convierte en resultados.</span>
+                    <span lang-es style="display:none">Envíanos tu caos. Nuestra IA lo convierte en resultados.</span>
                 </p>
                 <div class="flex gap-4 flex-wrap justify-center">
-                    <button onclick="document.getElementById('calculator').scrollIntoView()" class="px-8 py-4 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-2xl hover:shadow-lg transition">
-                        <span lang-en style="display:none">📊 Calculate Your Impact</span>
+                    <button onclick="document.getElementById('calculator').scrollIntoView()" class="px-8 py-4 bg-gradient-to-r from-kn-blue via-kn-magenta to-kn-orange text-white font-bold rounded-2xl hover:shadow-xl transition">
+                        <span lang-en>📊 Calculate Your Impact</span>
                         <span lang-fr style="display:none">📊 Calculer Votre Impact</span>
-                        <span lang-es>📊 Calcular Tu Impacto</span>
+                        <span lang-es style="display:none">📊 Calcular Tu Impacto</span>
                     </button>
-                    <button onclick="document.getElementById('portfolio').scrollIntoView()" class="px-8 py-4 border-2 border-kn-warm text-kn-warm rounded-2xl hover:bg-kn-warm/10 transition">
-                        <span lang-en style="display:none">👀 See Our Work</span>
+                    <button onclick="document.getElementById('portfolio').scrollIntoView()" class="px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-2xl hover:bg-gray-50 hover:border-kn-blue transition">
+                        <span lang-en>👀 See Our Work</span>
                         <span lang-fr style="display:none">👀 Voir Notre Travail</span>
-                        <span lang-es>👀 Ver Nuestro Trabajo</span>
+                        <span lang-es style="display:none">👀 Ver Nuestro Trabajo</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="relative w-full flex-1 min-h-[220px] border-t-2 border-b-2 border-kn-cyan/15 bg-kn-surface/40">
+        <!-- Animation Container -->
+        <div class="relative w-full flex-1 min-h-[220px] border-t border-b border-gray-200 bg-gray-50/80">
             <canvas id="heroCanvas" class="absolute inset-0 w-full h-full"></canvas>
         </div>
     </section>
 
     <!-- TRANSFORMATION SECTION -->
-    <section class="py-20 px-6 bg-gradient-to-r from-kn-magenta/5 to-kn-cyan/5">
+    <section class="py-20 px-6 bg-gradient-to-r from-kn-blue/5 via-kn-surface to-kn-orange/5">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold mb-16 text-center gradient-text">
-                <span lang-en style="display:none">Your Chaos Becomes Their Success</span>
+                <span lang-en>Your Chaos Becomes Their Success</span>
                 <span lang-fr style="display:none">Votre Chaos Devient Leur Succès</span>
-                <span lang-es>Tu Caos Se Convierte En Su Éxito</span>
+                <span lang-es style="display:none">Tu Caos Se Convierte En Su Éxito</span>
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
+                <!-- Transformation 1 -->
+                <div class="text-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="mb-6">
                         <div class="inline-block text-6xl mb-4">📂</div>
                         <div class="text-2xl font-bold text-kn-magenta">→</div>
                         <div class="inline-block text-6xl">🎯</div>
                     </div>
-                    <h3 class="text-xl font-bold text-kn-cyan mb-3">
-                        <span lang-en style="display:none">Messy Processes</span>
+                    <h3 class="text-xl font-bold text-kn-blue mb-3">
+                        <span lang-en>Messy Processes</span>
                         <span lang-fr style="display:none">Processus Chaotiques</span>
-                        <span lang-es>Procesos Desordenados</span>
+                        <span lang-es style="display:none">Procesos Desordenados</span>
                     </h3>
-                    <p class="text-gray-400 text-sm">
-                        <span lang-en style="display:none">Scattered files, manual tasks, lost information</span>
+                    <p class="text-gray-500 text-sm">
+                        <span lang-en>Scattered files, manual tasks, lost information</span>
                         <span lang-fr style="display:none">Fichiers dispersés, tâches manuelles, informations perdues</span>
-                        <span lang-es>Archivos dispersos, tareas manuales, información perdida</span>
+                        <span lang-es style="display:none">Archivos dispersos, tareas manuales, información perdida</span>
                     </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <p class="text-kn-magenta font-semibold">
+                            <span lang-en>✓ Streamlined Workflows</span>
+                            <span lang-fr style="display:none">✓ Flux Rationalisés</span>
+                            <span lang-es style="display:none">✓ Flujos Simplificados</span>
+                        </p>
+                        <p class="text-gray-500 text-xs mt-2">
+                            <span lang-en>Automated, intelligent, always organized</span>
+                            <span lang-fr style="display:none">Automatisés, intelligents, toujours organisés</span>
+                            <span lang-es style="display:none">Automatizados, inteligentes, siempre organizados</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="text-center">
+
+                <!-- Transformation 2 -->
+                <div class="text-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="mb-6">
                         <div class="inline-block text-6xl mb-4">⏰</div>
                         <div class="text-2xl font-bold text-kn-magenta">→</div>
                         <div class="inline-block text-6xl">⚡</div>
                     </div>
-                    <h3 class="text-xl font-bold text-kn-cyan mb-3">
-                        <span lang-en style="display:none">Wasted Time</span>
+                    <h3 class="text-xl font-bold text-kn-blue mb-3">
+                        <span lang-en>Wasted Time</span>
                         <span lang-fr style="display:none">Temps Perdu</span>
-                        <span lang-es>Tiempo Perdido</span>
+                        <span lang-es style="display:none">Tiempo Perdido</span>
                     </h3>
-                    <p class="text-gray-400 text-sm">
-                        <span lang-en style="display:none">Hours on repetitive tasks every week</span>
+                    <p class="text-gray-500 text-sm">
+                        <span lang-en>Hours on repetitive tasks every week</span>
                         <span lang-fr style="display:none">Des heures sur des tâches répétitives</span>
-                        <span lang-es>Horas en tareas repetitivas</span>
+                        <span lang-es style="display:none">Horas en tareas repetitivas</span>
                     </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <p class="text-kn-magenta font-semibold">
+                            <span lang-en>✓ 65% Time Freed</span>
+                            <span lang-fr style="display:none">✓ 65% De Temps Libéré</span>
+                            <span lang-es style="display:none">✓ 65% De Tiempo Liberado</span>
+                        </p>
+                        <p class="text-gray-500 text-xs mt-2">
+                            <span lang-en>Team focuses on high-value work</span>
+                            <span lang-fr style="display:none">L'équipe se concentre sur le travail précieux</span>
+                            <span lang-es style="display:none">El equipo se enfoca en trabajo de alto valor</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="text-center">
+
+                <!-- Transformation 3 -->
+                <div class="text-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="mb-6">
                         <div class="inline-block text-6xl mb-4">📉</div>
                         <div class="text-2xl font-bold text-kn-magenta">→</div>
                         <div class="inline-block text-6xl">📈</div>
                     </div>
-                    <h3 class="text-xl font-bold text-kn-cyan mb-3">
-                        <span lang-en style="display:none">Lost Opportunities</span>
+                    <h3 class="text-xl font-bold text-kn-blue mb-3">
+                        <span lang-en>Lost Opportunities</span>
                         <span lang-fr style="display:none">Opportunités Perdues</span>
-                        <span lang-es>Oportunidades Perdidas</span>
+                        <span lang-es style="display:none">Oportunidades Perdidas</span>
                     </h3>
-                    <p class="text-gray-400 text-sm">
-                        <span lang-en style="display:none">Missed clients, slow growth, no data insights</span>
+                    <p class="text-gray-500 text-sm">
+                        <span lang-en>Missed clients, slow growth, no data insights</span>
                         <span lang-fr style="display:none">Clients manqués, croissance lente, pas de données</span>
-                        <span lang-es>Clientes perdidos, crecimiento lento, sin datos</span>
+                        <span lang-es style="display:none">Clientes perdidos, crecimiento lento, sin datos</span>
                     </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <p class="text-kn-magenta font-semibold">
+                            <span lang-en>✓ New Revenue Streams</span>
+                            <span lang-fr style="display:none">✓ Nouvelles Sources de Revenus</span>
+                            <span lang-es style="display:none">✓ Nuevas Fuentes de Ingresos</span>
+                        </p>
+                        <p class="text-gray-500 text-xs mt-2">
+                            <span lang-en>Data-driven growth, captured clients, scale</span>
+                            <span lang-fr style="display:none">Croissance basée sur les données, clients captés</span>
+                            <span lang-es style="display:none">Crecimiento basado en datos, clientes capturados</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ROI CALCULATOR -->
-    <section id="calculator" class="py-20 px-6 bg-gradient-to-b from-kn-surface/30 to-transparent">
+    <section id="calculator" class="py-20 px-6 bg-white">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-4xl font-bold mb-4 gradient-text text-center">
-                <span lang-en style="display:none">See Your Impact</span>
+                <span lang-en>See Your Impact</span>
                 <span lang-fr style="display:none">Découvrez Votre Impact</span>
-                <span lang-es>Descubre Tu Impacto</span>
+                <span lang-es style="display:none">Descubre Tu Impacto</span>
             </h2>
-            <p class="text-gray-400 mb-12 text-center">
-                <span lang-en style="display:none">Adjust the sliders to see your potential gains</span>
+            <p class="text-gray-500 mb-12 text-center">
+                <span lang-en>Adjust the sliders to see your potential gains</span>
                 <span lang-fr style="display:none">Ajustez les curseurs pour voir vos gains potentiels</span>
-                <span lang-es>Ajusta los controles para ver tus ganancias potenciales</span>
+                <span lang-es style="display:none">Ajusta los controles para ver tus ganancias potenciales</span>
             </p>
 
-            <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark/40 border-2 border-kn-warm/20 rounded-3xl p-8 glow-border warm-glow">
+            <div class="bg-white border border-gray-200 rounded-3xl p-8 glow-border warm-glow shadow-sm">
                 <div class="mb-10">
-                    <label class="block text-sm font-semibold mb-4 text-kn-warm">
-                        👥 Tamaño del equipo: <span id="teamValue" class="text-kn-cyan">5</span> personas
+                    <label class="block text-sm font-semibold mb-4 text-gray-700">
+                        <span lang-en>👥 Team Size: <span id="teamValue" class="text-kn-blue">5</span> people</span>
+                        <span lang-fr style="display:none">👥 Taille de l'équipe : <span id="teamValue-fr" class="text-kn-blue">5</span> personnes</span>
+                        <span lang-es style="display:none">👥 Tamaño del equipo: <span id="teamValue-es" class="text-kn-blue">5</span> personas</span>
                     </label>
                     <input type="range" min="1" max="100" value="5" id="teamSlider" class="w-full cursor-pointer accent-kn-magenta" oninput="updateROI()">
                 </div>
 
                 <div class="mb-10">
-                    <label class="block text-sm font-semibold mb-4 text-kn-warm">
-                        ⏱️ Tareas Repetitivas/Semana: <span id="hoursValue" class="text-kn-cyan">10</span> hrs
+                    <label class="block text-sm font-semibold mb-4 text-gray-700">
+                        <span lang-en>⏱️ Repetitive Tasks/Week: <span id="hoursValue" class="text-kn-blue">10</span> hrs</span>
+                        <span lang-fr style="display:none">⏱️ Tâches Répétitives/Semaine : <span id="hoursValue-fr" class="text-kn-blue">10</span> hrs</span>
+                        <span lang-es style="display:none">⏱️ Tareas Repetitivas/Semana: <span id="hoursValue-es" class="text-kn-blue">10</span> hrs</span>
                     </label>
-                    <input type="range" min="2" max="40" value="10" id="hoursSlider" class="w-full cursor-pointer accent-kn-cyan" oninput="updateROI()">
+                    <input type="range" min="2" max="40" value="10" id="hoursSlider" class="w-full cursor-pointer accent-kn-orange" oninput="updateROI()">
                 </div>
 
                 <div class="grid grid-cols-2 gap-6 mt-12">
-                    <div class="bg-gradient-to-br from-kn-cyan/10 to-kn-dark border-2 border-kn-cyan/30 rounded-3xl p-6 text-center warm-glow">
+                    <div class="bg-blue-50 border border-blue-100 rounded-3xl p-6 text-center shadow-sm">
                         <div class="text-4xl font-bold gradient-text mb-2" id="hoursResult">312</div>
-                        <div class="text-sm text-gray-400">📅 Horas/mes ahorradas</div>
+                        <div class="text-sm text-gray-600 font-medium">
+                            <span lang-en>📅 Hours saved/month</span>
+                            <span lang-fr style="display:none">📅 Heures/mois économisées</span>
+                            <span lang-es style="display:none">📅 Horas/mes ahorradas</span>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-kn-magenta/10 to-kn-dark border-2 border-kn-magenta/30 rounded-3xl p-6 text-center warm-glow">
+                    <div class="bg-pink-50 border border-pink-100 rounded-3xl p-6 text-center shadow-sm">
                         <div class="text-4xl font-bold gradient-text mb-2" id="teamResult">75%</div>
-                        <div class="text-sm text-gray-400">🚀 Capacidad del equipo liberada</div>
+                        <div class="text-sm text-gray-600 font-medium">
+                            <span lang-en>🚀 Team capacity freed</span>
+                            <span lang-fr style="display:none">🚀 Capacité équipe libérée</span>
+                            <span lang-es style="display:none">🚀 Capacidad del equipo liberada</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,447 +307,15 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="py-20 px-6">
+    <section id="services" class="py-20 px-6 bg-kn-surface">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Lo Que Hacemos</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">
+                <span lang-en>What We Do</span>
+                <span lang-fr style="display:none">Ce Que Nous Faisons</span>
+                <span lang-es style="display:none">Lo Que Hacemos</span>
+            </h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
+                <div class="bg-white border border-gray-200 rounded-3xl p-8 glow-border shadow-sm">
                     <div class="text-5xl mb-4">🤖</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Chatbots IA y Automatización</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">WhatsApp, Messenger y asistentes IA personalizados que manejan consultas 24/7.</p>
-                </div>
-                <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
-                    <div class="text-5xl mb-4">📱</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Redes Sociales & Marketing</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Genera contenido automáticamente, programa publicaciones y maximiza tu presencia online.</p>
-                </div>
-                <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
-                    <div class="text-5xl mb-4">⚙️</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Automatización de Flujos</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Flujos personalizados con Make, Zapier e integraciones que optimizan tus operaciones.</p>
-                </div>
-                <div class="bg-gradient-to-br from-kn-surface/80 to-kn-dark border-2 border-gray-800/50 rounded-3xl p-8 glow-border warm-glow hover:bg-kn-surface">
-                    <div class="text-5xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-3 text-kn-warm">Soluciones IA Personalizadas</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Implementaciones de IA a medida que resuelven tus desafíos comerciales específicos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- METHODOLOGY -->
-    <section id="methodology" class="py-20 px-6 bg-gradient-to-b from-transparent to-kn-surface/30">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Nuestro Proceso</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="text-6xl mb-6 inline-block">🔍</div>
-                    <h3 class="font-bold mb-3 text-lg text-kn-warm">1. Auditoría</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Análisis profundo de tus procesos para identificar oportunidades de automatización.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-6 inline-block">🛠️</div>
-                    <h3 class="font-bold mb-3 text-lg text-kn-warm">2. Construir</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Diseño y despliegue de tu solución IA a medida con prototipos rápidos.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-6 inline-block">📈</div>
-                    <h3 class="font-bold mb-3 text-lg text-kn-warm">3. Escalar</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Monitoreo del rendimiento y expansión a otras áreas de tu negocio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Trabajos Recientes</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark border-2 border-kn-warm/20 rounded-3xl p-6 glow-border warm-glow">
-                    <div class="text-4xl mb-3">💬</div>
-                    <h3 class="font-bold mb-2 text-kn-cyan">Chatbot IA para Consultora</h3>
-                    <p class="text-sm text-gray-400 mb-4">Chatbot de WhatsApp gestionando consultas 24/7. Reducción de carga de soporte en un 60%.</p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-xs bg-kn-magenta/20 text-kn-magenta px-3 py-1 rounded-full">WhatsApp</span>
-                        <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">NLP</span>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-br from-kn-surface/60 to-kn-dark border-2 border-kn-warm/20 rounded-3xl p-6 glow-border warm-glow">
-                    <div class="text-4xl mb-3">📱</div>
-                    <h3 class="font-bold mb-2 text-kn-cyan">Automatización de Redes</h3>
-                    <p class="text-sm text-gray-400 mb-4">Generación automática de publicaciones y programación. 8 horas semanales ahorradas.</p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-xs bg-kn-magenta/20 text-kn-magenta px-3 py-1 rounded-full">Instagram</span>
-                        <span class="text-xs bg-kn-cyan/20 text-kn-cyan px-3 py-1 rounded-full">TikTok</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-20 px-6 bg-gradient-to-b from-kn-surface/30 to-transparent">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-4xl font-bold mb-6 text-center gradient-text">¿Listo para Transformar tu Negocio?</h2>
-            <p class="text-center text-gray-400 mb-12">Reserva tu llamada gratuita de 30 minutos o escríbenos directamente.</p>
-
-            <form class="bg-gradient-to-br from-kn-surface/60 to-kn-dark/40 border-2 border-kn-warm/30 rounded-3xl p-8 glow-border warm-glow" onsubmit="handleSubmit(event)">
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm">Tu Nombre</label>
-                    <input type="text" name="name" required class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition">
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm">Correo de Trabajo</label>
-                    <input type="email" name="email" required class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition">
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm">Empresa</label>
-                    <input type="text" name="company" class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition">
-                </div>
-                <div class="mb-8">
-                    <label class="block text-sm font-semibold mb-2 text-kn-warm">¿Cuál es tu desafío?</label>
-                    <textarea name="challenge" rows="4" class="w-full bg-kn-dark/60 border-2 border-gray-800/50 rounded-xl px-4 py-3 text-gray-100 focus:border-kn-cyan outline-none transition"></textarea>
-                </div>
-                <button type="submit" class="w-full py-4 bg-gradient-to-r from-kn-magenta to-kn-cyan text-black font-bold rounded-2xl hover:shadow-lg transition text-lg">
-                    ✨ Reservar Llamada Gratuita
-                </button>
-                <p class="text-xs text-gray-500 text-center mt-4">Respuesta en menos de 24 horas. Email: info@kndigital.com</p>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-kn-surface/50 border-t border-gray-800/50 py-12 px-6 text-center text-gray-500 text-sm">
-        <p class="mb-4">KN Digital © 2026. IA y Automatización | Alicante, España</p>
-        <p class="mb-6">¿Preguntas? Email: <strong>info@kndigital.com</strong></p>
-    </footer>
-
-    <script>
-        const SUPPORTED_LANGS = ['es', 'fr', 'en'];
-        let currentLang = 'es';
-
-        const canvas = document.getElementById('heroCanvas');
-        const ctx = canvas.getContext('2d');
-
-        if (!ctx.roundRect) {
-            ctx.roundRect = function(x, y, w, h, r) {
-                if (w < 2 * r) r = w / 2;
-                if (h < 2 * r) r = h / 2;
-                this.beginPath();
-                this.moveTo(x + r, y);
-                this.arcTo(x + w, y, x + w, y + h, r);
-                this.arcTo(x + w, y + h, x, y + h, r);
-                this.arcTo(x, y + h, x, y, r);
-                this.arcTo(x, y, x + w, y, r);
-                this.closePath();
-            };
-        }
-
-        function resizeCanvas() {
-            const container = canvas.parentElement;
-            canvas.width = container.offsetWidth;
-            canvas.height = container.offsetHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const animation = { inputBoxes: [], outputSuitcases: [], totalDelivered: 0, time: 0 };
-
-        const INPUT_LABELS = {
-            es: ['GASTOS', 'COSTE MARKETING', 'ADMINISTRACIÓN'],
-            fr: ['DÉPENSES', 'COÛT MARKETING', 'ADMINISTRATION'],
-            en: ['EXPENSES', 'MARKETING COST', 'ADMINISTRATION']
-        };
-        const OUTPUT_LABELS = {
-            es: ['CRECIMIENTO', 'PROSPECCIÓN', 'TIEMPO LIBRE'],
-            fr: ['CROISSANCE', 'PROSPECTION', 'TEMPS LIBÉRÉ'],
-            en: ['GROWTH', 'PROSPECTING', 'FREE TIME']
-        };
-        const OUTPUT_COLORS = [
-            'rgba(255, 80, 80, 0.95)',
-            'rgba(0, 190, 255, 0.95)',
-            'rgba(255, 200, 50, 0.95)'
-        ];
-        const MACHINE_TEXT = {
-            es: { tagline: 'AUTOMATIZACIÓN KN', caption: 'tus archivos → 1 solución' },
-            fr: { tagline: 'AUTOMATISATION KN', caption: 'vos dossiers → 1 solution' },
-            en: { tagline: 'KN AUTOMATION', caption: 'your files → 1 solution' }
-        };
-        const STATS_TEXT = {
-            es: n => `✓ ${n} resultados entregados`,
-            fr: n => `✓ ${n} résultats livrés`,
-            en: n => `✓ ${n} results delivered`
-        };
-
-        function machineGeom() {
-            const w = Math.min(220, canvas.width * 0.14);
-            const h = Math.min(300, canvas.height * 0.6);
-            const cx = canvas.width * 0.5;
-            const cy = canvas.height * 0.5;
-            return { cx, cy, w, h, bodyTop: cy - h / 2, entrance: { x: cx - w / 2, y: cy }, exit: { x: cx + w / 2, y: cy } };
-        }
-
-        function inputLanes() {
-            const m = machineGeom();
-            const laneYs = [canvas.height * 0.28, canvas.height * 0.5, canvas.height * 0.72];
-            return laneYs.map(laneY => {
-                const p0 = { x: -40, y: laneY };
-                const p2 = { x: m.entrance.x, y: m.entrance.y };
-                const p1 = { x: (p0.x + p2.x) / 2, y: laneY };
-                return { p0, p1, p2 };
-            });
-        }
-
-        function drawStatusBadge(x, y, kind) {
-            ctx.save();
-            ctx.fillStyle = 'rgba(18, 16, 16, 0.95)';
-            ctx.beginPath();
-            ctx.arc(x, y, 11, 0, Math.PI * 2);
-            ctx.fill();
-            if (kind === 'check') {
-                ctx.fillStyle = 'rgba(52, 211, 118, 1)';
-                ctx.beginPath();
-                ctx.arc(x, y, 9, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.strokeStyle = 'rgba(10, 12, 10, 0.95)';
-                ctx.lineWidth = 2.5;
-                ctx.beginPath();
-                ctx.moveTo(x - 4, y);
-                ctx.lineTo(x - 1, y + 3.5);
-                ctx.lineTo(x + 4.5, y - 4);
-                ctx.stroke();
-            } else {
-                ctx.fillStyle = 'rgba(235, 70, 70, 1)';
-                ctx.beginPath();
-                ctx.arc(x, y, 9, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.strokeStyle = 'rgba(15, 8, 8, 0.95)';
-                ctx.lineWidth = 2.5;
-                ctx.beginPath();
-                ctx.moveTo(x - 4, y - 4);
-                ctx.lineTo(x + 4, y + 4);
-                ctx.moveTo(x + 4, y - 4);
-                ctx.lineTo(x - 4, y + 4);
-                ctx.stroke();
-            }
-            ctx.restore();
-        }
-
-        function outputLane() {
-            const m = machineGeom();
-            const p0 = { x: m.exit.x, y: m.exit.y };
-            const p2 = { x: canvas.width + 50, y: m.exit.y };
-            const p1 = { x: (p0.x + p2.x) / 2, y: m.exit.y - canvas.height * 0.05 };
-            return { p0, p1, p2 };
-        }
-
-        function bezierPoint(p0, p1, p2, t) {
-            const mt = 1 - t;
-            return { x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x, y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y };
-        }
-
-        function bezierAngle(p0, p1, p2, t) {
-            const dx = 2 * (1 - t) * (p1.x - p0.x) + 2 * t * (p2.x - p1.x);
-            const dy = 2 * (1 - t) * (p1.y - p0.y) + 2 * t * (p2.y - p1.y);
-            return Math.atan2(dy, dx);
-        }
-
-        function drawLaneBelt(lane) {
-            ctx.save();
-            ctx.lineCap = 'round';
-            ctx.strokeStyle = 'rgba(35, 38, 48, 0.7)';
-            ctx.lineWidth = 17;
-            ctx.beginPath();
-            ctx.moveTo(lane.p0.x, lane.p0.y);
-            ctx.quadraticCurveTo(lane.p1.x, lane.p1.y, lane.p2.x, lane.p2.y);
-            ctx.stroke();
-            ctx.strokeStyle = 'rgba(60, 64, 76, 0.55)';
-            ctx.lineWidth = 17;
-            ctx.setLineDash([3, 11]);
-            ctx.lineDashOffset = -animation.time * 0.35;
-            ctx.beginPath();
-            ctx.moveTo(lane.p0.x, lane.p0.y);
-            ctx.quadraticCurveTo(lane.p1.x, lane.p1.y, lane.p2.x, lane.p2.y);
-            ctx.stroke();
-            ctx.restore();
-        }
-
-        class InputBox {
-            constructor(laneIndex) {
-                this.laneIndex = laneIndex;
-                this.t = 0;
-                this.speed = 0.0013 + Math.random() * 0.0002;
-                this.width = 82;
-                this.height = 40;
-            }
-            update() { this.t += this.speed; return this.t < 1; }
-            draw(lanes) {
-                const lane = lanes[this.laneIndex];
-                const pos = bezierPoint(lane.p0, lane.p1, lane.p2, this.t);
-                const angle = bezierAngle(lane.p0, lane.p1, lane.p2, this.t);
-                ctx.save();
-                ctx.translate(pos.x, pos.y);
-                ctx.rotate(angle * 0.2);
-                const grad = ctx.createLinearGradient(-this.width/2, -this.height/2, this.width/2, this.height/2);
-                grad.addColorStop(0, 'rgba(96, 84, 78, 0.98)');
-                grad.addColorStop(1, 'rgba(62, 52, 48, 0.98)');
-                ctx.fillStyle = grad;
-                ctx.beginPath();
-                ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 5);
-                ctx.fill();
-                ctx.strokeStyle = 'rgba(255, 130, 110, 0.65)';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 5);
-                ctx.stroke();
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
-                ctx.font = 'bold 10px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText(INPUT_LABELS[currentLang][this.laneIndex], 0, 4);
-                drawStatusBadge(this.width/2 - 4, -this.height/2 - 2, 'reject');
-                ctx.restore();
-            }
-        }
-
-        class OutputSuitcase {
-            constructor(dataIndex) {
-                this.t = 0;
-                this.speed = 0.0018 + Math.random() * 0.0002;
-                this.width = 64;
-                this.height = 52;
-                this.dataIndex = dataIndex;
-                this.color = OUTPUT_COLORS[dataIndex];
-                this.scale = 0.4;
-                this.glow = 0;
-            }
-            update() {
-                this.t += this.speed;
-                this.glow = Math.sin(animation.time * 0.06) * 0.5 + 0.5;
-                this.scale = Math.min(this.scale + 0.018, 1);
-                return this.t < 1;
-            }
-            draw(lane) {
-                const pos = bezierPoint(lane.p0, lane.p1, lane.p2, this.t);
-                const angle = bezierAngle(lane.p0, lane.p1, lane.p2, this.t);
-                ctx.save();
-                ctx.translate(pos.x, pos.y);
-                ctx.rotate(angle * 0.2);
-                ctx.scale(this.scale, this.scale);
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.roundRect(-this.width/2, -this.height/2, this.width, this.height, 6);
-                ctx.fill();
-                ctx.fillStyle = 'rgba(255,255,255,0.95)';
-                ctx.font = 'bold 10px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText(OUTPUT_LABELS[currentLang][this.dataIndex], 0, 5);
-                drawStatusBadge(this.width/2 - 4, -this.height/2 - 2, 'check');
-                ctx.restore();
-            }
-        }
-
-        function drawMachine() {
-            const m = machineGeom();
-            const { cx, w, h, bodyTop } = m;
-            const cy = m.cy;
-            ctx.save();
-            const grad = ctx.createLinearGradient(cx - w/2, bodyTop, cx + w/2, bodyTop + h);
-            grad.addColorStop(0, 'rgba(28, 30, 38, 0.97)');
-            grad.addColorStop(1, 'rgba(16, 17, 22, 0.97)');
-            ctx.fillStyle = grad;
-            ctx.beginPath();
-            ctx.roundRect(cx - w/2, bodyTop, w, h, 12);
-            ctx.fill();
-            ctx.strokeStyle = 'rgba(0, 240, 255, 0.5)';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.roundRect(cx - w/2, bodyTop, w, h, 12);
-            ctx.stroke();
-
-            ctx.fillStyle = 'rgba(0, 240, 255, 0.95)';
-            ctx.font = 'bold 16px sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText('KN', cx, cy - 10);
-            ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
-            ctx.font = 'bold 10px sans-serif';
-            ctx.fillText(MACHINE_TEXT[currentLang].tagline, cx, cy + 12);
-            ctx.restore();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            animation.time++;
-            const lanes = inputLanes();
-            const outLane = outputLane();
-
-            lanes.forEach(drawLaneBelt);
-            drawLaneBelt(outLane);
-
-            if (animation.time % 85 === 0) {
-                const laneIndex = Math.floor(Math.random() * 3);
-                if (animation.inputBoxes.filter(b => b.laneIndex === laneIndex).length < 2) {
-                    animation.inputBoxes.push(new InputBox(laneIndex));
-                }
-            }
-
-            animation.inputBoxes = animation.inputBoxes.filter(box => {
-                const alive = box.update();
-                if (!alive) {
-                    animation.outputSuitcases.push(new OutputSuitcase(box.laneIndex));
-                    animation.totalDelivered++;
-                    return false;
-                }
-                box.draw(lanes);
-                return true;
-            });
-
-            drawMachine();
-
-            animation.outputSuitcases = animation.outputSuitcases.filter(s => {
-                const alive = s.update();
-                s.draw(outLane);
-                return alive;
-            });
-
-            ctx.fillStyle = 'rgba(212, 165, 116, 0.9)';
-            ctx.font = 'bold 13px sans-serif';
-            ctx.textAlign = 'left';
-            ctx.fillText(STATS_TEXT[currentLang](animation.totalDelivered), 16, canvas.height - 12);
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        function switchLang(lang) {
-            currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'es';
-            document.querySelectorAll('[lang-en], [lang-fr], [lang-es]').forEach(el => el.style.display = 'none');
-            document.querySelectorAll(`[lang-${currentLang}]`).forEach(el => el.style.display = 'inline');
-            document.querySelectorAll('#langToggle button').forEach(b => {
-                b.classList.toggle('active-lang', b.dataset.lang === currentLang);
-            });
-        }
-
-        function updateROI() {
-            const teamSize = parseInt(document.getElementById('teamSlider').value);
-            const hoursPerWeek = parseInt(document.getElementById('hoursSlider').value);
-            document.getElementById('teamValue').textContent = teamSize;
-            document.getElementById('hoursValue').textContent = hoursPerWeek;
-            const monthlySaved = Math.round(teamSize * hoursPerWeek * 4.33 * 0.65);
-            const percentageFreed = Math.min(Math.round((hoursPerWeek * 0.65 / 40) * 100), 100);
-            document.getElementById('hoursResult').textContent = monthlySaved;
-            document.getElementById('teamResult').textContent = percentageFreed + '%';
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('¡Gracias! Te contactaremos en menos de 24 horas para tu llamada gratuita.');
-            event.target.reset();
-        }
-
-        updateROI();
-        switchLang('es');
-    </script>
-</body>
-</html>
+                    <h3 class="text-xl font-bold mb-3 text-kn-darktext"><span lang-en>AI Chatbots & Automation</span><span lang-fr style="display:none">Chatbots IA et Automatisation</span><span lang-es style="display:none">Chatbots IA y Automatización</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed"><span lang-en>WhatsApp, Messenger, and custom AI assistants that handle customer inquiries 24/7.</span><span lang-fr style="display:none">WhatsApp, Messenger et assistants IA personnalisés qui gèrent les demandes 24/7.</span><span lang-es style="display:none">WhatsApp, Messenger y asistentes IA personal

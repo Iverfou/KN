@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KN Digital · Agencia de IA en Alicante | Soluciones de IA a medida</title>
+<meta name="description" content="KN Digital es una agencia de IA en Alicante. Escuchamos a tu empresa, detectamos lo que te frena y creamos soluciones de IA a medida. Pide tu cita sin compromiso.">
+<meta name="theme-color" content="#fff9f0">
+<link rel="canonical" href="https://kndigital.es/">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KN Digital">
+<meta property="og:url" content="https://kndigital.es/">
+<meta property="og:title" content="KN Digital · Agencia de IA en Alicante">
+<meta property="og:description" content="La IA que resuelve tus problemas reales. Soluciones de IA a medida para las empresas de Alicante.">
+<meta property="og:image" content="https://kndigital.es/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"KN Digital","url":"https://kndigital.es/","email":"contact@kndigital.es","logo":"https://kndigital.es/assets/kn-logo.png","description":"Agencia de IA en Alicante: soluciones de inteligencia artificial a medida para empresas.","areaServed":"Alicante, España","knowsLanguage":["es","fr","en"],"address":{"@type":"PostalAddress","addressLocality":"Alicante","addressCountry":"ES"}}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&family=Oswald:wght@500;600;700&display=swap">
+
+<style>
+:root{
+  --bg:#fff9f0;--ink:#1b1526;--muted:#5b5369;--line:#eadfcf;
+  --fd:'Oswald',Impact,'Arial Narrow',sans-serif;--fb:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --c-blue:#0a7cff;--c-pink:#f0189b;--c-orange:#ff8a00;--c-green:#10b45a;--c-red:#ef3a32;--c-purple:#7a4dff;
+  --kick:#c2410c;--dark:#1b1526;--green-ink:#0b7a3d;
+  --card-sh:0 22px 44px -28px rgba(27,21,38,.4);
+  --gut:clamp(20px,4vw,48px);
+  --sec-y:clamp(64px,9vw,112px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ul{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+img{display:block;max-width:100%}
+section[id]{scroll-margin-top:72px}
+:focus-visible{outline:3px solid var(--c-orange);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,calc(100% - 2*var(--gut)));margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--dark);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{top:12px}
+.topbar{position:fixed;left:0;right:0;top:0;height:6px;z-index:60;background:linear-gradient(90deg,#7a4dff,#f0189b 45%,#ff8a00)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;padding-top:6px;background:rgba(255,249,240,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);transition:box-shadow .25s}
+.nav.scrolled{box-shadow:0 10px 30px -18px rgba(27,21,38,.35)}
+.nav-in{height:74px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.brand img{height:46px;width:auto}
+.bname{font-family:var(--fd);font-weight:700;font-size:28px;letter-spacing:.05em;line-height:1}
+.links{display:flex;gap:32px;margin-left:auto;font-weight:700;font-size:16px}
+.links a{opacity:.82;position:relative;padding:6px 0}
+.links a:hover,.links a.on{opacity:1}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;background:var(--c-orange);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.links a:hover::after,.links a.on::after{transform:scaleX(1)}
+.langs{display:flex;gap:2px}
+.lg{width:44px;height:40px;border-radius:10px;font-weight:800;font-size:13px;letter-spacing:.06em;color:var(--muted);transition:background .2s,color .2s}
+.lg:hover{color:var(--ink)}
+.lg.on{background:var(--dark);color:#fff}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:2px solid var(--ink);place-items:center}
+.burger i,.burger i::before,.burger i::after{display:block;width:18px;height:2.5px;border-radius:3px;background:var(--ink);position:relative;transition:transform .25s,background .25s}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0}
+.burger i::before{top:-6px}
+.burger i::after{top:6px}
+.nav.open .burger i{background:transparent}
+.nav.open .burger i::before{transform:translateY(6px) rotate(45deg)}
+.nav.open .burger i::after{transform:translateY(-6px) rotate(-45deg)}
+.links .menu-cta{display:none}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;font-weight:800;font-size:17px;transition:transform .2s,box-shadow .2s,background .2s,color .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn.small{height:46px;padding:0 22px;font-size:15px}
+.btn.wide{width:100%}
+.btn-primary{background:var(--dark);color:#fff}
+.btn-primary:hover{background:#000;box-shadow:0 14px 26px -14px rgba(27,21,38,.7)}
+.btn.ghost{border:2px solid var(--dark);color:var(--ink)}
+.btn.ghost:hover{background:var(--dark);color:#fff}
+.nav-cta{height:46px;padding:0 24px;font-size:15px}
+
+/* ---------- headings ---------- */
+.kick{font-weight:800;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--kick)}
+.h2{text-wrap:balance;font-family:var(--fd);font-weight:700;text-transform:uppercase;font-size:clamp(40px,7vw,84px);line-height:1;letter-spacing:.01em}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:720px}
+.head{display:flex;flex-direction:column;gap:14px}
+.head.c{align-items:center;text-align:center}
+.head.c .lead{max-width:780px}
+.sec{position:relative;padding-block:var(--sec-y)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(28px,5vw,56px) 0 0}
+.rb{position:absolute;mix-blend-mode:multiply;border-radius:6px;pointer-events:none;will-change:transform}
+.rb1{left:-2%;top:6%;width:clamp(54px,8.2vw,118px);height:clamp(240px,40vw,560px);background:#1e90ff;--rot:-8deg;opacity:.92}
+.rb2{left:8%;top:16%;width:clamp(44px,6.7vw,96px);height:clamp(190px,30vw,420px);background:#f0189b;--rot:30deg;opacity:.75}
+.rb3{right:-2%;top:3%;width:clamp(54px,8.2vw,118px);height:clamp(260px,42vw,600px);background:#ff9a1f;--rot:7deg;opacity:.92}
+.rb4{right:9%;top:18%;width:clamp(44px,6.7vw,96px);height:clamp(180px,28vw,400px);background:#14c26a;--rot:-30deg;opacity:.7}
+.rb{transform:translateY(var(--py,0px)) rotate(var(--rot,0deg))}
+.center{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;padding-top:clamp(0px,2vw,20px)}
+.badge{display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:6px 18px;border-radius:999px;background:#fff;border:1.5px solid var(--ink);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--c-green);box-shadow:0 0 0 4px rgba(16,180,90,.25);animation:pulse 1.6s ease-in-out infinite}
+h1{font-family:var(--fd);font-weight:700;font-size:clamp(46px,8.6vw,100px);line-height:.98;text-transform:uppercase;letter-spacing:.005em;max-width:1160px}
+h1 span{display:block}
+h1 em{position:relative;z-index:0;display:inline-block;font-style:normal;padding:0 .18em}
+h1 em::before{content:"";position:absolute;left:0;right:0;top:12%;bottom:4%;background:#ff9a1f;mix-blend-mode:multiply;transform:skew(-7deg);z-index:-1;animation:hl .9s .2s cubic-bezier(.2,.8,.2,1) both;transform-origin:left}
+@keyframes hl{from{transform:skew(-7deg) scaleX(0)}to{transform:skew(-7deg) scaleX(1)}}
+.sub{font-size:clamp(17px,2vw,22px);color:var(--muted);max-width:720px}
+.rot{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px 12px;font-weight:800;font-size:clamp(19px,2.5vw,26px)}
+.rp{color:var(--muted)}
+.rbox{display:inline-grid;text-align:left}
+.rw{grid-area:1/1;white-space:nowrap;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s;color:#c2410c}
+.rw.on{opacity:1;transform:none}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:4px}
+.igs{position:relative;z-index:3;margin-top:clamp(36px,6vw,64px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.ig{position:relative;overflow:hidden;min-height:200px;padding:24px 28px;border-radius:26px 26px 0 0;color:#fff;text-align:left;transition:transform .3s}
+.ig:hover{transform:translateY(-12px)}
+.g1{background:linear-gradient(135deg,#0648d6,#0a86ff)}
+.g2{background:linear-gradient(135deg,#c4006e,#e8420f)}
+.g3{background:linear-gradient(135deg,#00663f,#0a9a57)}
+.pill{display:inline-block;padding:3px 12px;border-radius:8px;background:rgba(20,14,30,.85);font-family:var(--fd);letter-spacing:.14em;font-size:14px}
+.ig h3{font-family:var(--fd);font-weight:700;text-transform:uppercase;font-size:clamp(30px,3.4vw,44px);line-height:1;margin:12px 0 6px}
+.ig p{font-size:15px;line-height:1.35;max-width:340px}
+.ig::after{content:"";position:absolute;right:-30px;bottom:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.12)}
+
+/* ---------- marquee ---------- */
+.strip{position:relative;height:76px;overflow:hidden;display:flex;align-items:center;background:var(--dark);color:#fff}
+.track2{display:flex;align-items:center;width:max-content;animation:marq 34s linear infinite}
+.strip:hover .track2{animation-play-state:paused}
+.mi{white-space:nowrap;padding:0 26px;font-family:var(--fd);font-weight:600;text-transform:uppercase;font-size:clamp(22px,2.4vw,30px);letter-spacing:.05em}
+.msep{width:12px;height:12px;background:var(--c-pink);border-radius:3px;transform:rotate(45deg);flex:0 0 auto}
+
+/* ---------- scan ---------- */
+.scan{background:#fff}
+.rig{display:grid;grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr);column-gap:30px;margin-top:48px}
+.col{display:flex;flex-direction:column;gap:18px}
+.belt{position:relative;height:150px;overflow:hidden;border-radius:20px;background:#efe3d1;border:1px solid #e0cfb6;transition:border-color .3s,box-shadow .3s}
+.belt.in.sel{border-color:var(--c-orange);box-shadow:0 0 0 3px rgba(255,122,47,.3)}
+.belt.out.on{border-color:var(--c-green);box-shadow:0 0 0 3px rgba(16,180,90,.22)}
+.track{position:absolute;left:0;right:0;bottom:0;height:32px;background:repeating-linear-gradient(90deg,rgba(27,21,38,.14) 0 16px,rgba(27,21,38,.04) 16px 32px);animation:beltmove 1s linear infinite}
+.belt.out.on .track{background:repeating-linear-gradient(90deg,rgba(16,180,90,.5) 0 16px,rgba(16,180,90,.14) 16px 32px)}
+.tag{position:absolute;left:12px;top:12px;z-index:3;height:30px;padding:0 14px 0 4px;display:flex;align-items:center;gap:9px;border-radius:999px;font-size:13px;font-weight:800;background:#fff;border:1px solid #e0cfb6;transition:transform .2s}
+.tag:hover{transform:translateY(-1px)}
+.tn{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;color:#fff;font-weight:800}
+.l1 .tn{background:var(--c-blue)}
+.l2 .tn{background:#d96500}
+.l3 .tn{background:var(--c-pink)}
+.chip{position:absolute;top:56px;left:0;z-index:2;width:172px;height:60px;padding:0 14px;display:flex;align-items:center;border-radius:12px;background:#fff;border:1px solid #e0cfb6;box-shadow:0 10px 18px -10px rgba(27,21,38,.45);font-size:13px;font-weight:800;line-height:1.15;text-transform:uppercase;animation:feed 7s linear infinite}
+.d1{animation-delay:-2.33s}
+.d2{animation-delay:-4.66s}
+.x{position:absolute;top:-10px;right:-10px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--c-red);color:#fff;border:2px solid #fff}
+.okrow{position:absolute;left:12px;right:12px;top:44px;display:none;gap:9px}
+.belt.out.on .okrow{display:flex}
+.ok{flex:1 1 0;min-width:0;height:68px;padding:0 9px;display:flex;align-items:center;gap:7px;border-radius:12px;background:#e2f8ec;color:#0a3a20;border:2px solid #10b45a;font-size:12px;font-weight:800;line-height:1.16;animation:emerge .7s cubic-bezier(.2,.8,.2,1) both}
+.e1{animation-delay:.1s}.e2{animation-delay:.28s}.e3{animation-delay:.46s}
+.ck{flex:0 0 auto;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;background:var(--c-green);color:#fff}
+.ck.big{width:30px;height:30px}
+.ck.huge{width:84px;height:84px}
+.ck.huge svg{width:44px;height:44px}
+.msg{position:absolute;left:0;right:0;top:56px;text-align:center;font-weight:800;font-size:15px;color:var(--c-orange);animation:pulse 1s ease-in-out infinite}
+.belt.out.on .msg{display:none}
+.machine{position:relative;min-height:486px;border-radius:34px;overflow:hidden;background:#1b1530;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:inset 0 0 0 4px var(--c-orange),0 0 0 8px rgba(255,122,47,.16),0 0 70px rgba(255,122,47,.32);transition:box-shadow .5s}
+.machine.done{box-shadow:inset 0 0 0 4px var(--c-green),0 0 0 8px rgba(16,180,90,.16),0 0 70px rgba(16,180,90,.32)}
+.band{position:absolute;left:0;right:0;top:0;height:150px;background:rgba(255,122,47,.18);border-top:2px solid var(--c-orange);border-bottom:2px solid var(--c-orange)}
+.band.b2{top:168px}.band.b3{top:336px}
+.machine.done .band{background:rgba(37,224,123,.2);border-color:var(--c-green)}
+.beam{position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,transparent,var(--c-orange) 20%,var(--c-orange) 80%,transparent);box-shadow:0 0 22px var(--c-orange);animation:sweep 2.2s ease-in-out infinite alternate}
+.machine.done .beam{animation:none;opacity:0}
+.mbadge{position:relative;z-index:2;width:128px;height:128px;border-radius:50%;background:#fff;border:6px solid var(--c-orange);display:grid;place-items:center;box-shadow:0 0 40px rgba(255,122,47,.5);transition:border-color .4s,box-shadow .4s}
+.mbadge img{width:86px;height:auto}
+.machine.done .mbadge{border-color:var(--c-green);box-shadow:0 0 40px rgba(37,224,123,.5)}
+.mname{position:relative;z-index:2;font-family:var(--fd);font-weight:600;font-size:36px;letter-spacing:.06em;line-height:1}
+.mtxt{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px}
+.mstat{position:relative;z-index:2;white-space:nowrap;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.mstat.run{color:#ffb27f;background:rgba(255,122,47,.16);animation:pulse 1.1s ease-in-out infinite}
+.mstat.fin{color:#06210f;background:#25e07b}
+.ctrl{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin-top:30px}
+.ic{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--dark);transition:transform .2s,background .2s}
+.ic:hover{transform:scale(1.08);background:var(--bg)}
+.dot{width:44px;height:44px;border-radius:50%;font-weight:800;border:2px solid var(--dark);transition:all .2s}
+.dot.on{background:var(--c-orange);border-color:var(--c-orange);color:#1a1020}
+.ctrl .btn{margin-left:14px}
+.results{margin-top:34px;min-height:250px;position:relative}
+.res-run,.res-done{min-height:250px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-sh)}
+.res-run{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;font-weight:700;color:var(--muted);padding:24px;text-align:center}
+.res-run[hidden],.res-done[hidden]{display:none}
+.pbar{width:min(420px,100%);height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.pbar i{display:block;height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,var(--c-blue),var(--c-pink),var(--c-orange));transform-origin:left;animation:prog 3.4s ease-in-out both}
+.res-done{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:40px;align-items:center;padding:32px 44px;animation:rise .5s ease both}
+.rl{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.rtitle{display:flex;align-items:center;gap:12px;font-family:var(--fd);font-weight:600;font-size:34px;text-transform:uppercase;line-height:1;letter-spacing:.03em}
+.rname{font-weight:800;color:var(--green-ink)}
+.rnote{font-size:14px;color:var(--muted);line-height:1.4}
+.rr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ri{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:14px;background:#f4fbf7;border:1px solid #cfeadb;font-weight:700;font-size:16px;line-height:1.3}
+
+/* ---------- services ---------- */
+.svcs{background:var(--bg)}
+.svcs .head{margin-bottom:clamp(32px,5vw,52px)}
+.svcs .h2{font-size:clamp(38px,6.4vw,80px)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px}
+.svc{position:relative;overflow:hidden;min-height:250px;padding:28px 30px;display:flex;flex-direction:column;gap:10px;border-radius:24px;background:#fff;border:1px solid var(--line);border-top:10px solid var(--cc);box-shadow:var(--card-sh);transition:transform .25s,box-shadow .25s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 30px 50px -26px var(--cc)}
+.svc h3{font-family:var(--fd);font-weight:600;text-transform:uppercase;font-size:clamp(28px,2.6vw,34px);line-height:1.05;letter-spacing:.02em}
+.svc p{font-size:16px;color:var(--muted);line-height:1.45}
+.sn{font-family:var(--fd);font-size:42px;line-height:1;color:var(--cc)}
+.c1{--cc:var(--c-blue)}.c2{--cc:var(--c-pink)}.c3{--cc:var(--c-orange)}.c4{--cc:var(--c-green)}.c5{--cc:var(--c-red)}.c6{--cc:var(--c-purple)}
+
+/* ---------- approach ---------- */
+.ap{background:var(--dark);color:#fff;--muted:#cbc2dc;--kick:#ffb35c}
+.ap .h2{font-size:clamp(38px,6.4vw,80px);max-width:1240px}
+.apgrid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:32px;margin-top:clamp(28px,4vw,44px)}
+.steps{display:flex;flex-direction:column;gap:12px}
+.step{display:flex;align-items:center;gap:18px;width:100%;min-height:84px;padding:0 26px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);font-weight:800;font-size:22px;text-align:left;color:#fff;transition:all .25s}
+.step .sn{font-size:34px;color:var(--c-orange)}
+.step:hover{transform:translateX(4px)}
+.step.on{background:rgba(255,138,0,.18);border-color:var(--c-orange)}
+.stpanel{position:relative;overflow:hidden;min-height:372px;padding:44px clamp(24px,4vw,52px) 84px;border-radius:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
+.stbig{position:absolute;right:30px;bottom:-56px;font-family:var(--fd);font-size:250px;line-height:1;color:var(--c-orange);opacity:.12;pointer-events:none}
+.stlabel{font-weight:800;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--kick)}
+.stpanel h3{position:relative;font-family:var(--fd);font-weight:600;text-transform:uppercase;font-size:clamp(46px,6vw,72px);line-height:1.05;margin-top:10px}
+.stpanel p{position:relative;font-size:clamp(17px,1.6vw,21px);color:var(--muted);max-width:450px;margin-top:14px}
+.stbars{position:absolute;left:clamp(24px,4vw,52px);bottom:40px;display:flex;gap:8px}
+.stbars i{display:block;width:clamp(40px,5vw,64px);height:8px;border-radius:8px;background:rgba(255,255,255,.2);transition:background .3s}
+.stbars i.on{background:var(--c-orange)}
+.stpanel.swap h3,.stpanel.swap p{animation:rise .4s ease both}
+.prins{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px;margin-top:40px}
+.pr{padding:26px 30px;border-radius:24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-top:6px solid var(--cc)}
+.pr h3{font-family:var(--fd);font-weight:600;text-transform:uppercase;font-size:clamp(26px,2.6vw,34px);line-height:1.05;margin-bottom:8px}
+.pr p{font-size:16px;color:var(--muted);line-height:1.45}
+
+/* ---------- rdv ---------- */
+.rdv{background:var(--bg)}
+.rdv-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,720px);gap:clamp(32px,5vw,70px);align-items:start}
+.rdv-l{display:flex;flex-direction:column;gap:16px;padding-top:10px}
+.rdv .h2{font-size:clamp(38px,6.4vw,84px)}
+.ct{display:flex;flex-direction:column;gap:12px;margin-top:20px;font-weight:700;font-size:19px}
+.ct li{display:flex;align-items:center;gap:14px;min-width:0}
+.ct a{overflow-wrap:anywhere}
+.ct a:hover{text-decoration:underline;text-decoration-color:var(--c-orange);text-decoration-thickness:3px;text-underline-offset:4px}
+.ct i{display:block;flex:0 0 auto;width:14px;height:14px;border-radius:50%;background:var(--c-orange)}
+.ct li:nth-child(2) i{background:var(--c-pink)}
+.ct li:nth-child(3) i{background:var(--c-blue)}
+.ct li:nth-child(4) i{background:var(--c-green)}
+.card.form{padding:clamp(22px,3.4vw,34px) clamp(20px,3.4vw,36px);border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-sh);min-height:690px}
+.form form{display:flex;flex-direction:column;gap:20px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;padding:0;margin:0}
+.fld label,.fld .lb{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fi{height:52px;width:100%;padding:0 16px;border-radius:12px;background:#fffdf9;border:1.5px solid #d9cbb5;outline:none;transition:border-color .2s,box-shadow .2s}
+.fi:focus{border-color:var(--c-orange);box-shadow:0 0 0 3px rgba(255,122,47,.28)}
+.fi:user-invalid{border-color:var(--c-red)}
+select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%231b1526' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5l5.5 5.5 5.5-5.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+.fi.ta{height:100px;padding:14px 16px;resize:vertical;min-height:100px;line-height:1.4}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.cp{height:44px;padding:0 16px;border-radius:999px;font-weight:800;font-size:15px;border:1.5px solid #d9cbb5;background:#fff;transition:all .2s}
+.cp:hover{transform:translateY(-1px)}
+.cp.on{background:var(--c-orange);color:#1a1020;border-color:var(--c-orange)}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted);line-height:1.4}
+.consent input{flex:0 0 auto;width:20px;height:20px;margin-top:1px;accent-color:var(--c-green)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ferr{color:#b3261e;font-weight:700;font-size:14px;min-height:0}
+.sent{min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px}
+.sent[hidden]{display:none}
+.sent h3{font-family:var(--fd);font-weight:600;text-transform:uppercase;font-size:clamp(36px,5vw,52px);line-height:1}
+.sent p{max-width:420px;color:var(--muted)}
+.ck.huge{animation:pop .5s cubic-bezier(.2,.8,.2,1) both}
+
+/* ---------- footer ---------- */
+.foot{background:var(--dark);color:#fff;padding:56px 0 40px}
+.foot-in{display:flex;flex-wrap:wrap;gap:28px 40px;align-items:center;justify-content:space-between}
+.fl{display:flex;align-items:center;gap:20px}
+.fl img{height:54px;width:auto}
+.fname{font-family:var(--fd);font-weight:700;font-size:34px;letter-spacing:.05em;line-height:1}
+.fl p{font-size:15px;opacity:.75;max-width:360px}
+.fr{display:flex;flex-wrap:wrap;gap:10px 32px;font-weight:700;font-size:15px;opacity:.9}
+.fr a:hover{text-decoration:underline;text-decoration-color:var(--c-orange);text-underline-offset:4px;text-decoration-thickness:3px}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- keyframes ---------- */
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes beltmove{from{background-position:0 0}to{background-position:32px 0}}
+@keyframes feed{0%{left:-190px}100%{left:100%}}
+@keyframes emerge{from{opacity:0;transform:translateX(-90px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes sweep{from{top:0}to{top:calc(100% - 4px)}}
+@keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .links{gap:22px;font-size:15px}
+  .nav-cta{display:none}
+  .links{margin-left:auto}
+}
+@media (max-width:1000px){
+  .rig{grid-template-columns:minmax(0,1fr);row-gap:18px;max-width:640px;margin-inline:auto}
+  .machine{min-height:0;height:170px;flex-direction:row;gap:20px}
+  .band{display:none}
+  .mbadge{width:96px;height:96px;border-width:5px}
+  .mbadge img{width:64px}
+  .mtxt{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .rdv-grid{grid-template-columns:minmax(0,1fr)}
+  .apgrid{grid-template-columns:minmax(0,1fr)}
+  .steps{display:grid;grid-template-columns:1fr 1fr}
+  .step{min-height:68px;font-size:19px;padding:0 18px}
+  .res-done{grid-template-columns:minmax(0,1fr);gap:22px;padding:28px}
+}
+@media (max-width:900px){
+  .burger{display:grid;margin-left:4px}
+  .links{position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;margin:0;padding:8px var(--gut) 20px;background:#fff9f0;border-bottom:1px solid var(--line);box-shadow:0 22px 30px -22px rgba(27,21,38,.4);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s;font-size:19px}
+  .nav.open .links{opacity:1;visibility:visible;transform:none}
+  .links a{padding:14px 0;border-bottom:1px solid var(--line);opacity:1}
+  .links a::after{display:none}
+  .langs{margin-left:auto}
+  .links .menu-cta{display:inline-flex;margin-top:16px;align-self:flex-start;color:#fff!important;border:0!important}
+  .nav-cta{display:none}
+  .igs{grid-template-columns:minmax(0,1fr)}
+  .ig{min-height:0;border-radius:24px}
+  .ig:hover{transform:none}
+  .hero{padding-bottom:40px}
+}
+@media (max-width:700px){
+  body{font-size:17px}
+  .rb1,.rb2,.rb3,.rb4{filter:opacity(.4)}
+  .rbox{text-align:center}
+  .nav-in{height:64px;gap:12px}
+  .brand img{height:38px}
+  .bname{font-size:22px}
+  .lg{width:36px;height:36px}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  .rr{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .stbig{font-size:170px}
+  .cta .btn{flex:1 1 100%}
+  .ctrl .btn{margin-left:0;flex:1 1 100%}
+  .rig .belt:not(.sel){display:none}
+  .belt.out{height:auto;min-height:218px;padding:16px 12px 44px}
+  .okrow{position:static;flex-direction:column;gap:8px}
+  .ok{height:46px}
+  .machine{height:130px}
+  .belt.out .msg{top:80px}
+  .strip{height:64px}
+  .res-done{padding:22px}
+  .card.form{min-height:0}
+  .sent{min-height:520px}
+  .rtitle{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .track2{animation:none}
+  .chip{animation:none;left:4px}
+  .chip.d1{left:calc(50% - 86px)}
+  .chip.d2{left:auto;right:4px}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
+<div class="topbar" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="KN Digital"><img src="assets/kn-logo.png" alt="" width="60" height="46"><span class="bname">KN DIGITAL</span></a>
+    <nav class="links" id="links" aria-label="Principal">
+      <a href="#scan" data-i18n="nav.0">Scan</a>
+      <a href="#services" data-i18n="nav.1">Servicios</a>
+      <a href="#approche" data-i18n="nav.2">Enfoque</a>
+      <a href="#rdv" data-i18n="nav.3">Contacto</a>
+      <a class="btn btn-primary small menu-cta" href="#rdv" data-i18n="navCta">Pedir cita</a>
+    </nav>
+    <div class="langs" role="group" data-aria="langLabel" aria-label="Idioma">
+      <button class="lg" type="button" data-lang="es" aria-label="Español">ES</button>
+      <button class="lg" type="button" data-lang="fr" aria-label="Français">FR</button>
+      <button class="lg" type="button" data-lang="en" aria-label="English">EN</button>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#rdv" data-i18n="navCta">Pedir cita</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" data-aria="menu" aria-label="Menú"><i></i></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="rb rb1" data-sp="0.06"></div><div class="rb rb2" data-sp="-0.04"></div><div class="rb rb3" data-sp="0.08"></div><div class="rb rb4" data-sp="-0.05"></div>
+  <div class="wrap">
+    <div class="center">
+      <div class="badge rv"><i></i><span data-i18n="badge">Nueva agencia de IA · Alicante</span></div>
+      <h1 class="rv" style="--d:.08s"><span data-i18n="h1a">LA IA QUE RESUELVE</span><em data-i18n="h1b">TUS PROBLEMAS REALES</em></h1>
+      <p class="sub rv" style="--d:.16s" data-i18n="heroSub"></p>
+      <div class="rot rv" style="--d:.22s" aria-live="off"><span class="rp" data-i18n="rotPre"></span><span class="rbox" id="rbox"></span></div>
+      <div class="cta rv" style="--d:.28s"><a class="btn btn-primary" href="#scan"><span data-i18n="cta1"></span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#rdv" data-i18n="cta2"></a></div>
+    </div>
+    <div class="igs" id="igs"></div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="track2" id="marq"></div></div>
+
+<section class="sec scan" id="scan">
+  <div class="wrap">
+    <div class="head c rv"><div class="kick" data-i18n="scanKick"></div><h2 class="h2" data-i18n="scanTitle"></h2><p class="lead" data-i18n="scanSub"></p></div>
+    <div class="rig" id="rig">
+      <div class="col" id="colIn"></div>
+      <div class="machine run" id="machine">
+        <div class="band"></div><div class="band b2"></div><div class="band b3"></div><div class="beam"></div>
+        <div class="mbadge"><img src="assets/kn-logo.png" alt="KN Digital"></div>
+        <div class="mtxt"><div class="mname">KN DIGITAL</div><div class="mstat run" id="mstat"></div></div>
+      </div>
+      <div class="col" id="colOut"></div>
+    </div>
+    <div class="ctrl" id="ctrl"></div>
+    <div class="results" aria-live="polite">
+      <div class="res-run" id="resRun"><div class="pbar"><i></i></div><p data-i18n="progress"></p></div>
+      <div class="res-done" id="resDone" hidden>
+        <div class="rl"><div class="rtitle"><span class="ck big"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="resTitle"></span></div><div class="rname" id="laneName"></div><p class="rnote" data-i18n="resNote"></p><a class="btn btn-primary small" href="#rdv" data-i18n="resCta"></a></div>
+        <div class="rr" id="resItems"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec svcs" id="services">
+  <div class="wrap">
+    <div class="head rv"><div class="kick" data-i18n="svcKick"></div><h2 class="h2" data-i18n="svcTitle"></h2><p class="lead" data-i18n="svcSub"></p></div>
+    <div class="grid3" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="sec ap" id="approche">
+  <div class="wrap">
+    <div class="head rv"><div class="kick" data-i18n="apKick"></div><h2 class="h2" data-i18n="apTitle"></h2></div>
+    <div class="apgrid">
+      <div class="steps" id="steps"></div>
+      <div class="stpanel" id="stpanel"><div class="stbig" id="stBig">01</div><div class="stlabel" id="stLabel"></div><h3 id="stTitle"></h3><p id="stDesc"></p><div class="stbars" id="stBars"></div></div>
+    </div>
+    <div class="prins" id="prins"></div>
+  </div>
+</section>
+
+<section class="sec rdv" id="rdv">
+  <div class="wrap rdv-grid">
+    <div class="rdv-l rv">
+      <div class="kick" data-i18n="rdvKick"></div>
+      <h2 class="h2" data-i18n="rdvTitle"></h2>
+      <p class="lead" data-i18n="rdvSub"></p>
+      <ul class="ct">
+        <li><i></i><span data-i18n="where"></span></li>
+        <li><i></i><a href="https://instagram.com/kndigia" target="_blank" rel="noopener">@kndigia</a></li>
+        <li><i></i><a href="mailto:contact@kndigital.es">contact@kndigital.es</a></li>
+        <li><i></i><a href="https://kndigital.es">kndigital.es</a></li>
+      </ul>
+    </div>
+    <div class="card form rv" style="--d:.1s">
+      <form id="rdvForm" novalidate>
+        <div class="row2">
+          <div class="fld"><label for="f-name" data-i18n="fName"></label><input class="fi" id="f-name" name="name" type="text" autocomplete="name" required data-ph="phName"></div>
+          <div class="fld"><label for="f-email" data-i18n="fEmail"></label><input class="fi" id="f-email" name="email" type="email" autocomplete="email" required data-ph="phEmail"></div>
+        </div>
+        <div class="row2">
+          <div class="fld"><label for="f-co" data-i18n="fCompany"></label><input class="fi" id="f-co" name="company" type="text" autocomplete="organization" data-ph="phCompany"></div>
+          <div class="fld"><label for="f-sec" data-i18n="fSector"></label><select class="fi" id="f-sec" name="sector"></select></div>
+        </div>
+        <div class="fld"><span class="lb" data-i18n="fDay"></span><div class="chips" id="chDay"></div></div>
+        <div class="row2">
+          <div class="fld"><span class="lb" data-i18n="fSlot"></span><div class="chips" id="chSlot"></div></div>
+          <div class="fld"><span class="lb" data-i18n="fLang"></span><div class="chips" id="chLang"></div></div>
+        </div>
+        <div class="fld"><label for="f-msg" data-i18n="fMsg"></label><textarea class="fi ta" id="f-msg" name="message" data-ph="phMsg"></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Web <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" id="f-consent" required><span data-i18n="consent"></span></label>
+        <div class="ferr" id="ferr" role="alert"></div>
+        <button class="btn btn-primary wide" type="submit" id="submitBtn"><span data-i18n="submit"></span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <div class="sent" id="sent" hidden role="status">
+        <span class="ck huge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3 data-i18n="sentTitle"></h3><p id="sentText"></p>
+        <button class="btn ghost small" type="button" id="again" data-i18n="again"></button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="fl"><img src="assets/kn-logo.png" alt="KN Digital" width="70" height="54"><div><div class="fname">KN DIGITAL</div><p data-i18n="footTag"></p></div></div>
+    <div class="fr"><span data-i18n="where"></span><a href="mailto:contact@kndigital.es">contact@kndigital.es</a><a href="https://instagram.com/kndigia" target="_blank" rel="noopener">@kndigia</a><a href="https://kndigital.es">kndigital.es</a><span data-i18n="copy"></span></div>
+  </div>
+</footer>
+
+<script>
+/* ============ CONFIGURACIÓN / CONFIG ============ */
+const CONFIG = {
+  email: 'contact@kndigital.es',
+  // Para recibir las solicitudes sin abrir el correo del visitante, pega aquí el endpoint de tu servicio de formularios
+  // (Formspree: 'https://formspree.io/f/xxxxxxx'  ·  o un webhook de Make/n8n que acepte JSON).
+  // Si se deja vacío, el formulario abre el correo del visitante con la solicitud ya redactada.
+  formEndpoint: ''
+};
+const COPY = {
+ "fr": {
+  "nav": [
+   "Scan",
+   "Services",
+   "Approche",
+   "Contact"
+  ],
+  "navCta": "Prendre RDV",
+  "badge": "Nouvelle agence IA · Alicante",
+  "h1a": "L'IA QUI RÉSOUT",
+  "h1b": "VOS VRAIS PROBLÈMES",
+  "heroSub": "KN Digital écoute votre entreprise, repère ce qui vous ralentit et met en place des solutions IA adaptées à votre réalité.",
+  "rotPre": "On automatise vos",
+  "rot": [
+   "tâches répétitives",
+   "relances clients",
+   "réponses multilingues",
+   "publications sociales"
+  ],
+  "cta1": "Lancer le scan",
+  "cta2": "Prendre rendez-vous",
+  "pts": [
+   "Le client d'abord",
+   "IA sur mesure",
+   "FR · ES · EN"
+  ],
+  "marq": [
+   "Audit de processus",
+   "Automatisation",
+   "Assistants IA 24/7",
+   "Réseaux sociaux",
+   "Prospection",
+   "Multilingue"
+  ],
+  "scanKick": "Le scan KN Digital",
+  "scanTitle": "DE LA FRICTION À LA SOLUTION",
+  "scanSub": "Trois tapis, trois entreprises. Le scan analyse leurs blocages et les trois tapis ressortent au vert, avec des solutions concrètes. Choisissez-en un pour voir ses résultats.",
+  "beltWord": "Tapis",
+  "stScan": "Analyse en cours",
+  "stDone": "Scan terminé",
+  "idle": "En attente",
+  "idleHint": "Sélectionnez ce tapis",
+  "scanning": "Analyse…",
+  "replay": "Relancer le scan",
+  "prev": "Tapis précédent",
+  "next": "Tapis suivant",
+  "resTitle": "Résultats du scan",
+  "progress": "Analyse des processus en cours…",
+  "resNote": "Démonstration interactive : chaque analyse réelle est propre à votre entreprise.",
+  "resCta": "Prendre RDV pour mon scan",
+  "res": [
+   "Tâches répétitives identifiées",
+   "Processus cartographiés et simplifiés",
+   "Solution IA adaptée à l'activité",
+   "Plan d'action clair, étape par étape"
+  ],
+  "lanes": [
+   {
+    "name": "Hôtellerie & tourisme",
+    "p": [
+     "Réservations à la main",
+     "Messages en 3 langues",
+     "Avis clients non suivis"
+    ],
+    "s": [
+     "Réservations centralisées",
+     "Réponses multilingues 24/7",
+     "Suivi des avis automatisé"
+    ]
+   },
+   {
+    "name": "Commerce local",
+    "p": [
+     "Commandes saisies à la main",
+     "Réseaux sans temps",
+     "Relances oubliées"
+    ],
+    "s": [
+     "Commandes synchronisées",
+     "Publications automatisées",
+     "Relances automatiques"
+    ]
+   },
+   {
+    "name": "Services & formation",
+    "p": [
+     "Devis faits à la main",
+     "Données dispersées",
+     "Prospection irrégulière"
+    ],
+    "s": [
+     "Documents générés seuls",
+     "Données centralisées",
+     "Prospection structurée"
+    ]
+   }
+  ],
+  "svcKick": "Ce que nous réalisons",
+  "svcTitle": "DES SOLUTIONS IA CONCRÈTES",
+  "svcSub": "Chaque service répond à un problème précis, jamais à une mode.",
+  "svc": [
+   [
+    "Audit de processus",
+    "Comprendre et redessiner vos processus avant d'automatiser quoi que ce soit."
+   ],
+   [
+    "Automatisation des tâches",
+    "Moins de tâches répétitives, plus de temps productif pour votre vrai métier."
+   ],
+   [
+    "Assistants IA 24/7",
+    "Des assistants voix et texte qui répondent à vos clients à toute heure."
+   ],
+   [
+    "Réseaux sociaux avec l'IA",
+    "Planifiez et publiez sur Instagram, TikTok, YouTube et Facebook depuis un seul endroit."
+   ],
+   [
+    "Ventes & prospection",
+    "Suivi des leads et relances automatisés pour ne laisser filer aucune opportunité."
+   ],
+   [
+    "Assistants multilingues",
+    "Communiquez avec vos clients dans leur langue, sans frontières."
+   ]
+  ],
+  "apKick": "Notre approche",
+  "apTitle": "LE PROBLÈME D'ABORD, L'IA ENSUITE",
+  "steps": [
+   [
+    "Écouter",
+    "Nous commençons par votre quotidien, vos contraintes et vos objectifs. Pas de jargon, pas de solution toute faite."
+   ],
+   [
+    "Analyser",
+    "Le scan KN Digital met en lumière ce qui vous freine vraiment : tâches répétées, données éparpillées, délais."
+   ],
+   [
+    "Concevoir",
+    "Nous choisissons l'IA adaptée à votre cas, jamais l'inverse. Simple, utile, pensée pour votre quotidien."
+   ],
+   [
+    "Accompagner",
+    "Mise en place, prise en main et ajustements avec vous, dans la langue qui vous convient."
+   ]
+  ],
+  "stepWord": "Étape",
+  "prin": [
+   [
+    "Le problème d'abord",
+    "Nous partons de votre besoin réel, jamais d'une technologie à vendre."
+   ],
+   [
+    "Sur mesure",
+    "Chaque solution est adaptée à votre activité, votre équipe et votre rythme."
+   ],
+   [
+    "Humain et clair",
+    "Des outils simples et un accompagnement en français, espagnol ou anglais."
+   ]
+  ],
+  "rdvKick": "Rendez-vous",
+  "rdvTitle": "PARLONS DE VOTRE ENTREPRISE",
+  "rdvSub": "Un premier échange pour comprendre votre situation et voir si l'IA peut vraiment vous aider. Sans engagement.",
+  "fName": "Nom",
+  "fEmail": "Email",
+  "fCompany": "Entreprise",
+  "fSector": "Secteur",
+  "secs": [
+   "Hôtellerie & tourisme",
+   "Commerce local",
+   "Services & formation",
+   "Autre"
+  ],
+  "fDay": "Jour souhaité",
+  "days": [
+   "Lun",
+   "Mar",
+   "Mer",
+   "Jeu",
+   "Ven"
+  ],
+  "fSlot": "Moment",
+  "slots": [
+   "Matin",
+   "Après-midi"
+  ],
+  "fLang": "Langue de l'échange",
+  "fMsg": "Votre besoin en quelques mots",
+  "phName": "Votre nom",
+  "phEmail": "vous@entreprise.com",
+  "phCompany": "Nom de l'entreprise",
+  "phMsg": "Ex. : je perds du temps sur…",
+  "submit": "Envoyer ma demande",
+  "sentTitle": "Demande envoyée !",
+  "sentText": "Merci ! Nous revenons vers vous très vite pour confirmer votre rendez-vous.",
+  "again": "Nouvelle demande",
+  "where": "Alicante · Costa Blanca, Espagne",
+  "footTag": "Solutions IA sur mesure pour les entreprises d'Alicante.",
+  "copy": "© 2026 KN Digital",
+  "metaTitle": "KN Digital · Agence IA à Alicante | Solutions IA sur mesure",
+  "metaDesc": "KN Digital est une agence IA à Alicante. Nous écoutons votre entreprise, repérons ce qui vous freine et créons des solutions IA sur mesure. Prenez rendez-vous sans engagement.",
+  "menu": "Menu",
+  "consent": "J'accepte que KN Digital utilise ces données uniquement pour répondre à ma demande.",
+  "sending": "Envoi…",
+  "sendErr": "Envoi impossible. Écrivez-nous à contact@kndigital.es.",
+  "mailNote": "Votre application e-mail s'est ouverte avec la demande prête. Sinon, écrivez-nous à contact@kndigital.es.",
+  "web": "kndigital.es",
+  "skip": "Aller au contenu",
+  "langLabel": "Langue"
+ },
+ "es": {
+  "nav": [
+   "Scan",
+   "Servicios",
+   "Enfoque",
+   "Contacto"
+  ],
+  "navCta": "Pedir cita",
+  "badge": "Nueva agencia de IA · Alicante",
+  "h1a": "LA IA QUE RESUELVE",
+  "h1b": "TUS PROBLEMAS REALES",
+  "heroSub": "KN Digital escucha a tu empresa, detecta lo que te frena y pone en marcha soluciones de IA adaptadas a tu realidad.",
+  "rotPre": "Automatizamos tus",
+  "rot": [
+   "tareas repetitivas",
+   "seguimientos a clientes",
+   "respuestas multilingües",
+   "publicaciones en redes"
+  ],
+  "cta1": "Lanzar el scan",
+  "cta2": "Pedir cita",
+  "pts": [
+   "El cliente primero",
+   "IA a medida",
+   "FR · ES · EN"
+  ],
+  "marq": [
+   "Auditoría de procesos",
+   "Automatización",
+   "Asistentes IA 24/7",
+   "Redes sociales",
+   "Prospección",
+   "Multilingüe"
+  ],
+  "scanKick": "El scan KN Digital",
+  "scanTitle": "DE LA FRICCIÓN A LA SOLUCIÓN",
+  "scanSub": "Tres cintas, tres empresas. El scan analiza sus bloqueos y las tres cintas salen en verde, con soluciones concretas. Elige una para ver sus resultados.",
+  "beltWord": "Cinta",
+  "stScan": "Análisis en curso",
+  "stDone": "Scan terminado",
+  "idle": "En espera",
+  "idleHint": "Selecciona esta cinta",
+  "scanning": "Analizando…",
+  "replay": "Repetir el scan",
+  "prev": "Cinta anterior",
+  "next": "Cinta siguiente",
+  "resTitle": "Resultados del scan",
+  "progress": "Analizando los procesos…",
+  "resNote": "Demostración interactiva: cada análisis real es propio de tu empresa.",
+  "resCta": "Pedir cita para mi scan",
+  "res": [
+   "Tareas repetitivas identificadas",
+   "Procesos mapeados y simplificados",
+   "Solución de IA adaptada a la actividad",
+   "Plan de acción claro, paso a paso"
+  ],
+  "lanes": [
+   {
+    "name": "Hostelería y turismo",
+    "p": [
+     "Reservas a mano",
+     "Mensajes en 3 idiomas",
+     "Reseñas sin seguimiento"
+    ],
+    "s": [
+     "Reservas centralizadas",
+     "Respuestas multilingües 24/7",
+     "Seguimiento de reseñas"
+    ]
+   },
+   {
+    "name": "Comercio local",
+    "p": [
+     "Pedidos a mano",
+     "Redes sin tiempo",
+     "Seguimientos olvidados"
+    ],
+    "s": [
+     "Pedidos sincronizados",
+     "Publicaciones automáticas",
+     "Seguimientos automáticos"
+    ]
+   },
+   {
+    "name": "Servicios y formación",
+    "p": [
+     "Presupuestos a mano",
+     "Datos dispersos",
+     "Prospección irregular"
+    ],
+    "s": [
+     "Documentos automáticos",
+     "Datos centralizados",
+     "Prospección ordenada"
+    ]
+   }
+  ],
+  "svcKick": "Lo que hacemos",
+  "svcTitle": "SOLUCIONES DE IA CONCRETAS",
+  "svcSub": "Cada servicio responde a un problema concreto, nunca a una moda.",
+  "svc": [
+   [
+    "Auditoría de procesos",
+    "Entender y rediseñar tus procesos antes de automatizar nada."
+   ],
+   [
+    "Automatización de tareas",
+    "Menos tareas repetitivas, más tiempo productivo para tu verdadero negocio."
+   ],
+   [
+    "Asistentes IA 24/7",
+    "Asistentes de voz y texto que atienden a tus clientes a cualquier hora."
+   ],
+   [
+    "Redes sociales con IA",
+    "Planifica y publica en Instagram, TikTok, YouTube y Facebook desde un solo lugar."
+   ],
+   [
+    "Ventas y prospección",
+    "Seguimiento de leads y recordatorios automáticos para no perder ninguna oportunidad."
+   ],
+   [
+    "Asistentes multilingües",
+    "Comunícate con tus clientes en su idioma, sin fronteras."
+   ]
+  ],
+  "apKick": "Nuestro enfoque",
+  "apTitle": "PRIMERO EL PROBLEMA, DESPUÉS LA IA",
+  "steps": [
+   [
+    "Escuchar",
+    "Empezamos por tu día a día, tus límites y tus objetivos. Sin jerga, sin soluciones prefabricadas."
+   ],
+   [
+    "Analizar",
+    "El scan KN Digital destaca lo que de verdad te frena: tareas repetidas, datos dispersos, retrasos."
+   ],
+   [
+    "Diseñar",
+    "Elegimos la IA adecuada a tu caso, nunca al revés. Simple, útil, pensada para tu día a día."
+   ],
+   [
+    "Acompañar",
+    "Puesta en marcha, formación y ajustes contigo, en el idioma que prefieras."
+   ]
+  ],
+  "stepWord": "Paso",
+  "prin": [
+   [
+    "Primero el problema",
+    "Partimos de tu necesidad real, nunca de una tecnología que vender."
+   ],
+   [
+    "A medida",
+    "Cada solución se adapta a tu actividad, tu equipo y tu ritmo."
+   ],
+   [
+    "Humano y claro",
+    "Herramientas sencillas y acompañamiento en español, francés o inglés."
+   ]
+  ],
+  "rdvKick": "Cita",
+  "rdvTitle": "HABLEMOS DE TU EMPRESA",
+  "rdvSub": "Una primera conversación para entender tu situación y ver si la IA puede ayudarte de verdad. Sin compromiso.",
+  "fName": "Nombre",
+  "fEmail": "Email",
+  "fCompany": "Empresa",
+  "fSector": "Sector",
+  "secs": [
+   "Hostelería y turismo",
+   "Comercio local",
+   "Servicios y formación",
+   "Otro"
+  ],
+  "fDay": "Día preferido",
+  "days": [
+   "Lun",
+   "Mar",
+   "Mié",
+   "Jue",
+   "Vie"
+  ],
+  "fSlot": "Momento",
+  "slots": [
+   "Mañana",
+   "Tarde"
+  ],
+  "fLang": "Idioma de la reunión",
+  "fMsg": "Tu necesidad en pocas palabras",
+  "phName": "Tu nombre",
+  "phEmail": "tu@empresa.com",
+  "phCompany": "Nombre de la empresa",
+  "phMsg": "Ej.: pierdo tiempo en…",
+  "submit": "Enviar mi solicitud",
+  "sentTitle": "¡Solicitud enviada!",
+  "sentText": "¡Gracias! Te respondemos muy pronto para confirmar tu cita.",
+  "again": "Nueva solicitud",
+  "where": "Alicante · Costa Blanca, España",
+  "footTag": "Soluciones de IA a medida para las empresas de Alicante.",
+  "copy": "© 2026 KN Digital",
+  "metaTitle": "KN Digital · Agencia de IA en Alicante | Soluciones de IA a medida",
+  "metaDesc": "KN Digital es una agencia de IA en Alicante. Escuchamos a tu empresa, detectamos lo que te frena y creamos soluciones de IA a medida. Pide tu cita sin compromiso.",
+  "menu": "Menú",
+  "consent": "Acepto que KN Digital use estos datos solo para responder a mi solicitud.",
+  "sending": "Enviando…",
+  "sendErr": "No se pudo enviar. Escríbenos a contact@kndigital.es.",
+  "mailNote": "Se ha abierto tu aplicación de correo con la solicitud lista. Si no se abre, escríbenos a contact@kndigital.es.",
+  "web": "kndigital.es",
+  "skip": "Ir al contenido",
+  "langLabel": "Idioma"
+ },
+ "en": {
+  "nav": [
+   "Scan",
+   "Services",
+   "Approach",
+   "Contact"
+  ],
+  "navCta": "Book a call",
+  "badge": "New AI agency · Alicante",
+  "h1a": "AI THAT SOLVES",
+  "h1b": "YOUR REAL PROBLEMS",
+  "heroSub": "KN Digital listens to your business, spots what slows you down and builds AI solutions that fit your reality.",
+  "rotPre": "We automate your",
+  "rot": [
+   "repetitive tasks",
+   "customer follow-ups",
+   "multilingual replies",
+   "social media posts"
+  ],
+  "cta1": "Run the scan",
+  "cta2": "Book a call",
+  "pts": [
+   "Client first",
+   "Tailor-made AI",
+   "FR · ES · EN"
+  ],
+  "marq": [
+   "Process audit",
+   "Automation",
+   "24/7 AI assistants",
+   "Social media",
+   "Prospecting",
+   "Multilingual"
+  ],
+  "scanKick": "The KN Digital scan",
+  "scanTitle": "FROM FRICTION TO SOLUTION",
+  "scanSub": "Three belts, three businesses. The scan analyses their blockers and all three belts come out green, with concrete solutions. Pick one to see its results.",
+  "beltWord": "Belt",
+  "stScan": "Scan in progress",
+  "stDone": "Scan complete",
+  "idle": "Waiting",
+  "idleHint": "Select this belt",
+  "scanning": "Analysing…",
+  "replay": "Run the scan again",
+  "prev": "Previous belt",
+  "next": "Next belt",
+  "resTitle": "Scan results",
+  "progress": "Analysing processes…",
+  "resNote": "Interactive demo: every real analysis is specific to your business.",
+  "resCta": "Book a call for my scan",
+  "res": [
+   "Repetitive tasks identified",
+   "Processes mapped and simplified",
+   "AI solution fitted to the business",
+   "Clear step-by-step action plan"
+  ],
+  "lanes": [
+   {
+    "name": "Hospitality & tourism",
+    "p": [
+     "Manual bookings",
+     "Messages in 3 languages",
+     "Reviews never followed up"
+    ],
+    "s": [
+     "Bookings in one place",
+     "24/7 multilingual replies",
+     "Review follow-up automated"
+    ]
+   },
+   {
+    "name": "Local retail",
+    "p": [
+     "Hand-typed orders",
+     "No time for socials",
+     "Forgotten follow-ups"
+    ],
+    "s": [
+     "Orders synced",
+     "Posts automated",
+     "Follow-ups automated"
+    ]
+   },
+   {
+    "name": "Services & training",
+    "p": [
+     "Quotes made by hand",
+     "Scattered data",
+     "Irregular prospecting"
+    ],
+    "s": [
+     "Documents generated",
+     "Data centralised",
+     "Structured prospecting"
+    ]
+   }
+  ],
+  "svcKick": "What we build",
+  "svcTitle": "CONCRETE AI SOLUTIONS",
+  "svcSub": "Every service answers a specific problem, never a trend.",
+  "svc": [
+   [
+    "Process audit",
+    "Understand and redesign your processes before automating anything."
+   ],
+   [
+    "Task automation",
+    "Fewer repetitive tasks, more productive time for your real business."
+   ],
+   [
+    "24/7 AI assistants",
+    "Voice and text assistants that answer your customers at any hour."
+   ],
+   [
+    "Social media with AI",
+    "Plan and publish on Instagram, TikTok, YouTube and Facebook from one place."
+   ],
+   [
+    "Sales & prospecting",
+    "Automated lead tracking and follow-ups so no opportunity slips away."
+   ],
+   [
+    "Multilingual assistants",
+    "Talk to your customers in their language, without borders."
+   ]
+  ],
+  "apKick": "Our approach",
+  "apTitle": "THE PROBLEM FIRST, AI SECOND",
+  "steps": [
+   [
+    "Listen",
+    "We start with your day-to-day, your constraints and your goals. No jargon, no off-the-shelf answers."
+   ],
+   [
+    "Analyse",
+    "The KN Digital scan shows what really holds you back: repeated tasks, scattered data, delays."
+   ],
+   [
+    "Design",
+    "We pick the AI that fits your case, never the other way round. Simple, useful, built for your routine."
+   ],
+   [
+    "Support",
+    "Setup, onboarding and adjustments with you, in the language you prefer."
+   ]
+  ],
+  "stepWord": "Step",
+  "prin": [
+   [
+    "Problem first",
+    "We start from your real need, never from a technology to sell."
+   ],
+   [
+    "Tailor-made",
+    "Every solution fits your activity, your team and your pace."
+   ],
+   [
+    "Human and clear",
+    "Simple tools and support in English, French or Spanish."
+   ]
+  ],
+  "rdvKick": "Book a call",
+  "rdvTitle": "LET'S TALK ABOUT YOUR BUSINESS",
+  "rdvSub": "A first conversation to understand your situation and see whether AI can really help. No commitment.",
+  "fName": "Name",
+  "fEmail": "Email",
+  "fCompany": "Company",
+  "fSector": "Sector",
+  "secs": [
+   "Hospitality & tourism",
+   "Local retail",
+   "Services & training",
+   "Other"
+  ],
+  "fDay": "Preferred day",
+  "days": [
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu",
+   "Fri"
+  ],
+  "fSlot": "Time of day",
+  "slots": [
+   "Morning",
+   "Afternoon"
+  ],
+  "fLang": "Language of the call",
+  "fMsg": "Your need in a few words",
+  "phName": "Your name",
+  "phEmail": "you@company.com",
+  "phCompany": "Company name",
+  "phMsg": "E.g. I lose time on…",
+  "submit": "Send my request",
+  "sentTitle": "Request sent!",
+  "sentText": "Thank you! We will get back to you very soon to confirm your appointment.",
+  "again": "New request",
+  "where": "Alicante · Costa Blanca, Spain",
+  "footTag": "Tailor-made AI solutions for Alicante businesses.",
+  "copy": "© 2026 KN Digital",
+  "metaTitle": "KN Digital · AI agency in Alicante | Tailor-made AI solutions",
+  "metaDesc": "KN Digital is an AI agency in Alicante. We listen to your business, spot what slows you down and build tailor-made AI solutions. Book a no-commitment call.",
+  "menu": "Menu",
+  "consent": "I agree that KN Digital uses this data only to answer my request.",
+  "sending": "Sending…",
+  "sendErr": "Could not send. Please write to contact@kndigital.es.",
+  "mailNote": "Your email app has opened with the request ready. If it didn't, write to us at contact@kndigital.es.",
+  "web": "kndigital.es",
+  "skip": "Skip to content",
+  "langLabel": "Language"
+ }
+};
+/* ================================================ */
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const CK = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const XX = '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const ARL = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+const ARR = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const S = { lang: 'es', lane: 1, phase: 'scan', step: 0, day: 1, slot: 0, fl: 'es', auto: true, wi: 0, sent: false };
+let T = COPY.es;
+const get = (o, path) => path.split('.').reduce((v, k) => (v == null ? v : v[k]), o);
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+
+/* ---------- i18n ---------- */
+function applyLang(lang, persist) {
+  if (!COPY[lang]) lang = 'es';
+  S.lang = lang; T = COPY[lang];
+  if (persist) { store.set('kn-lang', lang); }
+  document.documentElement.lang = lang;
+  document.title = T.metaTitle;
+  const md = $('meta[name="description"]'); if (md) md.setAttribute('content', T.metaDesc);
+  $$('[data-i18n]').forEach((el) => { const v = get(T, el.dataset.i18n); if (typeof v === 'string') el.textContent = v; });
+  $$('[data-ph]').forEach((el) => { el.placeholder = T[el.dataset.ph]; });
+  $$('[data-aria]').forEach((el) => { el.setAttribute('aria-label', T[el.dataset.aria]); });
+  $$('.lg').forEach((b) => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  buildRot(); buildMarq(); buildIgs(); buildScan(); buildServices(); buildApproach(); buildForm();
+  syncScan(); syncApproach();
+  if (S.sent) { $('#sentText').textContent = S.mailMode ? T.mailNote : T.sentText; }
+  observeReveals();
+}
+
+function buildRot() {
+  $('#rbox').innerHTML = T.rot.map((w, i) => '<span class="rw' + (i === S.wi % T.rot.length ? ' on' : '') + '">' + w + '</span>').join('');
+}
+function buildMarq() {
+  const one = T.marq.map((w) => '<span class="mi">' + w + '</span><span class="msep"></span>').join('');
+  $('#marq').innerHTML = one + one;
+}
+function buildIgs() {
+  $('#igs').innerHTML = T.svc.slice(0, 3).map((x, i) => '<article class="ig g' + (i + 1) + ' rv" style="--d:' + (0.3 + i * 0.1) + 's"><span class="pill">KN DIGITAL</span><h3>' + x[0] + '</h3><p>' + x[1] + '</p></article>').join('');
+}
+function buildServices() {
+  $('#svcGrid').innerHTML = T.svc.map((x, i) => '<article class="svc c' + (i + 1) + ' rv" style="--d:' + ((i % 3) * 0.08) + 's"><span class="sn">0' + (i + 1) + '</span><h3>' + x[0] + '</h3><p>' + x[1] + '</p></article>').join('');
+  $('#prins').innerHTML = T.prin.map((x, i) => '<div class="pr c' + (i + 1) + ' rv" style="--d:' + (i * 0.08) + 's"><h3>' + x[0] + '</h3><p>' + x[1] + '</p></div>').join('');
+}
+
+/* ---------- scan ---------- */
+function buildScan() {
+  $('#colIn').innerHTML = T.lanes.map((ln, i) => {
+    const n = i + 1;
+    return '<div class="belt in l' + n + '" data-lane="' + n + '"><button class="tag" type="button" data-lane="' + n + '"><span class="tn">' + n + '</span>' + ln.name + '</button>' +
+      ln.p.map((p, k) => '<div class="chip d' + k + '">' + p + '<span class="x">' + XX + '</span></div>').join('') + '<div class="track"></div></div>';
+  }).join('');
+  $('#colOut').innerHTML = T.lanes.map((ln, i) => {
+    const n = i + 1;
+    return '<div class="belt out l' + n + '" data-lane="' + n + '"><div class="okrow">' +
+      ln.s.map((s, k) => '<div class="ok e' + (k + 1) + '"><span class="ck">' + CK + '</span>' + s + '</div>').join('') +
+      '</div><div class="msg">' + T.scanning + '</div><div class="track"></div></div>';
+  }).join('');
+  $('#ctrl').innerHTML = '<button class="ic" type="button" data-nav="-1" aria-label="' + T.prev + '">' + ARL + '</button>' +
+    [1, 2, 3].map((n) => '<button class="dot" type="button" data-lane="' + n + '" aria-label="' + T.beltWord + ' ' + n + '">' + n + '</button>').join('') +
+    '<button class="ic" type="button" data-nav="1" aria-label="' + T.next + '">' + ARR + '</button>' +
+    '<button class="btn ghost small" type="button" data-replay>' + T.replay + '</button>';
+  $('#resItems').innerHTML = T.res.map((r) => '<div class="ri"><span class="ck">' + CK + '</span>' + r + '</div>').join('');
+}
+function syncScan() {
+  const done = S.phase === 'done';
+  $$('.belt.in').forEach((b) => b.classList.toggle('sel', +b.dataset.lane === S.lane));
+  $$('.belt.out').forEach((b) => { b.classList.toggle('sel', +b.dataset.lane === S.lane); b.classList.toggle('on', done); });
+  $$('.dot').forEach((d) => { const on = +d.dataset.lane === S.lane; d.classList.toggle('on', on); d.setAttribute('aria-pressed', on); });
+  const m = $('#machine'); m.classList.toggle('done', done); m.classList.toggle('run', !done);
+  const st = $('#mstat'); st.className = 'mstat ' + (done ? 'fin' : 'run'); st.textContent = done ? T.stDone : T.stScan;
+  $('#resRun').hidden = done; $('#resDone').hidden = !done;
+  $('#laneName').textContent = T.lanes[S.lane - 1].name;
+}
+let t1, t2, scanStarted = false;
+function runScan() {
+  clearTimeout(t1); clearTimeout(t2);
+  S.phase = 'scan'; syncScan();
+  t1 = setTimeout(() => { S.phase = 'done'; syncScan(); cycle(); }, 3400);
+}
+function cycle() {
+  clearTimeout(t2);
+  if (!S.auto || reduced) return;
+  t2 = setTimeout(() => { S.lane = (S.lane % 3) + 1; syncScan(); cycle(); }, 5200);
+}
+function pickLane(n) { clearTimeout(t2); S.auto = false; S.lane = n; syncScan(); }
+
+/* ---------- approach ---------- */
+function buildApproach() {
+  $('#steps').innerHTML = T.steps.map((x, i) => '<button class="step" type="button" data-step="' + i + '"><span class="sn">0' + (i + 1) + '</span>' + x[0] + '</button>').join('');
+  $('#stBars').innerHTML = T.steps.map(() => '<i></i>').join('');
+}
+function syncApproach(anim) {
+  $$('.step').forEach((b, i) => { const on = i === S.step; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  $$('#stBars i').forEach((b, i) => b.classList.toggle('on', S.step >= i));
+  $('#stBig').textContent = '0' + (S.step + 1);
+  $('#stLabel').textContent = T.stepWord + ' ' + (S.step + 1) + ' / 4';
+  $('#stTitle').textContent = T.steps[S.step][0];
+  $('#stDesc').textContent = T.steps[S.step][1];
+  if (anim) { const p = $('#stpanel'); p.classList.remove('swap'); void p.offsetWidth; p.classList.add('swap'); }
+}
+
+/* ---------- form ---------- */
+function chips(id, items, key) {
+  $('#' + id).innerHTML = items.map((t, i) => '<button class="cp' + (S[key] === (key === 'fl' ? ['es', 'fr', 'en'][i] : i) ? ' on' : '') + '" type="button" data-k="' + key + '" data-i="' + i + '">' + t + '</button>').join('');
+}
+function buildForm() {
+  const sel = $('#f-sec'); const cur = sel.selectedIndex;
+  sel.innerHTML = T.secs.map((o) => '<option>' + o + '</option>').join(''); sel.selectedIndex = Math.max(0, cur);
+  chips('chDay', T.days, 'day'); chips('chSlot', T.slots, 'slot'); chips('chLang', ['ES', 'FR', 'EN'], 'fl');
+}
+async function submitForm(e) {
+  e.preventDefault();
+  const f = e.target; const err = $('#ferr'); err.textContent = '';
+  if (!f.checkValidity()) { f.reportValidity(); return; }
+  if ($('[name="_gotcha"]').value) return;
+  const data = {
+    name: f.elements.name.value.trim(), email: f.elements.email.value.trim(), company: f.elements.company.value.trim(), sector: f.elements.sector.value,
+    day: T.days[S.day], slot: T.slots[S.slot], meeting_language: S.fl.toUpperCase(), message: f.elements.message.value.trim(), site_language: S.lang, source: 'kndigital.es'
+  };
+  if (CONFIG.formEndpoint) {
+    const btn = $('#submitBtn'); btn.disabled = true; const label = btn.firstElementChild.textContent; btn.firstElementChild.textContent = T.sending;
+    try {
+      const r = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+      if (!r.ok) throw new Error('bad status');
+      showSent(false);
+    } catch (x) { err.textContent = T.sendErr; }
+    btn.disabled = false; btn.firstElementChild.textContent = label;
+  } else {
+    const lines = [data.name + (data.company ? ' · ' + data.company : ''), data.email, '', T.fSector + ': ' + data.sector, T.fDay + ': ' + data.day + ' · ' + data.slot, T.fLang + ': ' + data.meeting_language, '', data.message];
+    const href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('KN Digital · ' + T.navCta + (data.company ? ' · ' + data.company : '')) + '&body=' + encodeURIComponent(lines.join('\n'));
+    showSent(true); window.location.href = href;
+  }
+}
+function showSent(mailMode) {
+  S.sent = true; S.mailMode = mailMode;
+  $('#rdvForm').hidden = true; $('#sent').hidden = false;
+  $('#sentText').textContent = mailMode ? T.mailNote : T.sentText;
+}
+
+/* ---------- reveal on scroll ---------- */
+let io;
+function observeReveals() {
+  if (!('IntersectionObserver' in window)) { $$('.rv').forEach((e) => e.classList.add('in')); return; }
+  if (!io) io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+  $$('.rv:not(.in)').forEach((e) => io.observe(e));
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('button, a'); if (!t) return;
+  if (t.matches('.lg')) applyLang(t.dataset.lang, true);
+  else if (t.matches('.tag, .dot')) pickLane(+t.dataset.lane);
+  else if (t.matches('[data-nav]')) pickLane(((S.lane - 1 + +t.dataset.nav + 3) % 3) + 1);
+  else if (t.matches('[data-replay]')) runScan();
+  else if (t.matches('.step')) { S.step = +t.dataset.step; syncApproach(true); }
+  else if (t.matches('.cp')) {
+    const k = t.dataset.k, i = +t.dataset.i; S[k] = k === 'fl' ? ['es', 'fr', 'en'][i] : i;
+    $$('.cp[data-k="' + k + '"]').forEach((b) => b.classList.toggle('on', b === t));
+  }
+  else if (t.id === 'again') { S.sent = false; $('#rdvForm').hidden = false; $('#sent').hidden = true; $('#rdvForm').reset(); }
+  if ($('#nav').classList.contains('open') && (t.closest('#links') )) closeMenu();
+});
+$('#rdvForm').addEventListener('submit', submitForm);
+const nav = $('#nav'), burger = $('#burger');
+function closeMenu() { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+burger.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+/* scroll: nav shadow, ribbon parallax, active link */
+const ribbons = $$('.rb');
+let ticking = false;
+function onScroll() {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 8);
+  if (!reduced && y < 1200) ribbons.forEach((r) => r.style.setProperty('--py', (y * parseFloat(r.dataset.sp)) + 'px'));
+  ticking = false;
+}
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+const links = $$('#links a[href^="#"]:not(.btn)');
+if ('IntersectionObserver' in window) {
+  const so = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+  ['scan', 'services', 'approche', 'rdv'].forEach((id) => so.observe(document.getElementById(id)));
+  const scanIO = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting && !scanStarted) { scanStarted = true; runScan(); scanIO.disconnect(); } }), { threshold: .25 });
+  scanIO.observe($('#scan'));
+} else { runScan(); }
+
+/* rotating words */
+setInterval(() => { S.wi = (S.wi + 1) % T.rot.length; $$('#rbox .rw').forEach((w, i) => w.classList.toggle('on', i === S.wi)); }, 2400);
+
+/* init */
+document.documentElement.classList.add('js');
+const qp = new URLSearchParams(location.search).get('lang');
+applyLang(COPY[qp] ? qp : (COPY[store.get('kn-lang')] ? store.get('kn-lang') : 'es'), false);
+S.fl = S.lang; buildForm();
+onScroll();
+</script>
+</body>
+</html>

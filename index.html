@@ -509,10 +509,9 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
 /* ============ CONFIGURACIÓN / CONFIG ============ */
 const CONFIG = {
   email: 'contact@kndigital.es',
-  // Para recibir las solicitudes sin abrir el correo del visitante, pega aquí el endpoint de tu servicio de formularios
-  // (Formspree: 'https://formspree.io/f/xxxxxxx'  ·  o un webhook de Make/n8n que acepte JSON).
-  // Si se deja vacío, el formulario abre el correo del visitante con la solicitud ya redactada.
-  formEndpoint: ''
+  // Las solicitudes de cita se envían a un webhook de Make, que las reenvía por correo a contact@kndigital.es.
+  // Si se deja vacío, el formulario abre el correo del visitante con la solicitud redactada (plan B).
+  formEndpoint: 'https://hook.eu1.make.com/7frd9ijumtnegx4i9nrefu4qyvazklym'
 };
 const COPY = {
  "fr": {
@@ -1270,7 +1269,7 @@ async function submitForm(e) {
   e.preventDefault();
   const f = e.target; const err = $('#ferr'); err.textContent = '';
   if (!f.checkValidity()) { f.reportValidity(); return; }
-  if ($('[name="_gotcha"]').value) return;
+  if ($('[name="_gotcha"]').value) { showSent(false); return; }
   const data = {
     name: f.elements.name.value.trim(), email: f.elements.email.value.trim(), company: f.elements.company.value.trim(), sector: f.elements.sector.value,
     day: T.days[S.day], slot: T.slots[S.slot], meeting_language: S.fl.toUpperCase(), message: f.elements.message.value.trim(), site_language: S.lang, source: 'kndigital.es'
@@ -1278,8 +1277,9 @@ async function submitForm(e) {
   if (CONFIG.formEndpoint) {
     const btn = $('#submitBtn'); btn.disabled = true; const label = btn.firstElementChild.textContent; btn.firstElementChild.textContent = T.sending;
     try {
-      const r = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
-      if (!r.ok) throw new Error('bad status');
+      const body = new URLSearchParams(data); body.append('_gotcha', f.elements._gotcha.value || '');
+      // Petición simple (sin preflight CORS): Make la recibe y responde 'Accepted'; la respuesta es opaca.
+      await fetch(CONFIG.formEndpoint, { method: 'POST', mode: 'no-cors', body });
       showSent(false);
     } catch (x) { err.textContent = T.sendErr; }
     btn.disabled = false; btn.firstElementChild.textContent = label;

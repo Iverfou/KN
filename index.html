@@ -259,6 +259,7 @@ h1 em::before{content:"";position:absolute;left:0;right:0;top:8%;bottom:-1%;back
 .fld{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;padding:0;margin:0}
 .fld label,.fld .lb{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .fi{height:52px;width:100%;padding:0 16px;border-radius:12px;background:#fffdf9;border:1.5px solid #d9cbb5;outline:none;transition:border-color .2s,box-shadow .2s}
+.hint{font-size:12.5px;line-height:1.35;color:var(--muted);font-weight:600}
 .fi:focus{border-color:var(--c-orange);box-shadow:0 0 0 3px rgba(255,122,47,.28)}
 .fi:user-invalid{border-color:var(--c-red)}
 select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%231b1526' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5l5.5 5.5 5.5-5.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
@@ -474,9 +475,10 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
           <div class="fld"><label for="f-email" data-i18n="fEmail"></label><input class="fi" id="f-email" name="email" type="email" autocomplete="email" required data-ph="phEmail"></div>
         </div>
         <div class="row2">
+          <div class="fld"><label for="f-tel" data-i18n="fPhone"></label><input class="fi" id="f-tel" name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+ \-]{7,22}" data-ph="phPhone"><small class="hint" data-i18n="phoneHint"></small></div>
           <div class="fld"><label for="f-co" data-i18n="fCompany"></label><input class="fi" id="f-co" name="company" type="text" autocomplete="organization" data-ph="phCompany"></div>
-          <div class="fld"><label for="f-sec" data-i18n="fSector"></label><select class="fi" id="f-sec" name="sector"></select></div>
         </div>
+        <div class="fld"><label for="f-sec" data-i18n="fSector"></label><select class="fi" id="f-sec" name="sector"></select></div>
         <div class="fld"><span class="lb" data-i18n="fDay"></span><div class="chips" id="chDay"></div></div>
         <div class="row2">
           <div class="fld"><span class="lb" data-i18n="fSlot"></span><div class="chips" id="chSlot"></div></div>
@@ -714,10 +716,13 @@ const COPY = {
   "where": "Alicante · Costa Blanca, Espagne",
   "footTag": "Solutions IA sur mesure pour les entreprises d'Alicante.",
   "copy": "© 2026 KN Digital",
+  "fPhone": "WhatsApp / Téléphone",
+  "phPhone": "+34 600 000 000",
+  "phoneHint": "Facultatif · On vous écrit sur WhatsApp pour confirmer le rendez-vous.",
   "metaTitle": "KN Digital · Agence IA à Alicante | Solutions IA sur mesure",
   "metaDesc": "KN Digital est une agence IA à Alicante. Nous écoutons votre entreprise, repérons ce qui vous freine et créons des solutions IA sur mesure. Prenez rendez-vous sans engagement.",
   "menu": "Menu",
-  "consent": "J'accepte que KN Digital utilise ces données uniquement pour répondre à ma demande.",
+  "consent": "J'accepte que KN Digital utilise ces données uniquement pour répondre à ma demande (et me contacter sur WhatsApp si je laisse mon numéro).",
   "sending": "Envoi…",
   "sendErr": "Envoi impossible. Écrivez-nous à contact@kndigital.es.",
   "mailNote": "Votre application e-mail s'est ouverte avec la demande prête. Sinon, écrivez-nous à contact@kndigital.es.",
@@ -925,10 +930,13 @@ const COPY = {
   "where": "Alicante · Costa Blanca, España",
   "footTag": "Soluciones de IA a medida para las empresas de Alicante.",
   "copy": "© 2026 KN Digital",
+  "fPhone": "WhatsApp / Teléfono",
+  "phPhone": "+34 600 000 000",
+  "phoneHint": "Opcional · Te escribiremos por WhatsApp para confirmar la cita.",
   "metaTitle": "KN Digital · Agencia de IA en Alicante | Soluciones de IA a medida",
   "metaDesc": "KN Digital es una agencia de IA en Alicante. Escuchamos a tu empresa, detectamos lo que te frena y creamos soluciones de IA a medida. Pide tu cita sin compromiso.",
   "menu": "Menú",
-  "consent": "Acepto que KN Digital use estos datos solo para responder a mi solicitud.",
+  "consent": "Acepto que KN Digital use estos datos solo para responder a mi solicitud (y contactarme por WhatsApp si dejo mi número).",
   "sending": "Enviando…",
   "sendErr": "No se pudo enviar. Escríbenos a contact@kndigital.es.",
   "mailNote": "Se ha abierto tu aplicación de correo con la solicitud lista. Si no se abre, escríbenos a contact@kndigital.es.",
@@ -1136,10 +1144,13 @@ const COPY = {
   "where": "Alicante · Costa Blanca, Spain",
   "footTag": "Tailor-made AI solutions for Alicante businesses.",
   "copy": "© 2026 KN Digital",
+  "fPhone": "WhatsApp / Phone",
+  "phPhone": "+34 600 000 000",
+  "phoneHint": "Optional · We'll message you on WhatsApp to confirm the call.",
   "metaTitle": "KN Digital · AI agency in Alicante | Tailor-made AI solutions",
   "metaDesc": "KN Digital is an AI agency in Alicante. We listen to your business, spot what slows you down and build tailor-made AI solutions. Book a no-commitment call.",
   "menu": "Menu",
-  "consent": "I agree that KN Digital uses this data only to answer my request.",
+  "consent": "I agree that KN Digital uses this data only to answer my request (and to contact me on WhatsApp if I leave my number).",
   "sending": "Sending…",
   "sendErr": "Could not send. Please write to contact@kndigital.es.",
   "mailNote": "Your email app has opened with the request ready. If it didn't, write to us at contact@kndigital.es.",
@@ -1271,7 +1282,7 @@ async function submitForm(e) {
   if (!f.checkValidity()) { f.reportValidity(); return; }
   if ($('[name="_gotcha"]').value) { showSent(false); return; }
   const data = {
-    name: f.elements.name.value.trim(), email: f.elements.email.value.trim(), company: f.elements.company.value.trim(), sector: f.elements.sector.value,
+    name: f.elements.name.value.trim(), email: f.elements.email.value.trim(), company: f.elements.company.value.trim(), phone: f.elements.phone.value.trim(), sector: f.elements.sector.value,
     day: T.days[S.day], slot: T.slots[S.slot], meeting_language: S.fl.toUpperCase(), message: f.elements.message.value.trim(), site_language: S.lang, source: 'kndigital.es'
   };
   if (CONFIG.formEndpoint) {
@@ -1284,7 +1295,7 @@ async function submitForm(e) {
     } catch (x) { err.textContent = T.sendErr; }
     btn.disabled = false; btn.firstElementChild.textContent = label;
   } else {
-    const lines = [data.name + (data.company ? ' · ' + data.company : ''), data.email, '', T.fSector + ': ' + data.sector, T.fDay + ': ' + data.day + ' · ' + data.slot, T.fLang + ': ' + data.meeting_language, '', data.message];
+    const lines = [data.name + (data.company ? ' · ' + data.company : ''), data.email, data.phone ? 'WhatsApp: ' + data.phone : '', '', T.fSector + ': ' + data.sector, T.fDay + ': ' + data.day + ' · ' + data.slot, T.fLang + ': ' + data.meeting_language, '', data.message];
     const href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('KN Digital · ' + T.navCta + (data.company ? ' · ' + data.company : '')) + '&body=' + encodeURIComponent(lines.join('\n'));
     showSent(true); window.location.href = href;
   }

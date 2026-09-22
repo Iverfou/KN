@@ -48,6 +48,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer;border:0;background:none;padding:0}
 img{display:block;max-width:100%}
 section[id]{scroll-margin-top:72px}
+#rdv-form{scroll-margin-top:88px}
 :focus-visible{outline:3px solid var(--c-orange);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1240px,calc(100% - 2*var(--gut)));margin-inline:auto}
 .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--dark);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700}
@@ -144,6 +145,7 @@ h1 em::before{content:"";position:absolute;left:0;right:0;top:8%;bottom:-1%;back
 /* ---------- scan ---------- */
 .scan{background:#fff}
 .rig{display:grid;grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr);column-gap:30px;margin-top:48px}
+.swipeHint{display:none;align-items:center;justify-content:center;gap:6px;margin:10px 0 0;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .col{display:flex;flex-direction:column;gap:18px}
 .belt{position:relative;height:150px;overflow:hidden;border-radius:20px;background:#efe3d1;border:1px solid #e0cfb6;transition:border-color .3s,box-shadow .3s}
 .belt.in.sel{border-color:var(--c-orange);box-shadow:0 0 0 3px rgba(255,122,47,.3)}
@@ -350,8 +352,12 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
   .stbig{font-size:170px}
   .cta .btn{flex:1 1 100%}
   .ctrl .btn{margin-left:0;flex:1 1 100%}
+  .rig{display:flex;flex-direction:row;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:100%;padding-bottom:4px}
+  .rig::-webkit-scrollbar{display:none}
+  .rig .col,.rig .machine{flex:0 0 84%;scroll-snap-align:center}
   .rig .belt:not(.sel){display:none}
   .belt.out{height:auto;min-height:218px;padding:16px 12px 44px}
+  .swipeHint{display:flex}
   .okrow{position:static;flex-direction:column;gap:8px}
   .ok{height:46px}
   .machine{height:130px}
@@ -385,14 +391,14 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
       <a href="#services" data-i18n="nav.1">Servicios</a>
       <a href="#approche" data-i18n="nav.2">Enfoque</a>
       <a href="#rdv" data-i18n="nav.3">Contacto</a>
-      <a class="btn btn-primary small menu-cta" href="#rdv" data-i18n="navCta">Pedir cita</a>
+      <a class="btn btn-primary small menu-cta" href="#rdv-form" data-i18n="navCta">Pedir cita</a>
     </nav>
     <div class="langs" role="group" data-aria="langLabel" aria-label="Idioma">
       <button class="lg" type="button" data-lang="es" aria-label="Español">ES</button>
       <button class="lg" type="button" data-lang="fr" aria-label="Français">FR</button>
       <button class="lg" type="button" data-lang="en" aria-label="English">EN</button>
     </div>
-    <a class="btn btn-primary nav-cta" href="#rdv" data-i18n="navCta">Pedir cita</a>
+    <a class="btn btn-primary nav-cta" href="#rdv-form" data-i18n="navCta">Pedir cita</a>
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" data-aria="menu" aria-label="Menú"><i></i></button>
   </div>
 </header>
@@ -406,7 +412,7 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
       <h1 class="rv" style="--d:.08s"><span data-i18n="h1a">NO ADAPTAMOS TU NEGOCIO A LA IA</span><em data-i18n="h1b">ADAPTAMOS LA IA A TU NEGOCIO</em></h1>
       <p class="sub rv" style="--d:.16s" data-i18n="heroSub"></p>
       <div class="rot rv" style="--d:.22s" aria-live="off"><span class="rp" data-i18n="rotPre"></span><span class="rbox" id="rbox"></span></div>
-      <div class="cta rv" style="--d:.28s"><a class="btn btn-primary" href="#scan"><span data-i18n="cta1"></span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#rdv" data-i18n="cta2"></a></div>
+      <div class="cta rv" style="--d:.28s"><a class="btn btn-primary" href="#scan"><span data-i18n="cta1"></span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#rdv-form" data-i18n="cta2"></a></div>
     </div>
     <div class="igs" id="igs"></div>
   </div>
@@ -426,11 +432,12 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
       </div>
       <div class="col" id="colOut"></div>
     </div>
+    <p class="swipeHint" data-i18n="swipeHint"></p>
     <div class="ctrl" id="ctrl"></div>
     <div class="results" aria-live="polite">
       <div class="res-run" id="resRun"><div class="pbar"><i></i></div><p data-i18n="progress"></p></div>
       <div class="res-done" id="resDone" hidden>
-        <div class="rl"><div class="rtitle"><span class="ck big"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="resTitle"></span></div><div class="rname" id="laneName"></div><p class="rnote" data-i18n="resNote"></p><a class="btn btn-primary small" href="#rdv" data-i18n="resCta"></a></div>
+        <div class="rl"><div class="rtitle"><span class="ck big"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="resTitle"></span></div><div class="rname" id="laneName"></div><p class="rnote" data-i18n="resNote"></p><a class="btn btn-primary small" href="#rdv-form" data-i18n="resCta"></a></div>
         <div class="rr" id="resItems"></div>
       </div>
     </div>
@@ -468,7 +475,7 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
         <li><i></i><a href="https://kndigital.es">kndigital.es</a></li>
       </ul>
     </div>
-    <div class="card form rv" style="--d:.1s">
+    <div class="card form rv" id="rdv-form" style="--d:.1s">
       <form id="rdvForm" novalidate>
         <div class="row2">
           <div class="fld"><label for="f-name" data-i18n="fName"></label><input class="fi" id="f-name" name="name" type="text" autocomplete="name" required data-ph="phName"></div>
@@ -728,7 +735,8 @@ const COPY = {
   "mailNote": "Votre application e-mail s'est ouverte avec la demande prête. Sinon, écrivez-nous à contact@kndigital.es.",
   "web": "kndigital.es",
   "skip": "Aller au contenu",
-  "langLabel": "Langue"
+  "langLabel": "Langue",
+  "swipeHint": "Glissez pour voir les 3 étapes →"
  },
  "es": {
   "nav": [
@@ -942,7 +950,8 @@ const COPY = {
   "mailNote": "Se ha abierto tu aplicación de correo con la solicitud lista. Si no se abre, escríbenos a contact@kndigital.es.",
   "web": "kndigital.es",
   "skip": "Ir al contenido",
-  "langLabel": "Idioma"
+  "langLabel": "Idioma",
+  "swipeHint": "Desliza para ver los 3 pasos →"
  },
  "en": {
   "nav": [
@@ -1156,7 +1165,8 @@ const COPY = {
   "mailNote": "Your email app has opened with the request ready. If it didn't, write to us at contact@kndigital.es.",
   "web": "kndigital.es",
   "skip": "Skip to content",
-  "langLabel": "Language"
+  "langLabel": "Language",
+  "swipeHint": "Swipe to see the 3 steps →"
  }
 };
 /* ================================================ */

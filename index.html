@@ -266,6 +266,9 @@ h1 em::before{content:"";position:absolute;left:0;right:0;top:8%;bottom:-1%;back
 .fi:user-invalid{border-color:var(--c-red)}
 select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%231b1526' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5l5.5 5.5 5.5-5.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
 .fi.ta{height:100px;padding:14px 16px;resize:vertical;min-height:100px;line-height:1.4}
+.fld.book{gap:6px;padding:14px 16px;border-radius:14px;background:#fffdf9;border:1.5px dashed #d9cbb5}
+.bookHint{font-size:12.5px;line-height:1.4;color:var(--muted);font-weight:600;margin:0 0 4px}
+.bookBtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .cp{height:44px;padding:0 16px;border-radius:999px;font-weight:800;font-size:15px;border:1.5px solid #d9cbb5;background:#fff;transition:all .2s}
 .cp:hover{transform:translateY(-1px)}
@@ -486,10 +489,11 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
           <div class="fld"><label for="f-co" data-i18n="fCompany"></label><input class="fi" id="f-co" name="company" type="text" autocomplete="organization" data-ph="phCompany"></div>
         </div>
         <div class="fld"><label for="f-sec" data-i18n="fSector"></label><select class="fi" id="f-sec" name="sector"></select></div>
-        <div class="fld"><span class="lb" data-i18n="fDay"></span><div class="chips" id="chDay"></div></div>
-        <div class="row2">
-          <div class="fld"><span class="lb" data-i18n="fSlot"></span><div class="chips" id="chSlot"></div></div>
-          <div class="fld"><span class="lb" data-i18n="fLang"></span><div class="chips" id="chLang"></div></div>
+        <div class="fld"><span class="lb" data-i18n="fLang"></span><div class="chips" id="chLang"></div></div>
+        <div class="fld book">
+          <span class="lb" data-i18n="fBook"></span>
+          <p class="bookHint" data-i18n="bookHint"></p>
+          <a class="btn btn-primary wide bookBtn" href="https://calendar.app.google/P71MDUVEK7TbSjYQA" target="_blank" rel="noopener"><span data-i18n="bookBtn"></span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
         <div class="fld"><label for="f-msg" data-i18n="fMsg"></label><textarea class="fi ta" id="f-msg" name="message" data-ph="phMsg"></textarea></div>
         <div class="hp" aria-hidden="true"><label>Web <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
@@ -736,7 +740,10 @@ const COPY = {
   "web": "kndigital.es",
   "skip": "Aller au contenu",
   "langLabel": "Langue",
-  "swipeHint": "Glissez pour voir les 3 étapes →"
+  "swipeHint": "Glissez pour voir les 3 étapes →",
+  "fBook": "Choisissez votre créneau",
+  "bookHint": "Réservez directement dans notre agenda : choisissez le jour et l'heure qui vous arrangent.",
+  "bookBtn": "Voir les disponibilités"
  },
  "es": {
   "nav": [
@@ -951,7 +958,10 @@ const COPY = {
   "web": "kndigital.es",
   "skip": "Ir al contenido",
   "langLabel": "Idioma",
-  "swipeHint": "Desliza para ver los 3 pasos →"
+  "swipeHint": "Desliza para ver los 3 pasos →",
+  "fBook": "Elige tu horario",
+  "bookHint": "Reserva directamente en nuestra agenda: eliges el día y la hora que te vayan bien.",
+  "bookBtn": "Ver horarios disponibles"
  },
  "en": {
   "nav": [
@@ -1166,7 +1176,10 @@ const COPY = {
   "web": "kndigital.es",
   "skip": "Skip to content",
   "langLabel": "Language",
-  "swipeHint": "Swipe to see the 3 steps →"
+  "swipeHint": "Swipe to see the 3 steps →",
+  "fBook": "Pick your time slot",
+  "bookHint": "Book straight into our calendar: choose the day and time that suit you.",
+  "bookBtn": "See available times"
  }
 };
 /* ================================================ */
@@ -1284,7 +1297,7 @@ function chips(id, items, key) {
 function buildForm() {
   const sel = $('#f-sec'); const cur = sel.selectedIndex;
   sel.innerHTML = T.secs.map((o) => '<option>' + o + '</option>').join(''); sel.selectedIndex = Math.max(0, cur);
-  chips('chDay', T.days, 'day'); chips('chSlot', T.slots, 'slot'); chips('chLang', ['ES', 'FR', 'EN'], 'fl');
+  chips('chLang', ['ES', 'FR', 'EN'], 'fl');
 }
 async function submitForm(e) {
   e.preventDefault();
@@ -1293,7 +1306,7 @@ async function submitForm(e) {
   if ($('[name="_gotcha"]').value) { showSent(false); return; }
   const data = {
     name: f.elements.name.value.trim(), email: f.elements.email.value.trim(), company: f.elements.company.value.trim(), phone: f.elements.phone.value.trim(), sector: f.elements.sector.value,
-    day: T.days[S.day], slot: T.slots[S.slot], meeting_language: S.fl.toUpperCase(), message: f.elements.message.value.trim(), site_language: S.lang, source: 'kndigital.es'
+    meeting_language: S.fl.toUpperCase(), message: f.elements.message.value.trim(), site_language: S.lang, source: 'kndigital.es'
   };
   if (CONFIG.formEndpoint) {
     const btn = $('#submitBtn'); btn.disabled = true; const label = btn.firstElementChild.textContent; btn.firstElementChild.textContent = T.sending;
@@ -1305,7 +1318,7 @@ async function submitForm(e) {
     } catch (x) { err.textContent = T.sendErr; }
     btn.disabled = false; btn.firstElementChild.textContent = label;
   } else {
-    const lines = [data.name + (data.company ? ' · ' + data.company : ''), data.email, data.phone ? 'WhatsApp: ' + data.phone : '', '', T.fSector + ': ' + data.sector, T.fDay + ': ' + data.day + ' · ' + data.slot, T.fLang + ': ' + data.meeting_language, '', data.message];
+    const lines = [data.name + (data.company ? ' · ' + data.company : ''), data.email, data.phone ? 'WhatsApp: ' + data.phone : '', '', T.fSector + ': ' + data.sector, T.fLang + ': ' + data.meeting_language, '', data.message];
     const href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('KN Digital · ' + T.navCta + (data.company ? ' · ' + data.company : '')) + '&body=' + encodeURIComponent(lines.join('\n'));
     showSent(true); window.location.href = href;
   }

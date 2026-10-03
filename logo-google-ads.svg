@@ -1,31 +1,30 @@
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <!-- White background for Google Ads -->
+  <!-- White background -->
   <rect width="512" height="512" fill="#FFFFFF"/>
 
-  <!-- Subtle shadow/border -->
-  <circle cx="256" cy="256" r="250" fill="none" stroke="#E61E78" stroke-width="2" opacity="0.2"/>
-
-  <!-- Main KN Logo Group -->
+  <!-- KN Logo - Clean geometric design -->
   <g transform="translate(256, 256)">
-    <!-- K Letter (Blue) -->
-    <rect x="-160" y="-100" width="70" height="200" fill="#0055FF" rx="10"/>
+    <!-- K LETTER -->
+    <!-- K vertical bar (Blue) -->
+    <rect x="-160" y="-110" width="55" height="220" fill="#0055FF" rx="8"/>
 
-    <!-- K Diagonal strokes -->
-    <polygon points="-90,-100 50,50 -90,100" fill="#0055FF"/>
-    <polygon points="-90,-100 20,30 -90,50" fill="#00E5FF" opacity="0.9"/>
+    <!-- K top diagonal (Magenta) -->
+    <polygon points="-105,-110 -35,-35 -105,0" fill="#E61E78"/>
 
-    <!-- N Left (Magenta) -->
-    <rect x="20" y="-100" width="70" height="200" fill="#E61E78" rx="10"/>
+    <!-- K bottom diagonal (Magenta) -->
+    <polygon points="-105,0 -35,75 -105,110" fill="#E61E78"/>
 
-    <!-- N Right (Orange) -->
-    <rect x="110" y="-100" width="70" height="200" fill="#FFA500" rx="10"/>
+    <!-- N LETTER -->
+    <!-- N left vertical (Magenta) -->
+    <rect x="-20" y="-110" width="55" height="220" fill="#E61E78" rx="8"/>
 
-    <!-- N Connector Diagonal (Green) -->
-    <polygon points="20,-100 110,100 40,100 20,0" fill="#00DD44"/>
+    <!-- N right vertical (Orange) -->
+    <rect x="70" y="-110" width="55" height="220" fill="#FFA500" rx="8"/>
 
-    <!-- Highlight effects -->
-    <rect x="-160" y="-100" width="70" height="30" fill="#0055FF" opacity="0.15" rx="10"/>
-    <rect x="20" y="-100" width="70" height="30" fill="#E61E78" opacity="0.15" rx="10"/>
-    <rect x="110" y="-100" width="70" height="30" fill="#FFA500" opacity="0.15" rx="10"/>
+    <!-- N diagonal connector (Green) - creates the diagonal stripe -->
+    <polygon points="-20,-110 125,110 70,110 -20,55" fill="#00DD44"/>
+
+    <!-- Accent: small blue bar on diagonal for visual interest -->
+    <rect x="35" y="-40" width="20" height="70" fill="#00E5FF" rx="4" transform="rotate(-45 45 5)"/>
   </g>
 </svg>

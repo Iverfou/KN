@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#0A0B0E"/>
+
+  <!-- KN Logo with vibrant colors -->
+  <g transform="translate(200, 200)">
+    <!-- K (Blue) -->
+    <rect x="-140" y="-80" width="60" height="160" fill="#0055FF" rx="8"/>
+
+    <!-- Diagonal part of K -->
+    <polygon points="-80,-80 -20,0 -80,80" fill="#0055FF"/>
+
+    <!-- N Left part (Magenta) -->
+    <rect x="-30" y="-80" width="60" height="160" fill="#E61E78" rx="8"/>
+
+    <!-- N Right part (Orange) -->
+    <rect x="40" y="-80" width="60" height="160" fill="#FFA500" rx="8"/>
+
+    <!-- N Diagonal connector -->
+    <polygon points="-30,-80 40,80 0,80 -30,0" fill="#00DD44"/>
+  </g>
+
+  <!-- Accent border -->
+  <rect x="8" y="8" width="384" height="384" fill="none" stroke="#00E5FF" stroke-width="2"/>
+</svg>

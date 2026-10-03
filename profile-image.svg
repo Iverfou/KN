@@ -1,0 +1,56 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="512" height="512" fill="#0A0B0E"/>
+
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#12141C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0B0E;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="knGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0055FF;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#E61E78;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00DD44;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <!-- Main KN Logo Group -->
+  <g transform="translate(256, 256)">
+    <!-- K Letter (Blue) -->
+    <rect x="-160" y="-100" width="70" height="200" fill="#0055FF" rx="10"/>
+
+    <!-- K Diagonal strokes -->
+    <polygon points="-90,-100 50,50 -90,100" fill="#0055FF"/>
+    <polygon points="-90,-100 20,30 -90,50" fill="#00E5FF" opacity="0.8"/>
+
+    <!-- N Left (Magenta) -->
+    <rect x="20" y="-100" width="70" height="200" fill="#E61E78" rx="10"/>
+
+    <!-- N Right (Orange) -->
+    <rect x="110" y="-100" width="70" height="200" fill="#FFA500" rx="10"/>
+
+    <!-- N Connector Diagonal (Green) -->
+    <polygon points="20,-100 110,100 40,100 20,0" fill="#00DD44"/>
+
+    <!-- Highlight effects -->
+    <rect x="-160" y="-100" width="70" height="30" fill="#00E5FF" opacity="0.3" rx="10"/>
+    <rect x="20" y="-100" width="70" height="30" fill="#FF6EC7" opacity="0.3" rx="10"/>
+    <rect x="110" y="-100" width="70" height="30" fill="#FFD700" opacity="0.3" rx="10"/>
+  </g>
+
+  <!-- Border accent -->
+  <circle cx="256" cy="256" r="250" fill="none" stroke="#00E5FF" stroke-width="3" opacity="0.5"/>
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#E61E78" stroke-width="1" opacity="0.3"/>
+
+  <!-- Decorative corners -->
+  <g opacity="0.2">
+    <circle cx="40" cy="40" r="8" fill="#00E5FF"/>
+    <circle cx="472" cy="40" r="8" fill="#E61E78"/>
+    <circle cx="40" cy="472" r="8" fill="#FFA500"/>
+    <circle cx="472" cy="472" r="8" fill="#00DD44"/>
+  </g>
+</svg>

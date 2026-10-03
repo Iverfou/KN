@@ -2,12 +2,27 @@
   <!-- White background -->
   <rect width="512" height="512" fill="#FFFFFF"/>
 
-  <!-- Simple KN Letters with bold colors -->
-  <g transform="translate(256, 256) scale(1.5)">
-    <!-- K in Blue -->
-    <text x="-80" y="40" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#0055FF">K</text>
+  <!-- K: Blue and Magenta -->
+  <g transform="translate(100, 256)">
+    <!-- K vertical bar - Blue -->
+    <rect x="0" y="-120" width="70" height="240" fill="#0055FF" rx="8"/>
 
-    <!-- N in Magenta -->
-    <text x="20" y="40" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#E61E78">N</text>
+    <!-- K diagonal top - Magenta -->
+    <polygon points="70,-120 170,-50 70,-20" fill="#E61E78"/>
+
+    <!-- K diagonal bottom - Magenta -->
+    <polygon points="70,20 170,90 70,120" fill="#E61E78"/>
+  </g>
+
+  <!-- N: Orange - Green - Orange -->
+  <g transform="translate(280, 256)">
+    <!-- N left bar - Orange -->
+    <rect x="0" y="-120" width="70" height="240" fill="#FFA500" rx="8"/>
+
+    <!-- N right bar - Orange -->
+    <rect x="140" y="-120" width="70" height="240" fill="#FFA500" rx="8"/>
+
+    <!-- N diagonal - Green -->
+    <polygon points="70,-120 210,120 140,120 0,-50" fill="#00DD44"/>
   </g>
 </svg>

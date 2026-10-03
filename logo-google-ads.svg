@@ -2,29 +2,12 @@
   <!-- White background -->
   <rect width="512" height="512" fill="#FFFFFF"/>
 
-  <!-- KN Logo - Clean geometric design -->
-  <g transform="translate(256, 256)">
-    <!-- K LETTER -->
-    <!-- K vertical bar (Blue) -->
-    <rect x="-160" y="-110" width="55" height="220" fill="#0055FF" rx="8"/>
+  <!-- Simple KN Letters with bold colors -->
+  <g transform="translate(256, 256) scale(1.5)">
+    <!-- K in Blue -->
+    <text x="-80" y="40" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#0055FF">K</text>
 
-    <!-- K top diagonal (Magenta) -->
-    <polygon points="-105,-110 -35,-35 -105,0" fill="#E61E78"/>
-
-    <!-- K bottom diagonal (Magenta) -->
-    <polygon points="-105,0 -35,75 -105,110" fill="#E61E78"/>
-
-    <!-- N LETTER -->
-    <!-- N left vertical (Magenta) -->
-    <rect x="-20" y="-110" width="55" height="220" fill="#E61E78" rx="8"/>
-
-    <!-- N right vertical (Orange) -->
-    <rect x="70" y="-110" width="55" height="220" fill="#FFA500" rx="8"/>
-
-    <!-- N diagonal connector (Green) - creates the diagonal stripe -->
-    <polygon points="-20,-110 125,110 70,110 -20,55" fill="#00DD44"/>
-
-    <!-- Accent: small blue bar on diagonal for visual interest -->
-    <rect x="35" y="-40" width="20" height="70" fill="#00E5FF" rx="4" transform="rotate(-45 45 5)"/>
+    <!-- N in Magenta -->
+    <text x="20" y="40" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#E61E78">N</text>
   </g>
 </svg>

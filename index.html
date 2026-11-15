@@ -1335,10 +1335,10 @@ function buildForm() {
   sel.innerHTML = T.secs.map((o) => '<option>' + o + '</option>').join(''); sel.selectedIndex = Math.max(0, cur);
   chips('chLang', ['ES', 'FR', 'EN'], 'fl');
 }
-/* Black Friday 16-27 nov 2026 (hora de Madrid): bandeau + código BF30 precargado; fuera de esas fechas no aparece nada. */
+/* Black Friday 15-27 nov 2026 (hora de Madrid): bandeau + código BF30 precargado; fuera de esas fechas no aparece nada. */
 function isFair() {
   const d = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
-  return d >= '2026-11-16' && d <= '2026-11-27';
+  return d >= '2026-11-15' && d <= '2026-11-27';
 }
 function initFair() {
   const on = isFair();

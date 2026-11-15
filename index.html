@@ -56,7 +56,7 @@ section[id]{scroll-margin-top:72px}
 .topbar{position:fixed;left:0;right:0;top:0;height:6px;z-index:60;background:linear-gradient(90deg,#7a4dff,#f0189b 45%,#ff8a00)}
 
 /* ---------- nav ---------- */
-.bfbar{position:relative;z-index:55;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:14px 16px 12px;background:#0d0d0d;color:#fff9f0;font-size:14.5px;line-height:1.35;text-align:center;border-bottom:8px solid;border-image:repeating-linear-gradient(135deg,#d9481f 0 12px,#0d0d0d 12px 24px) 8}.bfbar[hidden]{display:none}.bfbar b{background:#3dae5a;color:#0d0d0d;padding:3px 10px;font-weight:800;letter-spacing:.04em}.bfbar a{display:inline-flex;align-items:center;min-height:40px;padding:6px 18px;border-radius:999px;background:#fff9f0;color:#0d0d0d;font-weight:800;text-decoration:none}
+.bfbar{position:relative;z-index:55;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:14px 16px 12px;background:#0d0d0d;color:#fff9f0;font-size:14.5px;line-height:1.35;text-align:center;border-bottom:8px solid;border-image:repeating-linear-gradient(135deg,#d9481f 0 12px,#0d0d0d 12px 24px) 8}.bfbar[hidden]{display:none}.bfbar b{background:#3dae5a;color:#0d0d0d;padding:3px 10px;font-weight:800;letter-spacing:.04em}.bfbar .bfred{color:#ff4b3e;font-weight:900;font-size:16px;letter-spacing:.03em;text-transform:uppercase}.bfbar a{display:inline-flex;align-items:center;min-height:40px;padding:6px 18px;border-radius:999px;background:#fff9f0;color:#0d0d0d;font-weight:800;text-decoration:none}
 .bfdeco{position:absolute;inset:0;pointer-events:none;display:none}.bfdeco[hidden]{display:none}
 @media(min-width:1100px){.bfdeco{display:block}}
 .bfi{position:absolute;width:64px;height:64px;display:grid;place-items:center;background:#fff;border:3px solid #0d0d0d;border-radius:16px;box-shadow:5px 5px 0 var(--c);color:#0d0d0d;--r:0deg;transform:rotate(var(--r));animation:bfFloat 7s ease-in-out infinite;animation-delay:var(--dl,0s)}
@@ -400,7 +400,7 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
 <body>
 <a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
 <div class="topbar" aria-hidden="true"></div>
-<div class="bfbar" id="bfBar" hidden><b data-i18n="bfTag"></b><span data-i18n="bfText"></span><a href="#rdv-form" data-i18n="bfCta"></a></div>
+<div class="bfbar" id="bfBar" hidden><b data-i18n="bfTag"></b><strong class="bfred" data-i18n="bfFree"></strong><span data-i18n="bfText"></span><a href="#rdv-form" data-i18n="bfCta"></a></div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
@@ -740,13 +740,14 @@ const COPY = {
   "phEmail": "vous@entreprise.com",
   "phCompany": "Nom de l'entreprise",
   "phMsg": "Ex. : je perds du temps sur…",
-  "fairTitle": "Offre Black Friday : -30 % activé",
-  "fairText": "Votre code BF30 est déjà rempli. Valable jusqu'au 27 novembre 2026, sur le tarif du service (hors mensualités).",
+  "fairTitle": "Offre Black Friday activée",
+  "fairText": "Votre code BF30 est déjà rempli. Consultation gratuite ; la remise s'applique à la mise en place, à la signature du contrat (-30 % pour les 5 premières signatures, -20 % ensuite), jusqu'au 27 novembre 2026. Hors maintenance et mensualités.",
   "fPromo": "Code promo",
   "phPromo": "BF30",
-  "sentFair": "Merci ! Votre -30 % Black Friday est réservé. Nous revenons vers vous très vite pour confirmer votre rendez-vous.",
+  "sentFair": "Merci ! Votre consultation gratuite est réservée. Nous revenons vers vous très vite pour confirmer votre rendez-vous.",
   "bfTag": "BLACK FRIDAY -30 %",
-  "bfText": "Automatisation sur mesure en 48 h · Offre jusqu'au 27/11",
+  "bfFree": "Consultation gratuite",
+  "bfText": "-30 % pour les 5 premières signatures · -20 % ensuite · jusqu'au 27/11",
   "bfCta": "Prendre RDV",
   "submit": "Envoyer ma demande",
   "sentTitle": "Demande envoyée !",
@@ -966,13 +967,14 @@ const COPY = {
   "phEmail": "tu@empresa.com",
   "phCompany": "Nombre de la empresa",
   "phMsg": "Ej.: pierdo tiempo en…",
-  "fairTitle": "Oferta Black Friday: -30 % activado",
-  "fairText": "Tu código BF30 ya está puesto. Válido hasta el 27 de noviembre de 2026, sobre la tarifa del servicio (no incluye cuotas mensuales).",
+  "fairTitle": "Oferta Black Friday activada",
+  "fairText": "Tu código BF30 ya está puesto. Consulta gratuita; el descuento se aplica a la implantación al firmar el contrato (-30 % a las 5 primeras firmas, -20 % después), hasta el 27 de noviembre de 2026. No incluye mantenimiento ni cuotas mensuales.",
   "fPromo": "Código promocional",
   "phPromo": "BF30",
-  "sentFair": "¡Gracias! Tu -30 % Black Friday queda reservado. Te respondemos muy pronto para confirmar tu cita.",
+  "sentFair": "¡Gracias! Tu consulta gratuita queda reservada. Te respondemos muy pronto para confirmar tu cita.",
   "bfTag": "BLACK FRIDAY -30 %",
-  "bfText": "Automatización a medida en 48 h · Oferta hasta el 27/11",
+  "bfFree": "Consulta gratuita",
+  "bfText": "-30 % a las 5 primeras firmas · -20 % después · hasta el 27/11",
   "bfCta": "Pedir cita",
   "submit": "Enviar mi solicitud",
   "sentTitle": "¡Solicitud enviada!",
@@ -1192,13 +1194,14 @@ const COPY = {
   "phEmail": "you@company.com",
   "phCompany": "Company name",
   "phMsg": "E.g. I lose time on…",
-  "fairTitle": "Black Friday offer: -30% activated",
-  "fairText": "Your BF30 code is already filled in. Valid until November 27, 2026, on the service fee (monthly fees not included).",
+  "fairTitle": "Black Friday offer activated",
+  "fairText": "Your BF30 code is already filled in. Free consultation; the discount applies to the setup when you sign the contract (-30% for the first 5 signatures, -20% after), until November 27, 2026. Maintenance and monthly fees not included.",
   "fPromo": "Promo code",
   "phPromo": "BF30",
-  "sentFair": "Thank you! Your -30% Black Friday offer is reserved. We will get back to you very soon to confirm your appointment.",
+  "sentFair": "Thank you! Your free consultation is reserved. We will get back to you very soon to confirm your appointment.",
   "bfTag": "BLACK FRIDAY -30%",
-  "bfText": "Tailor-made automation in 48 h · Offer until 27/11",
+  "bfFree": "Free consultation",
+  "bfText": "-30% for the first 5 signatures · -20% after · until 27/11",
   "bfCta": "Book a call",
   "submit": "Send my request",
   "sentTitle": "Request sent!",

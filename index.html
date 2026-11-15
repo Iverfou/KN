@@ -57,6 +57,13 @@ section[id]{scroll-margin-top:72px}
 
 /* ---------- nav ---------- */
 .bfbar{position:relative;z-index:55;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:14px 16px 12px;background:#0d0d0d;color:#fff9f0;font-size:14.5px;line-height:1.35;text-align:center;border-bottom:8px solid;border-image:repeating-linear-gradient(135deg,#d9481f 0 12px,#0d0d0d 12px 24px) 8}.bfbar[hidden]{display:none}.bfbar b{background:#3dae5a;color:#0d0d0d;padding:3px 10px;font-weight:800;letter-spacing:.04em}.bfbar a{display:inline-flex;align-items:center;min-height:40px;padding:6px 18px;border-radius:999px;background:#fff9f0;color:#0d0d0d;font-weight:800;text-decoration:none}
+.bfdeco{position:absolute;inset:0;pointer-events:none;display:none}.bfdeco[hidden]{display:none}
+@media(min-width:1100px){.bfdeco{display:block}}
+.bfi{position:absolute;width:64px;height:64px;display:grid;place-items:center;background:#fff;border:3px solid #0d0d0d;border-radius:16px;box-shadow:5px 5px 0 var(--c);color:#0d0d0d;--r:0deg;transform:rotate(var(--r));animation:bfFloat 7s ease-in-out infinite;animation-delay:var(--dl,0s)}
+.bfi svg{width:30px;height:30px}
+.bfsticker{position:absolute;right:4%;top:7%;transform:rotate(6deg);background:#0d0d0d;color:#fff9f0;font-weight:800;font-size:15px;letter-spacing:.06em;padding:10px 16px;box-shadow:6px 6px 0 #d9481f;text-align:center;line-height:1.1}
+.bfsticker b{display:block;margin-top:6px;background:#3dae5a;color:#0d0d0d;font-size:30px;padding:2px 10px;letter-spacing:0}
+@keyframes bfFloat{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-8px) rotate(var(--r))}}
 .nav{position:sticky;top:0;z-index:50;padding-top:6px;background:rgba(255,249,240,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);transition:box-shadow .25s}
 .nav.scrolled{box-shadow:0 10px 30px -18px rgba(27,21,38,.35)}
 .nav-in{height:74px;display:flex;align-items:center;gap:22px}
@@ -417,6 +424,7 @@ select.fi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
 
 <main id="main">
 <section class="hero" id="top">
+  <div class="bfdeco" id="bfDeco" aria-hidden="true" hidden><span class="bfi" style="left:3%;top:20%;--r:-6deg;--c:#3dae5a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9.3 8.8c.3 2.1 2.2 4 4.4 4.5l1.2-1.1-1.9-1.1-.8.6a3.6 3.6 0 0 1-1.7-1.7l.6-.8-1.1-1.9z"/></svg></span><span class="bfi" style="left:7%;top:44%;--r:5deg;--c:#f07820;--dl:-2s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="bfi" style="left:3%;top:68%;--r:-4deg;--c:#4a9fd8;--dl:-4s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11M3.5 6l1.2 1.2L6.8 5M3.5 12l1.2 1.2L6.8 11M3.5 18l1.2 1.2L6.8 17"/></svg></span><span class="bfi" style="right:3%;top:42%;--r:6deg;--c:#c4107a;--dl:-1s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><span class="bfi" style="right:7%;top:64%;--r:-5deg;--c:#3dae5a;--dl:-3s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM4 10h16M8 3v4M16 3v4"/></svg></span><span class="bfi" style="right:3%;top:82%;--r:4deg;--c:#f07820;--dl:-5s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="bfsticker">BLACK FRIDAY<b>-30 %</b></div></div>
   <div class="rb rb1" data-sp="0.06"></div><div class="rb rb2" data-sp="-0.04"></div><div class="rb rb3" data-sp="0.08"></div><div class="rb rb4" data-sp="-0.05"></div>
   <div class="wrap">
     <div class="center">
@@ -1344,6 +1352,7 @@ function initFair() {
   const on = isFair();
   $('#fairBanner').hidden = !on;
   $('#bfBar').hidden = !on;
+  $('#bfDeco').hidden = !on;
   const p = $('#f-promo'); if (on && !p.value) p.value = 'BF30';
 }
 async function submitForm(e) {
